@@ -1,0 +1,45 @@
+body {
+  background: #223;
+}
+#container {
+  display: flex;
+  margin-top: 5%;
+  flex-wrap: wrap;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: larger;
+  border: solid 1px #fff;
+  box-shadow: 2px 0px 50px teal;
+  background: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+#container > p {
+  flex: 20%;
+  margin-bottom: 10px;
+}
+p[id='Cleveland Guardians']{
+  color: #ce0d2d;
+}
+p[id='New York Yankees']{
+  color: #132448;
+}
+p[id='Baltimore Orioles']{
+  color: #df4601;
+}
+p[id='Oakland Athletics']{
+  color: #006241;
+}
+p[id='Houston Astros']{
+  color: #eb6e20;
+}
+p[id='Pittsburgh Pirates']{
+  color: #ffce34;
+}
+p[id='Chicago Cubs']{
+  color: #0d3386;
+}
+p[id='Seattle Mariners']{
+  color: #005c5c;
+}
