@@ -1,39 +1,27 @@
-body {
-  background: #223;
-}
-#container {
-  display: flex;
-  margin-top: 5%;
-  flex-wrap: wrap;
+#baseball-match {
+  margin-top: 2%;
+  gap: 2em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bold;
-  font-size: 0.7em;
-  border: solid 1px #fff;
-  box-shadow: 2px 0px 50px teal;
+  font-size: 1em;
+  /* border: solid 1px #fff;
+  box-shadow: 2px 0px 50px teal; */
   background: #fff;
   border-radius: 5px;
-  padding: 1em;
+  padding: 10px;
 }
-#container > p {
-  flex: 20%;
-  flex-basis: calc(100% / 4);
-  padding: 1em;
-}
-#score-home, #score-away {
+
+/* #score-home, #score-away {
   display: flex;
   max-width: 20px;
   justify-content: center;
   padding: 1em;
-}
+} */
 
-.home-team, .away-team, #current-inning {
+/* .home-team, .away-team, #current-inning {
   display: flex;
   justify-content: center;
-}
-.no-matches {
-  display: flex;
-  justify-content: center;
-}
+} */
 /* TEAMS COLORS */
 #Cardinals{
   color: #be0a14;

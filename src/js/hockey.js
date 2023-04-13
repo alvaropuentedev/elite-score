@@ -1,29 +1,23 @@
 const container = document.querySelector('#container')
-const navBaseball = document.querySelector('#nav-baseball')
-// FETCH HEADER
+const navHockey = document.querySelector('#nav-hockey')
 const options = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Key': '3aefc1e7bamshd83a082017e807dp1102d7jsn7ea4642214b9',
-        'X-RapidAPI-Host': 'baseballapi.p.rapidapi.com'
+        'X-RapidAPI-Host': 'icehockeyapi.p.rapidapi.com'
     }
 }
-// CREATE BUTTON ELEMENT
-/* const btn = document.createElement('button')
-btn.textContent = ('BASEBALL')
-btn.setAttribute('class', 'btn btn-primary')
-navBar.appendChild(btn) */
 
 // NAV MENU
-navBaseball.addEventListener('click', () => {
+navHockey.addEventListener('click', () => {
     fetchData()
 })
 
 // FETCH API
 const fetchData = async () => {
-    // const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
-    // const resLive = await fetch(urlLiveScores, options)
-    const resLive = await fetch('./liveBaseballMatch.json')
+    /* const urlLiveScores = 'https://icehockeyapi.p.rapidapi.com/api/ice-hockey/matches/live'
+    const resLive = await fetch(urlLiveScores, options) */
+    const resLive = await fetch('liveHockeyGames.json')
     const dataLive = await resLive.json()
     console.log(dataLive)
     createMatches(dataLive)
@@ -31,8 +25,8 @@ const fetchData = async () => {
 
 // LIVE SCORES
 const createMatches = (resLive) => {
-    // console.log(resLive.events.length)
-    // console.log(resLive)
+    console.log(resLive.events.length)
+    console.log(resLive)
     container.innerHTML = ''
     if (resLive.events.length > 0) {
         const elementRow = document.createElement('div')
@@ -84,6 +78,7 @@ const createMatches = (resLive) => {
                 const showLineup = document.createElement('p')
                 showLineup.id = 'show-lineup'
                 const matchId = resLive.events[i].id
+                console.log(matchId)
                 fetchLineups(matchId)
             })
         }
@@ -96,18 +91,8 @@ const createMatches = (resLive) => {
 }
 
 const fetchLineups = async (matchId) => {
-    /* const urlTeamLineup = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
-    const resLineup = await fetch(urlTeamLineup, options) */
-    const resLineup = await fetch('lineupsBaseball.json')
+    const urlTeamLineup = 'https://baseballapi.p.rapidapi.com/api/hockey/match/' + matchId + '/lineups'
+    const resLineup = await fetch(urlTeamLineup, options)
     const dataLineup = await resLineup.json()
     console.log(dataLineup)
-    showLineups(dataLineup)
-}
-const showLineups = (dataLineup) => {
-    console.log(dataLineup)
-    for (let i = 0; i < dataLineup.home.length; i++) {
-        const elementDiv = document.createElement('div')
-        // elementDiv.textContent = dataLineup.home.players
-        console.log(dataLineup.home.players[0])
-    }
 }
