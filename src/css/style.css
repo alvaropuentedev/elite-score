@@ -1,6 +1,6 @@
-#baseball-match {
+#cards-container {
   margin-top: 2%;
-  gap: 2em;
+  gap: 1em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 1em;
@@ -10,18 +10,20 @@
   border-radius: 5px;
   padding: 10px;
 }
+#match-card{
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 140px;
+  max-height: 200px;
+}
 
-/* #score-home, #score-away {
-  display: flex;
-  max-width: 20px;
-  justify-content: center;
-  padding: 1em;
-} */
+#match-card:hover {
+  cursor: pointer;
+  /* background: #cbc9c9; */
+  box-shadow: #cbc9c9;
+  border: solid 1px #cbc9c9;
+}
 
-/* .home-team, .away-team, #current-inning {
-  display: flex;
-  justify-content: center;
-} */
 /* TEAMS COLORS */
 #Cardinals{
   color: #be0a14;

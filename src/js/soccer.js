@@ -1,24 +1,24 @@
 const CONTAINER = document.querySelector('#container')
-const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
+const NAV_SOCCER_LINK = document.querySelector('#nav-soccer')
 // FETCH HEADER
 const options = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Key': '3aefc1e7bamshd83a082017e807dp1102d7jsn7ea4642214b9',
-        'X-RapidAPI-Host': 'baseballapi.p.rapidapi.com'
+        'X-RapidAPI-Host': 'footapi7.p.rapidapi.com'
     }
 }
 
 // NAV MENU
-NAV_BASEBALL_LINK.addEventListener('click', () => {
+NAV_SOCCER_LINK.addEventListener('click', () => {
     fetchData()
 })
 
 // FETCH API
 const fetchData = async () => {
-    // const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
-    // const resLive = await fetch(urlLiveScores, options)
-    const resLive = await fetch('./liveBaseballMatch.json')
+    const urlLiveScores = 'https://footapi7.p.rapidapi.com/api/matches/live'
+    const resLive = await fetch(urlLiveScores, options)
+    // const resLive = await fetch('./liveBaseballMatch.json')
     const dataLive = await resLive.json()
     console.log(dataLive)
     createMatches(dataLive)
@@ -37,6 +37,7 @@ const createMatches = (resLive) => {
             const elementCol = document.createElement('div')
             elementCol.id = 'match-card'
             elementCol.setAttribute('class', 'col p-2 shadow rounded')
+            elementCol.textContent = resLive.events[i].tournament.name
             elementRow.appendChild(elementCol)
             // DIV AWAY
             const divAway = document.createElement('div')
@@ -94,9 +95,9 @@ const createMatches = (resLive) => {
 }
 
 const fetchLineups = async (matchId) => {
-    // const urlTeamLineup = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
-    // const resLineup = await fetch(urlTeamLineup, options)
-    const resLineup = await fetch('lineupsBaseball.json')
+    const urlTeamLineup = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
+    const resLineup = await fetch(urlTeamLineup, options)
+    // const resLineup = await fetch('lineupsBaseball.json')
     const dataLineup = await resLineup.json()
     console.log(dataLineup)
     showLineups(dataLineup)
