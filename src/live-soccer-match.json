@@ -1,0 +1,5170 @@
+{
+    "events": [
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 1,
+                "period1": 0,
+                "period2": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "ES",
+                    "name": "Spain"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 2820,
+                "name": "Osasuna",
+                "nameCode": "OSA",
+                "national": false,
+                "shortName": "Osasuna",
+                "slug": "osasuna",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#cc0000",
+                    "secondary": "#14213d",
+                    "text": "#14213d"
+                },
+                "type": 0,
+                "userCount": 55350
+            },
+            "changes": {
+                "changeTimestamp": 1681504033,
+                "changes": [
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ]
+            },
+            "customId": "tgbsvgb",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "hasXg": true,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "normaltime": 2,
+                "period1": 2,
+                "period2": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "ES",
+                    "name": "Spain"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 2818,
+                "name": "Rayo Vallecano",
+                "nameCode": "RVC",
+                "national": false,
+                "shortName": "Rayo Vallecano",
+                "slug": "rayo-vallecano",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 52951
+            },
+            "id": 10408419,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 29
+            },
+            "slug": "osasuna-rayo-vallecano",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502630
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502630,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 2,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "ES",
+                    "flag": "spain",
+                    "id": 32,
+                    "name": "Spain",
+                    "slug": "spain",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 36,
+                "name": "LaLiga",
+                "priority": 471,
+                "slug": "laliga",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "ES",
+                        "flag": "spain",
+                        "id": 32,
+                        "name": "Spain",
+                        "slug": "spain",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 8,
+                    "name": "LaLiga",
+                    "slug": "laliga",
+                    "userCount": 820879
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IT",
+                    "name": "Italy"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 2699,
+                "name": "Lazio",
+                "nameCode": "LAZ",
+                "national": false,
+                "shortName": "Lazio",
+                "slug": "lazio",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#64b6e1",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 208215
+            },
+            "changes": {
+                "changeTimestamp": 1681504573,
+                "changes": [
+                    "awayScore.current",
+                    "awayScore.display"
+                ]
+            },
+            "customId": "ZdbsKeb",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "hasXg": true,
+            "homeRedCards": 1,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IT",
+                    "name": "Italy"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 2735,
+                "name": "Spezia",
+                "nameCode": "SPE",
+                "national": false,
+                "shortName": "Spezia",
+                "slug": "spezia",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 38785
+            },
+            "id": 10411404,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 30
+            },
+            "slug": "spezia-lazio",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501970
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501970,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IT",
+                    "flag": "italy",
+                    "id": 31,
+                    "name": "Italy",
+                    "slug": "italy",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 33,
+                "name": "Serie A",
+                "priority": 470,
+                "slug": "serie-a",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IT",
+                        "flag": "italy",
+                        "id": 31,
+                        "name": "Italy",
+                        "slug": "italy",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 23,
+                    "name": "Serie A",
+                    "slug": "serie-a",
+                    "userCount": 683429
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "FR",
+                    "name": "France"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 1649,
+                "name": "Olympique Lyonnais",
+                "nameCode": "OL",
+                "national": false,
+                "shortName": "Lyon",
+                "slug": "olympique-lyonnais",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#004080",
+                    "text": "#004080"
+                },
+                "type": 0,
+                "userCount": 181150
+            },
+            "changes": {
+                "changeTimestamp": 1681504484,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "ZHsGI",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "hasXg": true,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "FR",
+                    "name": "France"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 1681,
+                "name": "Toulouse",
+                "nameCode": "TFC",
+                "national": false,
+                "shortName": "Toulouse",
+                "slug": "toulouse",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#660099",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 37544
+            },
+            "id": 10389784,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 31
+            },
+            "slug": "toulouse-olympique-lyonnais",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502512
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502512,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "FR",
+                    "flag": "france",
+                    "id": 7,
+                    "name": "France",
+                    "slug": "france",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 4,
+                "name": "Ligue 1",
+                "priority": 468,
+                "slug": "ligue-1",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "FR",
+                        "flag": "france",
+                        "id": 7,
+                        "name": "France",
+                        "slug": "france",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 34,
+                    "name": "Ligue 1",
+                    "slug": "ligue-1",
+                    "userCount": 509463
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayRedCards": 1,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "PT",
+                    "name": "Portugal"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 3009,
+                "name": "Vitória SC",
+                "nameCode": "VIT",
+                "national": false,
+                "shortName": "Vitória",
+                "slug": "vitoria-sc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 21281
+            },
+            "changes": {
+                "changeTimestamp": 1681504544,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "jkbsGPu",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": true,
+            "homeRedCards": 1,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "PT",
+                    "name": "Portugal"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 49531,
+                "name": "Famalicão",
+                "nameCode": "FAM",
+                "national": false,
+                "shortName": "Famalicão",
+                "slug": "famalicao",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#1a4879",
+                    "secondary": "#222226",
+                    "text": "#222226"
+                },
+                "type": 0,
+                "userCount": 14867
+            },
+            "id": 10438106,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 28
+            },
+            "slug": "famalicao-vitoria-sc",
+            "startTimestamp": 1681499700,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681503906
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503906,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 4,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "PT",
+                    "flag": "portugal",
+                    "id": 44,
+                    "name": "Portugal",
+                    "slug": "portugal",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 52,
+                "name": "Primeira Liga",
+                "priority": 322,
+                "slug": "primeira-liga",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "PT",
+                        "flag": "portugal",
+                        "id": 44,
+                        "name": "Portugal",
+                        "slug": "portugal",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 238,
+                    "name": "Liga Portugal",
+                    "slug": "liga-portugal",
+                    "userCount": 163182
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "BE",
+                    "name": "Belgium"
+                },
+                "gender": "M",
+                "id": 2898,
+                "name": "RC Sporting Charleroi",
+                "nameCode": "RCH",
+                "national": false,
+                "shortName": "Charleroi",
+                "slug": "rc-sporting-charleroi",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#000000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 14751
+            },
+            "changes": {
+                "changeTimestamp": 1681504545,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "Yhbsbib",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "BE",
+                    "name": "Belgium"
+                },
+                "gender": "M",
+                "id": 2901,
+                "name": "Standard Liège",
+                "nameCode": "STA",
+                "national": false,
+                "shortName": "Standard Liège",
+                "slug": "standard-liege",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#cc0000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 22835
+            },
+            "id": 10407521,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 33
+            },
+            "slug": "standard-liege-rc-sporting-charleroi",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502593
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502593,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "BE",
+                    "flag": "belgium",
+                    "id": 33,
+                    "name": "Belgium",
+                    "slug": "belgium",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 38,
+                "name": "First Division A",
+                "priority": 303,
+                "slug": "first-division-a",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "BE",
+                        "flag": "belgium",
+                        "id": 33,
+                        "name": "Belgium",
+                        "slug": "belgium",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 38,
+                    "name": "Pro League",
+                    "slug": "pro-league",
+                    "userCount": 64318
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 1,
+                "period1": 1,
+                "period2": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "SX",
+                    "name": "Scotland"
+                },
+                "gender": "M",
+                "id": 2355,
+                "name": "Aberdeen",
+                "nameCode": "ABE",
+                "national": false,
+                "shortName": "Aberdeen",
+                "slug": "aberdeen",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#cc0000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 11046
+            },
+            "changes": {
+                "changeTimestamp": 1681504463,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "fXspX",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0,
+                "period2": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "SX",
+                    "name": "Scotland"
+                },
+                "gender": "M",
+                "id": 2365,
+                "name": "Ross County",
+                "nameCode": "ROS",
+                "national": false,
+                "shortName": "Ross County",
+                "slug": "ross-county",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#000088",
+                    "text": "#000088"
+                },
+                "type": 0,
+                "userCount": 4381
+            },
+            "id": 10387523,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 32
+            },
+            "slug": "ross-county-aberdeen",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 840,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501708
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501708,
+                "extra": 840,
+                "initial": 2700,
+                "injuryTime1": 3,
+                "injuryTime2": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "SX",
+                    "flag": "scotland",
+                    "id": 22,
+                    "name": "Scotland",
+                    "slug": "scotland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 54,
+                "name": "Premiership",
+                "priority": 302,
+                "slug": "premiership",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "SX",
+                        "flag": "scotland",
+                        "id": 22,
+                        "name": "Scotland",
+                        "slug": "scotland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 36,
+                    "name": "Premiership",
+                    "slug": "premiership",
+                    "userCount": 39446
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "EN",
+                    "name": "England"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 263,
+                "name": "Norwich City",
+                "nameCode": "NOR",
+                "national": false,
+                "shortName": "Norwich",
+                "slug": "norwich-city",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffcc33",
+                    "secondary": "#336600",
+                    "text": "#336600"
+                },
+                "type": 0,
+                "userCount": 46198
+            },
+            "changes": {
+                "changeTimestamp": 1681503123,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ]
+            },
+            "customId": "Lsnf",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 5,
+                "display": 5,
+                "period1": 4
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "EN",
+                    "name": "England"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 36,
+                "name": "Middlesbrough",
+                "nameCode": "MID",
+                "national": false,
+                "shortName": "Middlesbrough",
+                "slug": "middlesbrough",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#d90000",
+                    "secondary": "#d90000",
+                    "text": "#d90000"
+                },
+                "type": 0,
+                "userCount": 21414
+            },
+            "id": 10407775,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 42
+            },
+            "slug": "middlesbrough-norwich-city",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502918
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502918,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "EN",
+                    "flag": "england",
+                    "id": 1,
+                    "name": "England",
+                    "slug": "england",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 2,
+                "name": "Championship",
+                "priority": 230,
+                "slug": "championship",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "EN",
+                        "flag": "england",
+                        "id": 1,
+                        "name": "England",
+                        "slug": "england",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 18,
+                    "name": "Championship",
+                    "slug": "championship",
+                    "userCount": 130241
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "ES",
+                    "name": "Spain"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 2839,
+                "name": "Eibar",
+                "nameCode": "EIB",
+                "national": false,
+                "shortName": "Eibar",
+                "slug": "eibar",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#003e85",
+                    "secondary": "#cd152f",
+                    "text": "#cd152f"
+                },
+                "type": 0,
+                "userCount": 32016
+            },
+            "changes": {
+                "changeTimestamp": 1681504422,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "OgbsYgb",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 2
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "ES",
+                    "name": "Spain"
+                },
+                "gender": "M",
+                "id": 2848,
+                "name": "Albacete Balompié",
+                "nameCode": "ALB",
+                "national": false,
+                "shortName": "Albacete",
+                "slug": "albacete-balompie",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 9945
+            },
+            "id": 10409308,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 36
+            },
+            "slug": "albacete-balompie-eibar",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502651
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502651,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "ES",
+                    "flag": "spain",
+                    "id": 32,
+                    "name": "Spain",
+                    "slug": "spain",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 37,
+                "name": "LaLiga 2",
+                "priority": 228,
+                "slug": "laliga-2",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "ES",
+                        "flag": "spain",
+                        "id": 32,
+                        "name": "Spain",
+                        "slug": "spain",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 54,
+                    "name": "LaLiga 2",
+                    "slug": "laliga-2",
+                    "userCount": 62970
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 2
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "CL",
+                    "name": "Chile"
+                },
+                "gender": "M",
+                "id": 3167,
+                "name": "Cobresal",
+                "nameCode": "COB",
+                "national": false,
+                "shortName": "Cobresal",
+                "slug": "cobresal",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#ff9900",
+                    "text": "#ff9900"
+                },
+                "type": 0,
+                "userCount": 3817
+            },
+            "changes": {
+                "changeTimestamp": 1681503639,
+                "changes": [
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "awayScore.period1"
+                ]
+            },
+            "customId": "hnbsrnb",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "CL",
+                    "name": "Chile"
+                },
+                "gender": "M",
+                "id": 3157,
+                "name": "Palestino",
+                "nameCode": "PAL",
+                "national": false,
+                "shortName": "Palestino",
+                "slug": "palestino",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 5262
+            },
+            "id": 10961645,
+            "roundInfo": {
+                "round": 10
+            },
+            "slug": "cobresal-palestino",
+            "startTimestamp": 1681500600,
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503634,
+                "injuryTime1": 4
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "CL",
+                    "flag": "chile",
+                    "id": 49,
+                    "name": "Chile",
+                    "slug": "chile",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 64475,
+                "name": "Primera Division",
+                "priority": 190,
+                "slug": "primera-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "CL",
+                        "flag": "chile",
+                        "id": 49,
+                        "name": "Chile",
+                        "slug": "chile",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 11653,
+                    "name": "Primera Division",
+                    "slug": "primera-division",
+                    "userCount": 18802
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0,
+                "period2": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "SA",
+                    "name": "Saudi Arabia"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 21895,
+                "name": "Al-Hilal Saudi",
+                "nameCode": "HIL",
+                "national": false,
+                "shortName": "Al-Hilal",
+                "slug": "al-hilal-saudi",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0080ff",
+                    "secondary": "#0080ff",
+                    "text": "#0080ff"
+                },
+                "type": 0,
+                "userCount": 63862
+            },
+            "changes": {
+                "changeTimestamp": 1681502998,
+                "changes": [
+                    "homeScore.period2",
+                    "homeScore.normaltime"
+                ]
+            },
+            "customId": "VMisJlrb",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": true,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 1,
+                "period1": 0,
+                "period2": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "SA",
+                    "name": "Saudi Arabia"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 168084,
+                "name": "Al-Batin",
+                "nameCode": "BAT",
+                "national": false,
+                "shortName": "Al-Batin",
+                "slug": "al-batin",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#87ceeb",
+                    "secondary": "#87ceeb",
+                    "text": "#87ceeb"
+                },
+                "type": 0,
+                "userCount": 4938
+            },
+            "id": 10913403,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 24
+            },
+            "slug": "al-hilal-saudi-al-batin",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502676
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502676,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 4,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "SA",
+                    "flag": "saudi-arabia",
+                    "id": 310,
+                    "name": "Saudi Arabia",
+                    "slug": "saudi-arabia",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 3708,
+                "name": "Saudi Professional League",
+                "priority": 123,
+                "slug": "saudi-professional-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "SA",
+                        "flag": "saudi-arabia",
+                        "id": 310,
+                        "name": "Saudi Arabia",
+                        "slug": "saudi-arabia",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 955,
+                    "name": "Saudi Professional League",
+                    "slug": "saudi-professional-league",
+                    "userCount": 50078
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0,
+                "period2": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "SA",
+                    "name": "Saudi Arabia"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 168094,
+                "name": "Al-Fayha",
+                "nameCode": "FAY",
+                "national": false,
+                "shortName": "Al-Fayha",
+                "slug": "al-fayha",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#f1771d",
+                    "secondary": "#222226",
+                    "text": "#222226"
+                },
+                "type": 0,
+                "userCount": 4667
+            },
+            "changes": {
+                "changeTimestamp": 1681502583,
+                "changes": [
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "tLnsUlrb",
+            "detailId": 1,
+            "finalResultOnly": false,
+            "hasEventPlayerHeatMap": true,
+            "hasEventPlayerStatistics": true,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0,
+                "period2": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "SA",
+                    "name": "Saudi Arabia"
+                },
+                "gender": "M",
+                "id": 34318,
+                "name": "Al-Ettifaq",
+                "nameCode": "ETT",
+                "national": false,
+                "shortName": "Al-Ettifaq",
+                "slug": "al-ettifaq",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#177245",
+                    "secondary": "#177245",
+                    "text": "#177245"
+                },
+                "type": 0,
+                "userCount": 5026
+            },
+            "id": 10913469,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 22
+            },
+            "slug": "al-ettifaq-al-fayha",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502574
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502574,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 2,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "SA",
+                    "flag": "saudi-arabia",
+                    "id": 310,
+                    "name": "Saudi Arabia",
+                    "slug": "saudi-arabia",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 3708,
+                "name": "Saudi Professional League",
+                "priority": 123,
+                "slug": "saudi-professional-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "SA",
+                        "flag": "saudi-arabia",
+                        "id": 310,
+                        "name": "Saudi Arabia",
+                        "slug": "saudi-arabia",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": true,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 955,
+                    "name": "Saudi Professional League",
+                    "slug": "saudi-professional-league",
+                    "userCount": 50078
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "PY",
+                    "name": "Paraguay"
+                },
+                "gender": "M",
+                "id": 48854,
+                "name": "Paraguay U17",
+                "nameCode": "PAR",
+                "national": true,
+                "shortName": "Paraguay",
+                "slug": "paraguay-u17",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ff0000",
+                    "secondary": "#045ca3",
+                    "text": "#045ca3"
+                },
+                "type": 0,
+                "userCount": 840
+            },
+            "changes": {
+                "changeTimestamp": 1681502657,
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "LbjseCu",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 2
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "BR",
+                    "name": "Brazil"
+                },
+                "gender": "M",
+                "id": 22586,
+                "name": "Brazil U17",
+                "nameCode": "BRA",
+                "national": true,
+                "shortName": "Brazil",
+                "slug": "brazil-u17",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffff00",
+                    "secondary": "#009933",
+                    "text": "#009933"
+                },
+                "type": 0,
+                "userCount": 6760
+            },
+            "id": 11200826,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 2
+            },
+            "slug": "paraguay-u17-brazil-u17",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502655
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502655,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "flag": "south-america",
+                    "id": 1470,
+                    "name": "South America",
+                    "slug": "south-america",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 42475,
+                "name": "U17 CONMEBOL Championship, Final Round",
+                "priority": 0,
+                "slug": "u17-conmebol-championship-final-round",
+                "uniqueTournament": {
+                    "category": {
+                        "flag": "south-america",
+                        "id": 1470,
+                        "name": "South America",
+                        "slug": "south-america",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 2041,
+                    "name": "U17 CONMEBOL Championship",
+                    "slug": "u17-conmebol-championship",
+                    "userCount": 4698
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "CU",
+                    "name": "Cuba"
+                },
+                "gender": "M",
+                "id": 206523,
+                "name": "Cuba U21",
+                "nameCode": "CUB",
+                "national": true,
+                "shortName": "Cuba",
+                "slug": "cuba-u21",
+                "sport": {
+                    "id": 23,
+                    "name": "Volleyball",
+                    "slug": "volleyball"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ed1c24",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 110
+            },
+            "changes": {
+                "changeTimestamp": 1681502514,
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ]
+            },
+            "coverage": -1,
+            "customId": "yFHbsgWcc",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "SV",
+                    "name": "El Salvador"
+                },
+                "gender": "F",
+                "id": 257306,
+                "name": "El Salvador U20",
+                "nameCode": "SAL",
+                "national": true,
+                "shortName": "El Salvador",
+                "slug": "el-salvador-u20",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#3300ff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 155
+            },
+            "id": 11211031,
+            "lastPeriod": "period2",
+            "slug": "el-salvador-u20-cuba-u21",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502460
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502460,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "flag": "north-and-central-america",
+                    "id": 1469,
+                    "name": "North & Central America",
+                    "slug": "north-central-america",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 31105,
+                "name": "U20 CONCACAF Womens Championship, Knockout stage",
+                "priority": 0,
+                "slug": "u20-concacaf-womens-championship-knockout-stage",
+                "uniqueTournament": {
+                    "category": {
+                        "flag": "north-and-central-america",
+                        "id": 1469,
+                        "name": "North & Central America",
+                        "slug": "north-central-america",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 1568,
+                    "name": "U20 CONCACAF Women's Championship",
+                    "slug": "u20-concacaf-womens-championship",
+                    "userCount": 978
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "AR",
+                    "name": "Argentina"
+                },
+                "gender": "M",
+                "id": 36836,
+                "name": "Aldosivi",
+                "nameCode": "CAA",
+                "national": false,
+                "shortName": "Aldosivi",
+                "slug": "aldosivi",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffff00",
+                    "secondary": "#006600",
+                    "text": "#006600"
+                },
+                "type": 0,
+                "userCount": 6816
+            },
+            "changes": {
+                "changeTimestamp": 1681503698,
+                "changes": [
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "awayScore.period1"
+                ]
+            },
+            "customId": "BZnsLLo",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "AR",
+                    "name": "Argentina"
+                },
+                "gender": "M",
+                "id": 34976,
+                "name": "Atlético Rafaela",
+                "nameCode": "ATR",
+                "national": false,
+                "shortName": "Atl. Rafaela",
+                "slug": "atletico-rafaela",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#3399ff",
+                    "text": "#3399ff"
+                },
+                "type": 0,
+                "userCount": 2011
+            },
+            "id": 10997371,
+            "roundInfo": {
+                "round": 10
+            },
+            "slug": "aldosivi-atletico-rafaela",
+            "startTimestamp": 1681500600,
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503696,
+                "injuryTime1": 2
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "AR",
+                    "flag": "argentina",
+                    "id": 48,
+                    "name": "Argentina",
+                    "slug": "argentina",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 37310,
+                "name": "Primera Nacional, Group B",
+                "priority": 0,
+                "slug": "primera-nacional-group-b",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "AR",
+                        "flag": "argentina",
+                        "id": 48,
+                        "name": "Argentina",
+                        "slug": "argentina",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 703,
+                    "name": "Primera Nacional",
+                    "slug": "primera-nacional",
+                    "userCount": 8735
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "BH",
+                    "name": "Bahrain"
+                },
+                "gender": "M",
+                "id": 60428,
+                "name": "Bahrain SC",
+                "nameCode": "BAH",
+                "national": false,
+                "shortName": "Bahrain",
+                "slug": "bahrain-sc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#228b22",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 1977
+            },
+            "changes": {
+                "changeTimestamp": 1681502847,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ]
+            },
+            "customId": "wjtsDiz",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "BH",
+                    "name": "Bahrain"
+                },
+                "gender": "M",
+                "id": 45471,
+                "name": "Al-Ahli Manama",
+                "nameCode": "AL-",
+                "national": false,
+                "shortName": "Al Ahli",
+                "slug": "al-ahli-manama",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffde00",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 2955
+            },
+            "id": 11132973,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 19
+            },
+            "slug": "bahrain-sc-al-ahli-manama",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502118
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502118,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "BH",
+                    "flag": "bahrain",
+                    "id": 351,
+                    "name": "Bahrain",
+                    "slug": "bahrain",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 4050,
+                "name": "Premier League",
+                "priority": 0,
+                "slug": "premier-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "BH",
+                        "flag": "bahrain",
+                        "id": 351,
+                        "name": "Bahrain",
+                        "slug": "bahrain",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 846,
+                    "name": "Premier League",
+                    "slug": "premier-league",
+                    "userCount": 2574
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "BH",
+                    "name": "Bahrain"
+                },
+                "gender": "M",
+                "id": 60430,
+                "name": "East Riffa",
+                "nameCode": "EAR",
+                "national": false,
+                "shortName": "East Riffa",
+                "slug": "east-riffa",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#ff0000",
+                    "text": "#ff0000"
+                },
+                "type": 0,
+                "userCount": 2317
+            },
+            "changes": {
+                "changeTimestamp": 1681504558,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ]
+            },
+            "customId": "zjtsFiz",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "BH",
+                    "name": "Bahrain"
+                },
+                "gender": "M",
+                "id": 45474,
+                "name": "Al-Muharraq",
+                "nameCode": "AMS",
+                "national": false,
+                "shortName": "Al-Muharraq",
+                "slug": "al-muharraq",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#dd0000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 5535
+            },
+            "id": 11132987,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 19
+            },
+            "slug": "east-riffa-al-muharraq",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 1020,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501727
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501727,
+                "extra": 1020,
+                "initial": 2700,
+                "injuryTime1": 2,
+                "injuryTime2": 8,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "BH",
+                    "flag": "bahrain",
+                    "id": 351,
+                    "name": "Bahrain",
+                    "slug": "bahrain",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 4050,
+                "name": "Premier League",
+                "priority": 0,
+                "slug": "premier-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "BH",
+                        "flag": "bahrain",
+                        "id": 351,
+                        "name": "Bahrain",
+                        "slug": "bahrain",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 846,
+                    "name": "Premier League",
+                    "slug": "premier-league",
+                    "userCount": 2574
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "EG",
+                    "name": "Egypt"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 241703,
+                "name": "Pharco FC",
+                "nameCode": "PHA",
+                "national": false,
+                "shortName": "Pharco",
+                "slug": "pharco-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#014f9f",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 5721
+            },
+            "changes": {
+                "changeTimestamp": 1681503772,
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "kNcsdJWb",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": true,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 2
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "EG",
+                    "name": "Egypt"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 6910,
+                "name": "Al Ahly SC",
+                "nameCode": "AHL",
+                "national": false,
+                "shortName": "Al Ahly",
+                "slug": "al-ahly-sc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#cc0000",
+                    "secondary": "#990000",
+                    "text": "#990000"
+                },
+                "type": 0,
+                "userCount": 171257
+            },
+            "id": 11180557,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 25
+            },
+            "slug": "al-ahly-sc-pharco-fc",
+            "startTimestamp": 1681499700,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681503771
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503771,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 3,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "EG",
+                    "flag": "egypt",
+                    "id": 305,
+                    "name": "Egypt",
+                    "slug": "egypt",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 38612,
+                "name": "Premier League",
+                "priority": 0,
+                "slug": "premier-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "EG",
+                        "flag": "egypt",
+                        "id": 305,
+                        "name": "Egypt",
+                        "slug": "egypt",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 808,
+                    "name": "Premier League",
+                    "slug": "premier-league",
+                    "userCount": 63439
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "EG",
+                    "name": "Egypt"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 43563,
+                "name": "Smouha",
+                "nameCode": "SMO",
+                "national": false,
+                "shortName": "Smouha",
+                "slug": "smouha",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#020fc7",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 8635
+            },
+            "changes": {
+                "changeTimestamp": 1681503703,
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "Mdosnwr",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": true,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "EG",
+                    "name": "Egypt"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 35187,
+                "name": "Al-Ittihad Alexandria",
+                "nameCode": "ITT",
+                "national": false,
+                "shortName": "Al-Ittihad",
+                "slug": "al-ittihad-alexandria",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#2fb425",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 8966
+            },
+            "id": 11180560,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 25
+            },
+            "slug": "smouha-al-ittihad-alexandria",
+            "startTimestamp": 1681499700,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681503660
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503660,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "EG",
+                    "flag": "egypt",
+                    "id": 305,
+                    "name": "Egypt",
+                    "slug": "egypt",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 38612,
+                "name": "Premier League",
+                "priority": 0,
+                "slug": "premier-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "EG",
+                        "flag": "egypt",
+                        "id": 305,
+                        "name": "Egypt",
+                        "slug": "egypt",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 808,
+                    "name": "Premier League",
+                    "slug": "premier-league",
+                    "userCount": 63439
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "EG",
+                    "name": "Egypt"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 175002,
+                "name": "Pyramids FC",
+                "nameCode": "PYR",
+                "national": false,
+                "shortName": "Pyramids",
+                "slug": "pyramids-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#09a1d8",
+                    "secondary": "#010353",
+                    "text": "#010353"
+                },
+                "type": 0,
+                "userCount": 45677
+            },
+            "changes": {
+                "changeTimestamp": 1681503673,
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "cavbsDFIb",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": true,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "EG",
+                    "name": "Egypt"
+                },
+                "gender": "M",
+                "id": 209028,
+                "name": "Aswan SC",
+                "nameCode": "ASW",
+                "national": false,
+                "shortName": "Aswan",
+                "slug": "aswan-sc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0033ff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 4044
+            },
+            "id": 11180555,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 25
+            },
+            "slug": "aswan-sc-pyramids-fc",
+            "startTimestamp": 1681499700,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681503671
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503671,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 2,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "EG",
+                    "flag": "egypt",
+                    "id": 305,
+                    "name": "Egypt",
+                    "slug": "egypt",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 38612,
+                "name": "Premier League",
+                "priority": 0,
+                "slug": "premier-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "EG",
+                        "flag": "egypt",
+                        "id": 305,
+                        "name": "Egypt",
+                        "slug": "egypt",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 808,
+                    "name": "Premier League",
+                    "slug": "premier-league",
+                    "userCount": 63439
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 3,
+                "display": 3,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "GI",
+                    "name": "Gibraltar"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 126304,
+                "name": "Lincoln Red Imps",
+                "nameCode": "LIN",
+                "national": false,
+                "shortName": "Lincoln RI",
+                "slug": "lincoln-red-imps",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#960103",
+                    "secondary": "#222226",
+                    "text": "#222226"
+                },
+                "type": 0,
+                "userCount": 7688
+            },
+            "changes": {
+                "changeTimestamp": 1681503605,
+                "changes": [
+                    "awayScore.current",
+                    "awayScore.display"
+                ]
+            },
+            "customId": "eBabsmBab",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "GI",
+                    "name": "Gibraltar"
+                },
+                "gender": "M",
+                "id": 126312,
+                "name": "St Joseph's FC",
+                "nameCode": "STJ",
+                "national": false,
+                "shortName": "St Joseph's",
+                "slug": "st-josephs-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0000ff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 2417
+            },
+            "id": 11090731,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 9
+            },
+            "slug": "st-josephs-fc-lincoln-red-imps",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501800
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501800,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "GI",
+                    "flag": "gibraltar",
+                    "id": 938,
+                    "name": "Gibraltar",
+                    "slug": "gibraltar",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 77561,
+                "name": "Football League, Championship Group",
+                "priority": 0,
+                "slug": "football-league-championship-group",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "GI",
+                        "flag": "gibraltar",
+                        "id": 938,
+                        "name": "Gibraltar",
+                        "slug": "gibraltar",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 1542,
+                    "name": "Football League",
+                    "slug": "football-league",
+                    "userCount": 1650
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "normaltime": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IS",
+                    "name": "Iceland"
+                },
+                "disabled": false,
+                "gender": "F",
+                "id": 48024,
+                "name": "Grindavík",
+                "nameCode": "GRI",
+                "national": false,
+                "shortName": "Grindavík",
+                "slug": "grindavik",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#f7f950",
+                    "secondary": "#3e84ee",
+                    "text": "#3e84ee"
+                },
+                "type": 0,
+                "userCount": 503
+            },
+            "changes": {
+                "changeTimestamp": 1681503519,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ]
+            },
+            "coverage": -1,
+            "customId": "zkusMMKc",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 3,
+                "display": 3,
+                "normaltime": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IS",
+                    "name": "Iceland"
+                },
+                "disabled": false,
+                "gender": "F",
+                "id": 339387,
+                "name": "HK Kopavogur",
+                "nameCode": "KOP",
+                "national": false,
+                "shortName": "HK Kopavogur",
+                "slug": "hk-kopavogur",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 607
+            },
+            "id": 11211063,
+            "lastPeriod": "period2",
+            "slug": "grindavik-hk-kopavogur",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502820
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502820,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IS",
+                    "flag": "iceland",
+                    "id": 10,
+                    "name": "Iceland",
+                    "slug": "iceland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 11060,
+                "name": "Cup, Women",
+                "priority": 0,
+                "slug": "cup-women",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IS",
+                        "flag": "iceland",
+                        "id": 10,
+                        "name": "Iceland",
+                        "slug": "iceland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 11211,
+                    "name": "Cup, Women",
+                    "slug": "cup-women",
+                    "userCount": 422
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 3
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 3169,
+                "name": "St. Patrick's Athletic",
+                "nameCode": "STP",
+                "national": false,
+                "shortName": "St. Patrick’s",
+                "slug": "st-patricks-athletic",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 6030
+            },
+            "changes": {
+                "changeTimestamp": 1681503465,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "unbsynb",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeRedCards": 1,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3173,
+                "name": "Bohemian",
+                "nameCode": "BOH",
+                "national": false,
+                "shortName": "Bohemian",
+                "slug": "bohemian",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#d70303",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 6006
+            },
+            "id": 10950900,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 10
+            },
+            "slug": "bohemian-st-patricks-athletic",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502132
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502132,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 79,
+                "name": "Premier Division",
+                "priority": 0,
+                "slug": "premier-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 192,
+                    "name": "Premier Division",
+                    "slug": "premier-division",
+                    "userCount": 8386
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3174,
+                "name": "Shelbourne",
+                "nameCode": "SHE",
+                "national": false,
+                "shortName": "Shelbourne",
+                "slug": "shelbourne",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ee0000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 3304
+            },
+            "changes": {
+                "changeTimestamp": 1681504456,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "znbsCnb",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3177,
+                "name": "Shamrock Rovers",
+                "nameCode": "SHA",
+                "national": false,
+                "shortName": "Shamrock Rovers",
+                "slug": "shamrock-rovers",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#008100",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 19716
+            },
+            "id": 10950923,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 10
+            },
+            "slug": "shamrock-rovers-shelbourne",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 840,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501985
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501985,
+                "extra": 840,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "injuryTime2": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 79,
+                "name": "Premier Division",
+                "priority": 0,
+                "slug": "premier-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 192,
+                    "name": "Premier Division",
+                    "slug": "premier-division",
+                    "userCount": 8386
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 40896,
+                "name": "Cork City",
+                "nameCode": "COR",
+                "national": false,
+                "shortName": "Cork City",
+                "slug": "cork-city",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#008200",
+                    "secondary": "#006a00",
+                    "text": "#006a00"
+                },
+                "type": 0,
+                "userCount": 7770
+            },
+            "changes": {
+                "changeTimestamp": 1681504392,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "tnbsWrq",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 3168,
+                "name": "University College Dublin",
+                "nameCode": "DUB",
+                "national": false,
+                "shortName": "UC Dublin",
+                "slug": "university-college-dublin",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#99ecff",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 2845
+            },
+            "id": 10950915,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 10
+            },
+            "slug": "cork-city-university-college-dublin",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 840,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501669
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501669,
+                "extra": 840,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "injuryTime2": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 79,
+                "name": "Premier Division",
+                "priority": 0,
+                "slug": "premier-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 192,
+                    "name": "Premier Division",
+                    "slug": "premier-division",
+                    "userCount": 8386
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 3185,
+                "name": "Cobh Ramblers",
+                "nameCode": "COB",
+                "national": false,
+                "shortName": "Cobh Ramblers",
+                "slug": "cobh-ramblers",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#880000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 1204
+            },
+            "changes": {
+                "changeTimestamp": 1681504141,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ]
+            },
+            "customId": "KnbsYnb",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3198,
+                "name": "Athlone Town",
+                "nameCode": "ATH",
+                "national": false,
+                "shortName": "Athlone Town",
+                "slug": "athlone-town",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#000080",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 1446
+            },
+            "id": 11068274,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 9
+            },
+            "slug": "athlone-town-cobh-ramblers",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501500
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501500,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 718,
+                "name": "First Division",
+                "priority": 0,
+                "slug": "first-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 193,
+                    "name": "First Division",
+                    "slug": "first-division",
+                    "userCount": 2760
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3171,
+                "name": "Bray Wanderers",
+                "nameCode": "BRA",
+                "national": false,
+                "shortName": "Bray Wanderers",
+                "slug": "bray-wanderers",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#000000",
+                    "secondary": "#00a862",
+                    "text": "#00a862"
+                },
+                "type": 0,
+                "userCount": 1644
+            },
+            "changes": {
+                "changeTimestamp": 1681504360,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "wnbsHXeb",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 6,
+                "display": 6,
+                "period1": 3
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 137382,
+                "name": "Galway United",
+                "nameCode": "GAL",
+                "national": false,
+                "shortName": "Galway Utd",
+                "slug": "galway-united",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#890000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 4355
+            },
+            "id": 11068275,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 9
+            },
+            "slug": "bray-wanderers-galway-united",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501745
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501745,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 718,
+                "name": "First Division",
+                "priority": 0,
+                "slug": "first-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 193,
+                    "name": "First Division",
+                    "slug": "first-division",
+                    "userCount": 2760
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 459718,
+                "name": "Kerry FC",
+                "nameCode": "KER",
+                "national": false,
+                "shortName": "Kerry FC",
+                "slug": "kerry-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 450
+            },
+            "changes": {
+                "changeTimestamp": 1681504534,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "UnbstUId",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3194,
+                "name": "Waterford FC",
+                "nameCode": "WAT",
+                "national": false,
+                "shortName": "Waterford",
+                "slug": "waterford-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0000ff",
+                    "secondary": "#ffe100",
+                    "text": "#ffe100"
+                },
+                "type": 0,
+                "userCount": 4176
+            },
+            "id": 11068276,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 9
+            },
+            "slug": "kerry-fc-waterford-fc",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 720,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501828
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501828,
+                "extra": 720,
+                "initial": 2700,
+                "injuryTime1": 2,
+                "injuryTime2": 3,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 718,
+                "name": "First Division",
+                "priority": 0,
+                "slug": "first-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 193,
+                    "name": "First Division",
+                    "slug": "first-division",
+                    "userCount": 2760
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 377765,
+                "name": "Treaty United FC",
+                "nameCode": "TRE",
+                "national": false,
+                "shortName": "Treaty United FC",
+                "slug": "treaty-united-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 1845
+            },
+            "changes": {
+                "changeTimestamp": 1681504021,
+                "changes": [
+                    "time.currentPeriodStart"
+                ]
+            },
+            "customId": "Gnbspfbd",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3181,
+                "name": "Finn Harps",
+                "nameCode": "FHA",
+                "national": false,
+                "shortName": "Finn Harps",
+                "slug": "finn-harps",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0042ff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 2244
+            },
+            "id": 11068277,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 9
+            },
+            "slug": "treaty-united-fc-finn-harps",
+            "startTimestamp": 1681498800,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502682
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502682,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 718,
+                "name": "First Division",
+                "priority": 0,
+                "slug": "first-division",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "IE",
+                        "flag": "ireland",
+                        "id": 51,
+                        "name": "Ireland",
+                        "slug": "ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 193,
+                    "name": "First Division",
+                    "slug": "first-division",
+                    "userCount": 2760
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "gender": "M",
+                "id": 3184,
+                "name": "Malahide United",
+                "nameCode": "MAL",
+                "national": false,
+                "shortName": "Malahide Utd",
+                "slug": "malahide-united",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 304
+            },
+            "changes": {
+                "changeTimestamp": 1681503397,
+                "changes": [
+                    "awayScore.current",
+                    "awayScore.display"
+                ]
+            },
+            "coverage": -1,
+            "customId": "JnbscTjc",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "IE",
+                    "name": "Ireland"
+                },
+                "id": 274652,
+                "name": "Home Farm FC",
+                "nameCode": "HFA",
+                "national": false,
+                "shortName": "Home Farm FC",
+                "slug": "home-farm-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 333
+            },
+            "id": 11210236,
+            "lastPeriod": "period2",
+            "slug": "malahide-united-home-farm-fc",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681502520
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681502520,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "IE",
+                    "flag": "ireland",
+                    "id": 51,
+                    "name": "Ireland",
+                    "slug": "ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 43150,
+                "name": "Leinster Senior League Senior Division",
+                "priority": 0,
+                "slug": "leinster-senior-league-senior-division"
+            }
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "normaltime": 1,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "NX",
+                    "name": "Northern Ireland"
+                },
+                "gender": "M",
+                "id": 5182,
+                "name": "Ards FC",
+                "nameCode": "ARD",
+                "national": false,
+                "shortName": "Ards",
+                "slug": "ards-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0029ff",
+                    "secondary": "#ff0000",
+                    "text": "#ff0000"
+                },
+                "type": 0,
+                "userCount": 654
+            },
+            "changes": {
+                "changeTimestamp": 1681503931,
+                "changes": [
+                    "awayScore.current",
+                    "awayScore.display"
+                ]
+            },
+            "customId": "HdcszJp",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 1,
+                "period1": 1
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "NX",
+                    "name": "Northern Ireland"
+                },
+                "gender": "M",
+                "id": 39224,
+                "name": "Annagh United",
+                "nameCode": "ANN",
+                "national": false,
+                "shortName": "Annagh United",
+                "slug": "annagh-united",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ff0000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 1012
+            },
+            "id": 11187982,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 36
+            },
+            "slug": "ards-fc-annagh-united",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501920
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501920,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "NX",
+                    "flag": "northern-ireland",
+                    "id": 130,
+                    "name": "Northern Ireland",
+                    "slug": "northern-ireland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 94060,
+                "name": "Championship 1, Promotion Round",
+                "priority": 0,
+                "slug": "championship-1-promotion-round",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "NX",
+                        "flag": "northern-ireland",
+                        "id": 130,
+                        "name": "Northern Ireland",
+                        "slug": "northern-ireland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 701,
+                    "name": "Championship",
+                    "slug": "championship",
+                    "userCount": 874
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "QA",
+                    "name": "Qatar"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 44441,
+                "name": "Al Duhail",
+                "nameCode": "DUH",
+                "national": false,
+                "shortName": "Al Duhail",
+                "slug": "al-duhail",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#cc0033",
+                    "secondary": "#cc0033",
+                    "text": "#cc0033"
+                },
+                "type": 0,
+                "userCount": 17679
+            },
+            "changes": {
+                "changeTimestamp": 1681503016,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ]
+            },
+            "customId": "mLnsQNr",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": true,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "QA",
+                    "name": "Qatar"
+                },
+                "gender": "M",
+                "id": 34312,
+                "name": "Al-Gharafa",
+                "nameCode": "ALG",
+                "national": false,
+                "shortName": "Al-Gharafa",
+                "slug": "al-gharafa",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffff00",
+                    "secondary": "#0047ab",
+                    "text": "#0047ab"
+                },
+                "type": 0,
+                "userCount": 5734
+            },
+            "id": 11142447,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 19
+            },
+            "slug": "al-duhail-al-gharafa",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501989
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501989,
+                "extra": 540,
+                "initial": 2700,
+                "injuryTime1": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "QA",
+                    "flag": "qatar",
+                    "id": 353,
+                    "name": "Qatar",
+                    "slug": "qatar",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 4051,
+                "name": "Stars League",
+                "priority": 0,
+                "slug": "stars-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "QA",
+                        "flag": "qatar",
+                        "id": 353,
+                        "name": "Qatar",
+                        "slug": "qatar",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 825,
+                    "name": "Stars League",
+                    "slug": "stars-league",
+                    "userCount": 7933
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 2
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "QA",
+                    "name": "Qatar"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 40660,
+                "name": "Al-Rayyan",
+                "nameCode": "ALR",
+                "national": false,
+                "shortName": "Al-Rayyan",
+                "slug": "al-rayyan",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#cc3300",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 6916
+            },
+            "changes": {
+                "changeTimestamp": 1681504529,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "knqsONr",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": true,
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 2
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "QA",
+                    "name": "Qatar"
+                },
+                "gender": "M",
+                "id": 44439,
+                "name": "Al-Sailiya",
+                "nameCode": "ALS",
+                "national": false,
+                "shortName": "Al-Sailiya",
+                "slug": "al-sailiya",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#000000",
+                    "secondary": "#3344cc",
+                    "text": "#3344cc"
+                },
+                "type": 0,
+                "userCount": 3135
+            },
+            "id": 11142442,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 19
+            },
+            "slug": "al-sailiya-al-rayyan",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 840,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501811
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501811,
+                "extra": 840,
+                "initial": 2700,
+                "injuryTime1": 5,
+                "injuryTime2": 5,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "QA",
+                    "flag": "qatar",
+                    "id": 353,
+                    "name": "Qatar",
+                    "slug": "qatar",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 4051,
+                "name": "Stars League",
+                "priority": 0,
+                "slug": "stars-league",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "QA",
+                        "flag": "qatar",
+                        "id": 353,
+                        "name": "Qatar",
+                        "slug": "qatar",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": true,
+                    "id": 825,
+                    "name": "Stars League",
+                    "slug": "stars-league",
+                    "userCount": 7933
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "SX",
+                    "name": "Scotland"
+                },
+                "gender": "M",
+                "id": 2376,
+                "name": "Hamilton Academical",
+                "nameCode": "HAM",
+                "national": false,
+                "shortName": "Hamilton",
+                "slug": "hamilton-academical",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#a80054",
+                    "text": "#a80054"
+                },
+                "type": 0,
+                "userCount": 1950
+            },
+            "changes": {
+                "changeTimestamp": 1681503488,
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display",
+                    "homeScore.normaltime",
+                    "awayScore.normaltime"
+                ]
+            },
+            "customId": "BXsEX",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "normaltime": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "SX",
+                    "name": "Scotland"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 2379,
+                "name": "Queen's Park FC",
+                "nameCode": "QUE",
+                "national": false,
+                "shortName": "Queen's Park",
+                "slug": "queens-park-fc",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#070707",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 4561
+            },
+            "id": 10387627,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 33
+            },
+            "slug": "queens-park-fc-hamilton-academical",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501582
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501582,
+                "extra": 540,
+                "initial": 2700,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "SX",
+                    "flag": "scotland",
+                    "id": 22,
+                    "name": "Scotland",
+                    "slug": "scotland",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 55,
+                "name": "Championship",
+                "priority": 0,
+                "slug": "championship",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "SX",
+                        "flag": "scotland",
+                        "id": 22,
+                        "name": "Scotland",
+                        "slug": "scotland",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 206,
+                    "name": "Championship",
+                    "slug": "championship",
+                    "userCount": 5058
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "aggregatedWinnerCode": 1,
+            "awayScore": {
+                "aggregated": 3,
+                "current": 1,
+                "display": 1,
+                "extra1": 0,
+                "normaltime": 0,
+                "overtime": 0,
+                "period1": 0,
+                "period2": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "AE",
+                    "name": "United Arab Emirates"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 34060,
+                "name": "Al-Sharjah",
+                "nameCode": "SHJ",
+                "national": false,
+                "shortName": "Al-Sharjah",
+                "slug": "al-sharjah",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#3758a7",
+                    "text": "#3758a7"
+                },
+                "type": 0,
+                "userCount": 7719
+            },
+            "changes": {
+                "changeTimestamp": 1681504184,
+                "changes": [
+                    "cardsCode"
+                ]
+            },
+            "customId": "kGnsMyy",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": true,
+            "homeRedCards": 1,
+            "homeScore": {
+                "aggregated": 2,
+                "current": 1,
+                "display": 1,
+                "extra1": 0,
+                "normaltime": 1,
+                "overtime": 0,
+                "period1": 1,
+                "period2": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "AE",
+                    "name": "United Arab Emirates"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 58687,
+                "name": "Ajman",
+                "nameCode": "AJM",
+                "national": false,
+                "shortName": "Ajman",
+                "slug": "ajman",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ff6600",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 2174
+            },
+            "id": 11118343,
+            "lastPeriod": "extra2",
+            "previousLegEventId": 11116409,
+            "roundInfo": {
+                "cupRoundType": 2,
+                "name": "Semifinal",
+                "round": 28,
+                "slug": "semifinal"
+            },
+            "slug": "ajman-al-sharjah",
+            "startTimestamp": 1681495200,
+            "status": {
+                "code": 42,
+                "description": "2nd extra",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 540,
+                "initial": 6300,
+                "max": 7200,
+                "prefix": "ET-",
+                "timestamp": 1681503360
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681503360,
+                "extra": 540,
+                "initial": 6300,
+                "max": 7200
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "AE",
+                    "flag": "united-arab-emirates",
+                    "id": 299,
+                    "name": "United Arab Emirates",
+                    "slug": "united-arab-emirates",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 15220,
+                "name": "Presidents Cup",
+                "priority": 0,
+                "slug": "presidents-cup",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "AE",
+                        "flag": "united-arab-emirates",
+                        "id": 299,
+                        "name": "United Arab Emirates",
+                        "slug": "united-arab-emirates",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 3080,
+                    "name": "Presidents Cup",
+                    "slug": "presidents-cup",
+                    "userCount": 1067
+                }
+            }
+        },
+        {
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 0
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "WA",
+                    "name": "Wales"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 4921,
+                "name": "The New Saints",
+                "nameCode": "TNS",
+                "national": false,
+                "shortName": "TNS",
+                "slug": "the-new-saints",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#41a317",
+                    "text": "#41a317"
+                },
+                "type": 0,
+                "userCount": 24825
+            },
+            "changes": {
+                "changeTimestamp": 1681504397,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "wYbsfAo",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "WA",
+                    "name": "Wales"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 36255,
+                "name": "Bala Town",
+                "nameCode": "BAT",
+                "national": false,
+                "shortName": "Bala Town",
+                "slug": "bala-town",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffffff",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                },
+                "type": 0,
+                "userCount": 7280
+            },
+            "id": 11108303,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 26
+            },
+            "slug": "the-new-saints-bala-town",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 720,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501685
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501685,
+                "extra": 720,
+                "initial": 2700,
+                "injuryTime1": 1,
+                "injuryTime2": 3,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "WA",
+                    "flag": "wales",
+                    "id": 131,
+                    "name": "Wales",
+                    "slug": "wales",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 64360,
+                "name": "Cymru Premier, Championship Round",
+                "priority": 0,
+                "slug": "cymru-premier-championship-round",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "WA",
+                        "flag": "wales",
+                        "id": 131,
+                        "name": "Wales",
+                        "slug": "wales",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 254,
+                    "name": "Cymru Premier",
+                    "slug": "cymru-premier",
+                    "userCount": 5573
+                }
+            },
+            "winnerCode": 0
+        },
+        {
+            "awayScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 1
+            },
+            "awayTeam": {
+                "country": {
+                    "alpha2": "WA",
+                    "name": "Wales"
+                },
+                "disabled": false,
+                "gender": "M",
+                "id": 37090,
+                "name": "Flint Town United",
+                "nameCode": "FTU",
+                "national": false,
+                "shortName": "Flint Town Utd",
+                "slug": "flint-town-united",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#000000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 1729
+            },
+            "changes": {
+                "changeTimestamp": 1681504549,
+                "changes": [
+                    "time.injuryTime2"
+                ]
+            },
+            "customId": "hYbsPQo",
+            "finalResultOnly": false,
+            "hasGlobalHighlights": false,
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0
+            },
+            "homeTeam": {
+                "country": {
+                    "alpha2": "WA",
+                    "name": "Wales"
+                },
+                "gender": "M",
+                "id": 4907,
+                "name": "Airbus UK Broughton",
+                "nameCode": "AUK",
+                "national": false,
+                "shortName": "Airbus UK",
+                "slug": "airbus-uk-broughton",
+                "sport": {
+                    "id": 1,
+                    "name": "Football",
+                    "slug": "football"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#0000ff",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                },
+                "type": 0,
+                "userCount": 2370
+            },
+            "id": 11032994,
+            "lastPeriod": "period2",
+            "roundInfo": {
+                "round": 31
+            },
+            "slug": "airbus-uk-broughton-flint-town-united",
+            "startTimestamp": 1681497900,
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "statusTime": {
+                "extra": 720,
+                "initial": 2700,
+                "max": 5400,
+                "prefix": "",
+                "timestamp": 1681501830
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1681501830,
+                "extra": 720,
+                "initial": 2700,
+                "injuryTime1": 3,
+                "injuryTime2": 3,
+                "max": 5400
+            },
+            "tournament": {
+                "category": {
+                    "alpha2": "WA",
+                    "flag": "wales",
+                    "id": 131,
+                    "name": "Wales",
+                    "slug": "wales",
+                    "sport": {
+                        "id": 1,
+                        "name": "Football",
+                        "slug": "football"
+                    }
+                },
+                "id": 64355,
+                "name": "Cymru Premier, Relegation Round",
+                "priority": 0,
+                "slug": "cymru-premier-relegation-round",
+                "uniqueTournament": {
+                    "category": {
+                        "alpha2": "WA",
+                        "flag": "wales",
+                        "id": 131,
+                        "name": "Wales",
+                        "slug": "wales",
+                        "sport": {
+                            "id": 1,
+                            "name": "Football",
+                            "slug": "football"
+                        }
+                    },
+                    "country": {},
+                    "crowdsourcingEnabled": false,
+                    "displayInverseHomeAwayTeams": false,
+                    "hasEventPlayerStatistics": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 254,
+                    "name": "Cymru Premier",
+                    "slug": "cymru-premier",
+                    "userCount": 5573
+                }
+            },
+            "winnerCode": 0
+        }
+    ]
+}
