@@ -2,9 +2,15 @@
 :root{
   --Astros:  #eb6e20;
   --cardinals: #be0a14;
+  --Cubs: #0d3386;
+  --Dodgers: #004680;
   --guardians: #ce0d2d;
   --Mets: #ff5911;
   --Rangers: #003278;
+}
+#nav-menu{
+  min-width: 100%;
+  min-height: 3em;
 }
 #cards-container, #title,#lineup-match {
   margin-top: 10%;
@@ -31,6 +37,13 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 550;
 }
+#option-menu-live-match{
+  font-size: 1.3rem;
+}
+#option-menu-live-match:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
 /* TEAMS COLORS */
 #Cardinals{
   color: var(--cardinals);
@@ -46,6 +59,15 @@
 }
 #pitchers-Guardians {
   background-color: var(--guardians);
+  color: white;
+  justify-content: center;
+  font-size:small;
+}
+#Dodgers{
+  color: var(--Dodgers);
+}
+#pitchers-Dodgers {
+  background-color: var(--Dodgers);
   color: white;
   justify-content: center;
   font-size:small;
@@ -72,7 +94,13 @@
   color: #ffce34;
 }
 #Cubs{
-  color: #0d3386;
+  color: var(--Cubs);
+}
+#pitchers-Cubs {
+  background-color: var(--Cubs);
+  color: white;
+  justify-content: center;
+  font-size:small;
 }
 #Mariners{
   color: #005c5c;

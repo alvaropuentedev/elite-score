@@ -18,15 +18,26 @@ NAV_BASEBALL_LINK.addEventListener('click', () => {
 const fetchDataLiveMatch = async () => {
     const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
     const resLive = await fetch(urlLiveScores, options)
-    // const resLive = await fetch('./liveBaseballMatch.json')
+    // const resLive = await fetch('baseballprueba.json')
     const dataLive = await resLive.json()
-    console.log(dataLive)
     createMatches(dataLive)
+    console.log(dataLive)
 }
 
 // LIVE SCORES
 const createMatches = (resLive) => {
     CONTAINER.innerHTML = ''
+    // MENU
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
     if (resLive.events.length > 0) {
         // DIV CARDS CONTAINER
         const cardsContainer = document.createElement('div')
@@ -108,17 +119,27 @@ const createMatches = (resLive) => {
 const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
     const urlTeamLineupBaseball = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
     const resLineup = await fetch(urlTeamLineupBaseball, options)
-    // const resLineup = await fetch('lineupsBaseball.json')
+    // const resLineup = await fetch('baseballPicherproblem.json')
     const dataLineup = await resLineup.json()
-    console.log(dataLineup)
     showLineups(dataLineup, awayTeamName, homeTeamName)
+    console.log(dataLineup)
 }
 
 // SHOW LINEUPS
 export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
-    console.log(dataLineup.home.players.length)
+    // MENU
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    // ROW
     const elementRow = document.createElement('div')
-    elementRow.id =
     elementRow.setAttribute('class', 'd-flex justify-content-between')
     CONTAINER.appendChild(elementRow)
     // ROW AWAY
@@ -144,7 +165,6 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
             players.textContent = (i + 1) + ' ' + dataLineup.away.players[i].player.shortName +
             ' (' + dataLineup.away.players[i].player.position + ')'
             elementRowAway.appendChild(players)
-            console.log(dataLineup.home.players[i].player.shortName)
         }
     }
     // AWAY PITCHERS BAR
@@ -180,12 +200,11 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     elementRowHome.appendChild(battersHomeSeparator)
     // HOME LINEUP
     for (let i = 0; i < dataLineup.home.players.length; i++) {
-        if (dataLineup.away.players[i].position !== 'P') {
+        if (dataLineup.home.players[i].position !== 'P') {
             const elementDiv = document.createElement('div')
             elementDiv.textContent = (i + 1) + ' ' + dataLineup.home.players[i].player.shortName +
             ' (' + dataLineup.home.players[i].player.position + ')'
             elementRowHome.appendChild(elementDiv)
-            console.log(dataLineup.home.players[i].player.shortName)
         }
     }
     // HOME SEPARATOR
