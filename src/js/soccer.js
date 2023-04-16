@@ -28,6 +28,16 @@ const fetchDataLiveMatch = async () => {
 // LIVE SCORES
 const createMatches = (resLive) => {
     CONTAINER.innerHTML = ''
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
     if (resLive.events.length > 0) {
         // DIV CARDS CONTAINER
         const cardsContainer = document.createElement('div')
@@ -119,7 +129,18 @@ const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
     showLineups(dataLineup, awayTeamName, homeTeamName)
 }
 // SHOW LINEUPS
-export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
+const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
+    // MENU
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
     console.log(dataLineup.home.players.length)
     const elementRow = document.createElement('div')
     elementRow.id =
@@ -146,6 +167,7 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
         }
         console.log(dataLineup.home.players[i].player.shortName)
     }
+
     // AWAY ROW
     const elementRowAway = document.createElement('div')
     elementRowAway.id = 'lineup-match'

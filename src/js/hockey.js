@@ -1,4 +1,3 @@
-import { showLineups } from './baseball.js'
 const CONTAINER = document.querySelector('#container')
 const navHockey = document.querySelector('#nav-hockey')
 const options = {
@@ -121,4 +120,67 @@ const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
     const dataLineup = await resLineup.json()
     showLineups(dataLineup, awayTeamName, homeTeamName)
     console.log(dataLineup)
+}
+const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
+    // MENU
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    console.log(dataLineup.home.players.length)
+    const elementRow = document.createElement('div')
+    elementRow.id =
+    elementRow.setAttribute('class', 'd-flex justify-content-between')
+    CONTAINER.appendChild(elementRow)
+    // HOME ROW
+    const elementRowHome = document.createElement('div')
+    elementRowHome.id = 'lineup-match'
+    elementRow.appendChild(elementRowHome)
+    // HOME TEAM NAME
+    const divHomeTeamName = document.createElement('div')
+    divHomeTeamName.id = homeTeamName
+    divHomeTeamName.setAttribute('class', 'fw-bold text-center')
+    divHomeTeamName.textContent = homeTeamName
+    elementRowHome.appendChild(divHomeTeamName)
+    // HOME LINEUP
+    for (let i = 0; i < dataLineup.home.players.length; i++) {
+        const elementDiv = document.createElement('div')
+        elementDiv.textContent = (i + 1) + ' ' + dataLineup.home.players[i].player.shortName + ' (' + dataLineup.home.players[i].player.position + ')'
+        elementRowHome.appendChild(elementDiv)
+        if (i === 10) {
+            const substituteSeparation = document.createElement('hr')
+            elementRowHome.appendChild(substituteSeparation)
+        }
+        console.log(dataLineup.home.players[i].player.shortName)
+    }
+
+    // AWAY ROW
+    const elementRowAway = document.createElement('div')
+    elementRowAway.id = 'lineup-match'
+    elementRowAway.setAttribute('class', 'tex')
+    elementRow.appendChild(elementRowAway)
+    // AWAY TEAM NAME
+    const divAwayTeamName = document.createElement('div')
+    divAwayTeamName.id = awayTeamName
+    divAwayTeamName.setAttribute('class', 'fw-bold text-center')
+    divAwayTeamName.textContent = awayTeamName
+    elementRowAway.appendChild(divAwayTeamName)
+    // AWAY LINEUP
+    for (let i = 0; i < dataLineup.away.players.length; i++) {
+        const elementDiv2 = document.createElement('div')
+        elementDiv2.textContent = (i + 1) + ' ' + dataLineup.away.players[i].player.shortName + ' (' + dataLineup.away.players[i].player.position + ')'
+        elementDiv2.setAttribute('class', '')
+        elementRowAway.appendChild(elementDiv2)
+        console.log(dataLineup.home.players[i].player.shortName)
+        if (i === 10) {
+            const substituteSeparation = document.createElement('hr')
+            elementRowAway.appendChild(substituteSeparation)
+        }
+    }
 }

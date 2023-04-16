@@ -1,14 +1,10 @@
 @media (max-width: 500px) {
-    #cards-container {
-        margin-top: 20%;
-        gap: 1.09em;
+    #cards-container,#lineup-match , #title {
+        margin-top: 8%;
       }
     #match-card, #lineup-match {
         min-width: 10em ;
         max-width: 20em;
         max-height: 20em;
-    }
-    #lineup-match , #title{
-        margin-top: 20%;
     }
   }

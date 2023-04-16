@@ -12,7 +12,13 @@ const options = {
 // NAV MENU
 NAV_BASEBALL_LINK.addEventListener('click', () => {
     fetchDataLiveMatch()
+    toDateTime(1681669895)
 })
+function toDateTime (secs) {
+    const t = new Date(1970, 0, 1)
+    t.setSeconds(secs)
+    console.log(t)
+}
 
 // FETCH LIVE MATCH
 const fetchDataLiveMatch = async () => {
@@ -153,7 +159,7 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     divAwayTeamName.textContent = awayTeamName
     elementRowAway.appendChild(divAwayTeamName)
     // AWAY BATTERS BAR
-    const battersAwaySeparator = document.createElement('nav')
+    const battersAwaySeparator = document.createElement('div')
     battersAwaySeparator.id = 'pitchers-' + awayTeamName
     battersAwaySeparator.setAttribute('class', 'text-center m-2')
     battersAwaySeparator.textContent = 'BATTERS'
@@ -168,7 +174,7 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
         }
     }
     // AWAY PITCHERS BAR
-    const pitchersAwaySeparator = document.createElement('nav')
+    const pitchersAwaySeparator = document.createElement('div')
     pitchersAwaySeparator.id = 'pitchers-' + awayTeamName
     pitchersAwaySeparator.setAttribute('class', 'text-center m-2')
     pitchersAwaySeparator.textContent = 'PITCHERS'
@@ -193,7 +199,7 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     divHomeTeamName.textContent = homeTeamName
     elementRowHome.appendChild(divHomeTeamName)
     // Home BATTERS BAR
-    const battersHomeSeparator = document.createElement('nav')
+    const battersHomeSeparator = document.createElement('div')
     battersHomeSeparator.id = 'pitchers-' + homeTeamName
     battersHomeSeparator.setAttribute('class', 'text-center m-2')
     battersHomeSeparator.textContent = 'BATTERS'
@@ -208,7 +214,7 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
         }
     }
     // HOME SEPARATOR
-    const pitcherHomeSeparator = document.createElement('nav')
+    const pitcherHomeSeparator = document.createElement('div')
     pitcherHomeSeparator.id = 'pitchers-' + homeTeamName
     pitcherHomeSeparator.setAttribute('class', 'text-center m-2')
     pitcherHomeSeparator.textContent = 'PITCHERS'
