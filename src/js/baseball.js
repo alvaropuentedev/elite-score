@@ -19,6 +19,26 @@ function toDateTime (secs) {
     t.setSeconds(secs)
     console.log(t)
 }
+// FUNC CREATE MENU
+const createMenu = () => {
+    // MENU
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    const optionNews = document.createElement('span')
+    optionNews.id = 'option-menu-live-match'
+    optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
+    optionNews.textContent = 'News'
+    navMenuContainer.appendChild(optionNews)
+    optionNews.addEventListener('click', () => { fetchDataLiveMatch() })
+}
 
 // FETCH LIVE MATCH
 const fetchDataLiveMatch = async () => {
@@ -34,16 +54,7 @@ const fetchDataLiveMatch = async () => {
 const createMatches = (resLive) => {
     CONTAINER.innerHTML = ''
     // MENU
-    const navMenuContainer = document.createElement('nav')
-    navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
-    CONTAINER.appendChild(navMenuContainer)
-    const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu-live-match'
-    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
-    optionLiveMatch.textContent = 'Live'
-    navMenuContainer.appendChild(optionLiveMatch)
-    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    createMenu()
     if (resLive.events.length > 0) {
         // DIV CARDS CONTAINER
         const cardsContainer = document.createElement('div')
@@ -113,8 +124,8 @@ const createMatches = (resLive) => {
             }
         }
     }
-    if (resLive.events.length < 0) {
-        const elementNoMatches = document.createElement('p')
+    if (resLive.events.length < 1) {
+        const elementNoMatches = document.createElement('h5')
         elementNoMatches.id = 'no-match-found'
         elementNoMatches.setAttribute('class', 'mt-3 text-center')
         elementNoMatches.textContent = 'No Matches Found'
@@ -123,30 +134,28 @@ const createMatches = (resLive) => {
 }
 // FETCH LINEUPS
 const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
-    const urlTeamLineupBaseball = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
-    const resLineup = await fetch(urlTeamLineupBaseball, options)
-    // const resLineup = await fetch('baseballPicherproblem.json')
-    const dataLineup = await resLineup.json()
-    showLineups(dataLineup, awayTeamName, homeTeamName)
-    console.log(dataLineup)
+    try {
+        const urlTeamLineupBaseball = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
+        const resLineup = await fetch(urlTeamLineupBaseball, options)
+        // const resLineup = await fetch('baseballPicherproblem.json')
+        const dataLineup = await resLineup.json()
+        showLineups(dataLineup, awayTeamName, homeTeamName)
+        console.log(dataLineup)
+    } catch (error) {
+        // NO LINEUPS FOUND MESSAGE
+        const noLineupsFound = document.createElement('h5')
+        noLineupsFound.setAttribute('class', 'mt-3 text-center')
+        noLineupsFound.textContent = 'No Lineups Found'
+        CONTAINER.appendChild(noLineupsFound)
+    }
 }
-
 // SHOW LINEUPS
-export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
+const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // MENU
-    const navMenuContainer = document.createElement('nav')
-    navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
-    CONTAINER.appendChild(navMenuContainer)
-    const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu-live-match'
-    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
-    optionLiveMatch.textContent = 'Live'
-    navMenuContainer.appendChild(optionLiveMatch)
-    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    createMenu()
     // ROW
     const elementRow = document.createElement('div')
-    elementRow.setAttribute('class', 'd-flex justify-content-between')
+    elementRow.id = 'container-box-scores'
     CONTAINER.appendChild(elementRow)
     // ROW AWAY
     const elementRowAway = document.createElement('div')
@@ -160,17 +169,49 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     elementRowAway.appendChild(divAwayTeamName)
     // AWAY BATTERS BAR
     const battersAwaySeparator = document.createElement('div')
-    battersAwaySeparator.id = 'pitchers-' + awayTeamName
+    battersAwaySeparator.id = 'batters-' + awayTeamName
     battersAwaySeparator.setAttribute('class', 'text-center m-2')
     battersAwaySeparator.textContent = 'BATTERS'
     elementRowAway.appendChild(battersAwaySeparator)
-    // AWAY LINEUP
+    // TABLE AWAY
+    const tableAway = document.createElement('table')
+    tableAway.id = 'box-score-away-table'
+    tableAway.setAttribute('class', 'table')
+    // THEAD AWAY
+    elementRowAway.appendChild(tableAway)
+    const theadAway = document.createElement('thead')
+    tableAway.appendChild(theadAway)
+    const rowHeadAway =
+    `<tr>
+    <th>${'Player'}</th>
+            <th>${'AB'}</th>
+            <th>${'R'}</th>
+            <th>${'H'}</th>
+            <th>${'RBI'}</th>
+            <th>${'BB'}</th>
+            <th>${'K'}</th>
+            <th>${'AVG'}</th>
+            </tr>`
+    theadAway.innerHTML += rowHeadAway
+    // TABLE BODY
+    const tableBodyAway = document.createElement('tbody')
+    tableAway.appendChild(tableBodyAway)
+    // TABLE AWAY LINEUP
     for (let i = 0; i < dataLineup.away.players.length; i++) {
         if (dataLineup.away.players[i].position !== 'P') {
-            const players = document.createElement('div')
-            players.textContent = (i + 1) + ' ' + dataLineup.away.players[i].player.shortName +
-            ' (' + dataLineup.away.players[i].player.position + ')'
-            elementRowAway.appendChild(players)
+            const rowCellAway =
+            `<tr>
+            <td>${dataLineup.away.players[i].player.shortName +
+            ' (' + dataLineup.away.players[i].player.position + ')'}</td>
+            <td>${dataLineup.away.players[i].statistics.battingAtBats}</td>
+            <td>${dataLineup.away.players[i].statistics.battingRuns}</td>
+            <td>${dataLineup.away.players[i].statistics.battingHits}</td>
+            <td>${dataLineup.away.players[i].statistics.battingRbi}</td>
+            <td>${dataLineup.away.players[i].statistics.battingBaseOnBalls}</td>
+            <td>${dataLineup.away.players[i].statistics.battingStrikeOuts}</td>
+            <td>${dataLineup.away.players[i].statistics.battingAverage}</td>
+            </tr>`
+            tableBodyAway.innerHTML += rowCellAway
         }
     }
     // AWAY PITCHERS BAR
@@ -198,19 +239,51 @@ export const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     divHomeTeamName.setAttribute('class', 'fw-bold text-center')
     divHomeTeamName.textContent = homeTeamName
     elementRowHome.appendChild(divHomeTeamName)
-    // Home BATTERS BAR
+    // HOME BATTERS BAR
     const battersHomeSeparator = document.createElement('div')
-    battersHomeSeparator.id = 'pitchers-' + homeTeamName
+    battersHomeSeparator.id = 'batters-' + homeTeamName
     battersHomeSeparator.setAttribute('class', 'text-center m-2')
     battersHomeSeparator.textContent = 'BATTERS'
     elementRowHome.appendChild(battersHomeSeparator)
-    // HOME LINEUP
+    // TABLE HOME
+    const tableHome = document.createElement('table')
+    tableHome.id = 'box-score-home-table'
+    tableHome.setAttribute('class', 'table')
+    // THEAD HOME
+    elementRowHome.appendChild(tableHome)
+    const theadHome = document.createElement('thead')
+    tableHome.appendChild(theadHome)
+    const rowHeadHome =
+    `<tr>
+    <th>${'Player'}</th>
+            <th>${'AB'}</th>
+            <th>${'R'}</th>
+            <th>${'H'}</th>
+            <th>${'RBI'}</th>
+            <th>${'BB'}</th>
+            <th>${'K'}</th>
+            <th>${'AVG'}</th>
+            </tr>`
+    theadHome.innerHTML += rowHeadHome
+    // TABLE BODY
+    const tableBodyHome = document.createElement('tbody')
+    tableHome.appendChild(tableBodyHome)
+    // TABLE HOME LINEUP
     for (let i = 0; i < dataLineup.home.players.length; i++) {
         if (dataLineup.home.players[i].position !== 'P') {
-            const elementDiv = document.createElement('div')
-            elementDiv.textContent = (i + 1) + ' ' + dataLineup.home.players[i].player.shortName +
-            ' (' + dataLineup.home.players[i].player.position + ')'
-            elementRowHome.appendChild(elementDiv)
+            const rowCellHome =
+            `<tr>
+            <td>${dataLineup.home.players[i].player.shortName +
+            ' (' + dataLineup.home.players[i].player.position + ')'}</td>
+            <td>${dataLineup.home.players[i].statistics.battingAtBats}</td>
+            <td>${dataLineup.home.players[i].statistics.battingRuns}</td>
+            <td>${dataLineup.home.players[i].statistics.battingHits}</td>
+            <td>${dataLineup.home.players[i].statistics.battingRbi}</td>
+            <td>${dataLineup.home.players[i].statistics.battingBaseOnBalls}</td>
+            <td>${dataLineup.home.players[i].statistics.battingStrikeOuts}</td>
+            <td>${dataLineup.home.players[i].statistics.battingAverage}</td>
+            </tr>`
+            tableBodyHome.innerHTML += rowCellHome
         }
     }
     // HOME SEPARATOR

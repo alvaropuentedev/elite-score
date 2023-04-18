@@ -19,7 +19,26 @@ const options2 = {
 navHockey.addEventListener('click', () => {
     fetchDataLiveMatch()
 })
-
+// FUNC CREATE MENU
+const createMenu = () => {
+    // MENU
+    const navMenuContainer = document.createElement('nav')
+    navMenuContainer.id = 'nav-menu'
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    CONTAINER.appendChild(navMenuContainer)
+    const optionLiveMatch = document.createElement('span')
+    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
+    optionLiveMatch.textContent = 'Live'
+    navMenuContainer.appendChild(optionLiveMatch)
+    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    const optionNews = document.createElement('span')
+    optionNews.id = 'option-menu-live-match'
+    optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
+    optionNews.textContent = 'News'
+    navMenuContainer.appendChild(optionNews)
+    optionNews.addEventListener('click', () => { fetchDataLiveMatch() })
+}
 // FETCH API
 const fetchDataLiveMatch = async () => {
     try {
@@ -41,6 +60,8 @@ const fetchDataLiveMatch = async () => {
 
 const createMatches = (resLive) => {
     CONTAINER.innerHTML = ''
+    // MENU
+    createMenu()
     if (resLive.events.length > 0) {
         // DIV CARDS CONTAINER
         const cardsContainer = document.createElement('div')
@@ -53,11 +74,21 @@ const createMatches = (resLive) => {
             elementCol.id = 'match-card'
             elementCol.setAttribute('class', 'col p-2 shadow rounded text-start')
             cardsContainer.appendChild(elementCol)
-            // DIV NAME TOURNAMENT
+            // CONTAINER NAME TOURNAMENT
+            const containerNameTournament = document.createElement('div')
+            containerNameTournament.setAttribute('class', '')
+            elementCol.appendChild(containerNameTournament)
+            // NAME TOURNAMENT
             const nameTournament = document.createElement('div')
             nameTournament.id = 'name-tournament'
             nameTournament.textContent = resLive.events[i].tournament.name
-            elementCol.appendChild(nameTournament)
+            containerNameTournament.appendChild(nameTournament)
+            // COUNTRY TOURNAMENT
+            const countryTournament = document.createElement('div')
+            countryTournament.id = 'country-tournament'
+            countryTournament.setAttribute('class', 'text-secondary')
+            countryTournament.textContent = resLive.events[i].tournament.category.name
+            containerNameTournament.appendChild(countryTournament)
             // DIV AWAY
             const divAway = document.createElement('div')
             divAway.id = 'div-away'
@@ -123,16 +154,7 @@ const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
 }
 const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // MENU
-    const navMenuContainer = document.createElement('nav')
-    navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
-    CONTAINER.appendChild(navMenuContainer)
-    const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu-live-match'
-    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
-    optionLiveMatch.textContent = 'Live'
-    navMenuContainer.appendChild(optionLiveMatch)
-    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    createMenu()
     console.log(dataLineup.home.players.length)
     const elementRow = document.createElement('div')
     elementRow.id =
