@@ -141,6 +141,7 @@ const createMatches = (resLive) => {
     }
     if (resLive.events.length < 1) {
         const elementNoMatches = document.createElement('h5')
+        elementNoMatches.id = 'no-match-found'
         elementNoMatches.setAttribute('class', 'mt-3 text-center')
         elementNoMatches.textContent = 'No Matches Found'
         CONTAINER.appendChild(elementNoMatches)

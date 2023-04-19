@@ -43,9 +43,9 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 
 // FETCH LIVE MATCH
 const fetchDataLiveMatch = async () => {
-    const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
-    const resLive = await fetch(urlLiveScores, options)
-    // const resLive = await fetch('liveBaseballMatch.json')
+    // const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
+    // const resLive = await fetch(urlLiveScores, options)
+    const resLive = await fetch('liveBaseballMatch.json')
     const dataLive = await resLive.json()
     createMatches(dataLive)
     console.log(dataLive)
@@ -125,7 +125,7 @@ const createMatches = (resLive) => {
             }
         }
     }
-    if (resLive.events.length < 1) {
+    if (resLive.events.length < 1 || resLive.events[0].tournament.name !== 'MLB') {
         const elementNoMatches = document.createElement('h5')
         elementNoMatches.id = 'no-match-found'
         elementNoMatches.setAttribute('class', 'mt-3 text-center')
