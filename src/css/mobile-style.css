@@ -1,15 +1,29 @@
 @media (max-width: 500px) {
-    #cards-container,#lineup-match , #title {
+
+
+    #lineup-match {
         margin-top: 8%;
-      }
-    #match-card{
-        min-width: 10em ;
-        max-width: 20em;
-        max-height: 20em;
+        font-size: 14px;
     }
-    #lineup-match{
-        min-width: 10em ;
-        max-width: 40em;
-        max-height: 100em;
+
+    #option-menu {
+        font-size: 20px;
     }
-  }
+
+    #title {
+        margin-top: 5rem;
+    }
+
+    #match-card {
+        min-width: 10rem;
+        max-width: 20rem;
+        max-height: 20rem;
+    }
+
+    #lineup-match {
+        min-width: 10rem;
+        max-width: 40rem;
+        max-height: 100rem;
+    }
+
+}

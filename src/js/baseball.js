@@ -1,5 +1,6 @@
 const CONTAINER = document.querySelector('#container')
 const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
+let MATCH_ID
 // FETCH HEADER
 const options = {
     method: 'GET',
@@ -12,7 +13,7 @@ const options = {
 // NAV MENU
 NAV_BASEBALL_LINK.addEventListener('click', () => {
     fetchDataLiveMatch()
-    toDateTime(1681669895)
+    toDateTime(1681848314)
 })
 function toDateTime (secs) {
     const t = new Date(1970, 0, 1)
@@ -20,31 +21,31 @@ function toDateTime (secs) {
     console.log(t)
 }
 // FUNC CREATE MENU
-const createMenu = () => {
+const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // MENU
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light bg-dark rounded d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.id = 'option-menu'
     optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
     optionLiveMatch.textContent = 'Live'
     navMenuContainer.appendChild(optionLiveMatch)
     optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
     const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu-live-match'
-    optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
-    optionNews.textContent = 'News'
+    optionNews.id = 'option-menu'
+    optionNews.setAttribute('class', 'box-score-reload text-white pointer mt-2 ms-3')
+    optionNews.textContent = 'Reload'
     navMenuContainer.appendChild(optionNews)
-    optionNews.addEventListener('click', () => { fetchDataLiveMatch() })
+    optionNews.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
 }
 
 // FETCH LIVE MATCH
 const fetchDataLiveMatch = async () => {
     const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
     const resLive = await fetch(urlLiveScores, options)
-    // const resLive = await fetch('baseballprueba.json')
+    // const resLive = await fetch('liveBaseballMatch.json')
     const dataLive = await resLive.json()
     createMatches(dataLive)
     console.log(dataLive)
@@ -55,6 +56,7 @@ const createMatches = (resLive) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
+    document.querySelector('.box-score-reload').innerHTML = ''
     if (resLive.events.length > 0) {
         // DIV CARDS CONTAINER
         const cardsContainer = document.createElement('div')
@@ -115,11 +117,10 @@ const createMatches = (resLive) => {
                 elementCol.appendChild(currentInning)
                 // ON CLICK SHOW LINEUPS
                 elementCol.addEventListener('click', () => {
-                    CONTAINER.innerHTML = ''
-                    const matchId = resLive.events[i].id
+                    MATCH_ID = resLive.events[i].id
                     const awayTeamName = resLive.events[i].awayTeam.shortName
                     const homeTeamName = resLive.events[i].homeTeam.shortName
-                    fetchLineups(matchId, awayTeamName, homeTeamName)
+                    fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
                 })
             }
         }
@@ -133,11 +134,11 @@ const createMatches = (resLive) => {
     }
 }
 // FETCH LINEUPS
-const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
+const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     try {
-        const urlTeamLineupBaseball = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + matchId + '/lineups'
+        const urlTeamLineupBaseball = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + MATCH_ID + '/lineups'
         const resLineup = await fetch(urlTeamLineupBaseball, options)
-        // const resLineup = await fetch('baseballPicherproblem.json')
+        // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
         showLineups(dataLineup, awayTeamName, homeTeamName)
         console.log(dataLineup)
@@ -151,11 +152,12 @@ const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
 }
 // SHOW LINEUPS
 const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
+    CONTAINER.innerHTML = ''
     // MENU
-    createMenu()
+    createMenu(MATCH_ID, awayTeamName, homeTeamName)
     // ROW
     const elementRow = document.createElement('div')
-    elementRow.id = 'container-box-scores'
+    elementRow.id = 'box-score-container'
     CONTAINER.appendChild(elementRow)
     // ROW AWAY
     const elementRowAway = document.createElement('div')
@@ -164,7 +166,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // AWAY TEAM NAME
     const divAwayTeamName = document.createElement('div')
     divAwayTeamName.id = awayTeamName
-    divAwayTeamName.setAttribute('class', 'fw-bold text-center')
+    divAwayTeamName.setAttribute('class', 'away-team-name fw-bold text-center')
     divAwayTeamName.textContent = awayTeamName
     elementRowAway.appendChild(divAwayTeamName)
     // AWAY BATTERS BAR
@@ -176,9 +178,9 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // TABLE AWAY
     const tableAway = document.createElement('table')
     tableAway.id = 'box-score-away-table'
-    tableAway.setAttribute('class', 'table')
-    // THEAD AWAY
+    tableAway.setAttribute('class', 'table table-striped')
     elementRowAway.appendChild(tableAway)
+    // THEAD AWAY
     const theadAway = document.createElement('thead')
     tableAway.appendChild(theadAway)
     const rowHeadAway =
@@ -190,7 +192,8 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
             <th>${'RBI'}</th>
             <th>${'BB'}</th>
             <th>${'K'}</th>
-            <th>${'AVG'}</th>
+            <th>${'SB'}</th>
+            <th>${'HR'}</th>
             </tr>`
     theadAway.innerHTML += rowHeadAway
     // TABLE BODY
@@ -199,19 +202,37 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // TABLE AWAY LINEUP
     for (let i = 0; i < dataLineup.away.players.length; i++) {
         if (dataLineup.away.players[i].position !== 'P') {
-            const rowCellAway =
+            let atBat = dataLineup.away.players[i].statistics.battingAtBats
+            let runs = dataLineup.away.players[i].statistics.battingRuns
+            let hits = dataLineup.away.players[i].statistics.battingHits
+            let rbi = dataLineup.away.players[i].statistics.battingRbi
+            let baseOnBalls = dataLineup.away.players[i].statistics.battingBaseOnBalls
+            let strikeOuts = dataLineup.away.players[i].statistics.battingStrikeOuts
+            let stolenBases = dataLineup.away.players[i].statistics.battingStolenBases
+            let homeRuns = dataLineup.away.players[i].statistics.battingHomeRuns
+            const myDefault = 0
+            atBat = atBat ?? myDefault
+            runs = runs ?? myDefault
+            hits = hits ?? myDefault
+            rbi = rbi ?? myDefault
+            baseOnBalls = baseOnBalls ?? myDefault
+            strikeOuts = strikeOuts ?? myDefault
+            stolenBases = stolenBases ?? myDefault
+            homeRuns = homeRuns ?? myDefault
+            const rowCellaway =
             `<tr>
             <td>${dataLineup.away.players[i].player.shortName +
             ' (' + dataLineup.away.players[i].player.position + ')'}</td>
-            <td>${dataLineup.away.players[i].statistics.battingAtBats}</td>
-            <td>${dataLineup.away.players[i].statistics.battingRuns}</td>
-            <td>${dataLineup.away.players[i].statistics.battingHits}</td>
-            <td>${dataLineup.away.players[i].statistics.battingRbi}</td>
-            <td>${dataLineup.away.players[i].statistics.battingBaseOnBalls}</td>
-            <td>${dataLineup.away.players[i].statistics.battingStrikeOuts}</td>
-            <td>${dataLineup.away.players[i].statistics.battingAverage}</td>
+            <td>${atBat}</td>
+            <td>${runs}</td>
+            <td>${hits}</td>
+            <td>${rbi}</td>
+            <td>${baseOnBalls}</td>
+            <td>${strikeOuts}</td>
+            <td>${stolenBases}</td>
+            <td>${homeRuns}</td>
             </tr>`
-            tableBodyAway.innerHTML += rowCellAway
+            tableBodyAway.innerHTML += rowCellaway
         }
     }
     // AWAY PITCHERS BAR
@@ -220,13 +241,44 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     pitchersAwaySeparator.setAttribute('class', 'text-center m-2')
     pitchersAwaySeparator.textContent = 'PITCHERS'
     elementRowAway.appendChild(pitchersAwaySeparator)
+    // TABLE PITCHERS AWAY
+    const tablePitchersAway = document.createElement('table')
+    tablePitchersAway.id = 'box-score-away-pitchers-table'
+    tablePitchersAway.setAttribute('class', 'table table-striped')
+    elementRowAway.appendChild(tablePitchersAway)
+    // THEAD PITCHERS AWAY
+    const theadPitchersAway = document.createElement('thead')
+    tablePitchersAway.appendChild(theadPitchersAway)
+    const rowHeadPitchersAway =
+    `<tr>
+    <th>${'Player'}</th>
+            <th>${'IP'}</th>
+            <th>${'H'}</th>
+            <th>${'R'}</th>
+            <th>${'ER'}</th>
+            <th>${'BB'}</th>
+            <th>${'SO'}</th>
+            <th>${'HR'}</th>
+            </tr>`
+    theadPitchersAway.innerHTML += rowHeadPitchersAway
+    // TABLE PITCHERS BODY
+    const tableBodyPitchersAway = document.createElement('tbody')
+    tablePitchersAway.appendChild(tableBodyPitchersAway)
     // AWAY PITCHERS
     for (let i = 0; i < dataLineup.away.players.length; i++) {
         if (dataLineup.away.players[i].position === 'P') {
-            const homePitchers = document.createElement('div')
-            homePitchers.textContent = (i + 1) + ' ' + dataLineup.away.players[i].player.shortName +
-            ' (' + dataLineup.away.players[i].player.position + ')'
-            elementRowAway.appendChild(homePitchers)
+            const rowCellPitchersAway =
+            `<tr>
+            <td>${dataLineup.away.players[i].player.shortName}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingInningsPitched}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingHits}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingRuns}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingEarnedRuns}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingBaseOnBalls}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingStrikeOuts}</td>
+            <td>${dataLineup.away.players[i].statistics.pitchingHomeRuns}</td>
+            </tr>`
+            tableBodyPitchersAway.innerHTML += rowCellPitchersAway
         }
     }
     // ROW HOME
@@ -236,7 +288,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // HOME TEAM NAME
     const divHomeTeamName = document.createElement('div')
     divHomeTeamName.id = homeTeamName
-    divHomeTeamName.setAttribute('class', 'fw-bold text-center')
+    divHomeTeamName.setAttribute('class', 'home-team-name fw-bold text-center')
     divHomeTeamName.textContent = homeTeamName
     elementRowHome.appendChild(divHomeTeamName)
     // HOME BATTERS BAR
@@ -248,9 +300,9 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // TABLE HOME
     const tableHome = document.createElement('table')
     tableHome.id = 'box-score-home-table'
-    tableHome.setAttribute('class', 'table')
-    // THEAD HOME
+    tableHome.setAttribute('class', 'table table-striped')
     elementRowHome.appendChild(tableHome)
+    // THEAD HOME
     const theadHome = document.createElement('thead')
     tableHome.appendChild(theadHome)
     const rowHeadHome =
@@ -262,7 +314,8 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
             <th>${'RBI'}</th>
             <th>${'BB'}</th>
             <th>${'K'}</th>
-            <th>${'AVG'}</th>
+            <th>${'SB'}</th>
+            <th>${'HR'}</th>
             </tr>`
     theadHome.innerHTML += rowHeadHome
     // TABLE BODY
@@ -271,17 +324,35 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     // TABLE HOME LINEUP
     for (let i = 0; i < dataLineup.home.players.length; i++) {
         if (dataLineup.home.players[i].position !== 'P') {
+            let atBat = dataLineup.home.players[i].statistics.battingAtBats
+            let runs = dataLineup.home.players[i].statistics.battingRuns
+            let hits = dataLineup.home.players[i].statistics.battingHits
+            let rbi = dataLineup.home.players[i].statistics.battingRbi
+            let baseOnBalls = dataLineup.home.players[i].statistics.battingBaseOnBalls
+            let strikeOuts = dataLineup.home.players[i].statistics.battingStrikeOuts
+            let stolenBases = dataLineup.home.players[i].statistics.battingStolenBases
+            let homeRuns = dataLineup.home.players[i].statistics.battingHomeRuns
+            const myDefault = 0
+            atBat = atBat ?? myDefault
+            runs = runs ?? myDefault
+            hits = hits ?? myDefault
+            rbi = rbi ?? myDefault
+            baseOnBalls = baseOnBalls ?? myDefault
+            strikeOuts = strikeOuts ?? myDefault
+            stolenBases = stolenBases ?? myDefault
+            homeRuns = homeRuns ?? myDefault
             const rowCellHome =
             `<tr>
             <td>${dataLineup.home.players[i].player.shortName +
             ' (' + dataLineup.home.players[i].player.position + ')'}</td>
-            <td>${dataLineup.home.players[i].statistics.battingAtBats}</td>
-            <td>${dataLineup.home.players[i].statistics.battingRuns}</td>
-            <td>${dataLineup.home.players[i].statistics.battingHits}</td>
-            <td>${dataLineup.home.players[i].statistics.battingRbi}</td>
-            <td>${dataLineup.home.players[i].statistics.battingBaseOnBalls}</td>
-            <td>${dataLineup.home.players[i].statistics.battingStrikeOuts}</td>
-            <td>${dataLineup.home.players[i].statistics.battingAverage}</td>
+            <td>${atBat}</td>
+            <td>${runs}</td>
+            <td>${hits}</td>
+            <td>${rbi}</td>
+            <td>${baseOnBalls}</td>
+            <td>${strikeOuts}</td>
+            <td>${stolenBases}</td>
+            <td>${homeRuns}</td>
             </tr>`
             tableBodyHome.innerHTML += rowCellHome
         }
@@ -292,13 +363,44 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     pitcherHomeSeparator.setAttribute('class', 'text-center m-2')
     pitcherHomeSeparator.textContent = 'PITCHERS'
     elementRowHome.appendChild(pitcherHomeSeparator)
+    // TABLE PITCHERS HOME
+    const tablePitchersHome = document.createElement('table')
+    tablePitchersHome.id = 'box-score-home-pitchers-table'
+    tablePitchersHome.setAttribute('class', 'table table-striped')
+    elementRowHome.appendChild(tablePitchersHome)
+    // THEAD PITCHERS HOME
+    const theadPitchersHome = document.createElement('thead')
+    tablePitchersHome.appendChild(theadPitchersHome)
+    const rowHeadPitchersHome =
+    `<tr>
+    <th>${'Player'}</th>
+            <th>${'IP'}</th>
+            <th>${'H'}</th>
+            <th>${'R'}</th>
+            <th>${'ER'}</th>
+            <th>${'BB'}</th>
+            <th>${'SO'}</th>
+            <th>${'HR'}</th>
+            </tr>`
+    theadPitchersHome.innerHTML += rowHeadPitchersHome
+    // TABLE PITCHERS BODY
+    const tableBodyPitchersHome = document.createElement('tbody')
+    tablePitchersHome.appendChild(tableBodyPitchersHome)
     // HOME PITCHERS
     for (let i = 0; i < dataLineup.home.players.length; i++) {
         if (dataLineup.home.players[i].position === 'P') {
-            const homePitchers = document.createElement('div')
-            homePitchers.textContent = (i + 1) + ' ' + dataLineup.home.players[i].player.shortName +
-            ' (' + dataLineup.home.players[i].player.position + ')'
-            elementRowHome.appendChild(homePitchers)
+            const rowCellPitchersHome =
+            `<tr>
+            <td>${dataLineup.home.players[i].player.shortName}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingInningsPitched}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingHits}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingRuns}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingEarnedRuns}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingBaseOnBalls}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingStrikeOuts}</td>
+            <td>${dataLineup.home.players[i].statistics.pitchingHomeRuns}</td>
+            </tr>`
+            tableBodyPitchersHome.innerHTML += rowCellPitchersHome
         }
     }
 }

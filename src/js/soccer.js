@@ -45,16 +45,16 @@ const createMenu = () => {
     // MENU
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark rounded d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.id = 'option-menu'
     optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
     optionLiveMatch.textContent = 'Live'
     navMenuContainer.appendChild(optionLiveMatch)
     optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
     const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu-live-match'
+    optionNews.id = 'option-menu'
     optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
     optionNews.textContent = 'News'
     navMenuContainer.appendChild(optionNews)
@@ -77,7 +77,7 @@ const createMatches = (resLive) => {
             if (getTournamentCountry === 'Spain' || getTournamentCountry === 'England' ||
             getTournamentCountry === 'Germany' || getTournamentCountry === 'Italy' ||
             getTournamentCountry === 'France' || getTournamentCountry === 'Norway' || getTournamentCountry === 'Austria' ||
-            getTournamentCountry === 'USA') {
+            getTournamentCountry === 'USA' || getTournamentCountry === 'Europe') {
                 // DIV MATCH CARDS
                 const elementCol = document.createElement('div')
                 elementCol.id = 'match-card'
@@ -193,6 +193,10 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     divHomeTeamName.setAttribute('class', 'fw-bold text-center')
     divHomeTeamName.textContent = homeTeamName
     elementRowHome.appendChild(divHomeTeamName)
+    const formationHome = document.createElement('div')
+    formationHome.setAttribute('class', 'text-center')
+    formationHome.textContent = dataLineup.home.formation
+    elementRowHome.appendChild(formationHome)
     // HOME LINEUP
     for (let i = 0; i < dataLineup.home.players.length; i++) {
         const elementDiv = document.createElement('div')
@@ -205,7 +209,6 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
         }
         console.log(dataLineup.home.players[i].player.shortName)
     }
-
     // AWAY ROW
     const elementRowAway = document.createElement('div')
     elementRowAway.id = 'lineup-match'
@@ -217,6 +220,10 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     divAwayTeamName.setAttribute('class', 'fw-bold text-center')
     divAwayTeamName.textContent = awayTeamName
     elementRowAway.appendChild(divAwayTeamName)
+    const formationAway = document.createElement('div')
+    formationAway.setAttribute('class', 'text-center')
+    formationAway.textContent = dataLineup.away.formation
+    elementRowAway.appendChild(formationAway)
     // AWAY LINEUP
     for (let i = 0; i < dataLineup.away.players.length; i++) {
         const elementDiv2 = document.createElement('div')

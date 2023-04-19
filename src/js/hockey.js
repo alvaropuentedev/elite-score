@@ -19,21 +19,22 @@ const options2 = {
 navHockey.addEventListener('click', () => {
     fetchDataLiveMatch()
 })
+
 // FUNC CREATE MENU
 const createMenu = () => {
     // MENU
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark mt-5 rounded d-flex justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark rounded d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu-live-match'
+    optionLiveMatch.id = 'option-menu'
     optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
     optionLiveMatch.textContent = 'Live'
     navMenuContainer.appendChild(optionLiveMatch)
     optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
     const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu-live-match'
+    optionNews.id = 'option-menu'
     optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
     optionNews.textContent = 'News'
     navMenuContainer.appendChild(optionNews)
@@ -137,8 +138,9 @@ const createMatches = (resLive) => {
                 fetchLineups(matchId, awayTeamName, homeTeamName)
             })
         }
-    } else {
-        const elementNoMatches = document.createElement('p')
+    }
+    if (resLive.events.length < 1) {
+        const elementNoMatches = document.createElement('h5')
         elementNoMatches.setAttribute('class', 'mt-3 text-center')
         elementNoMatches.textContent = 'No Matches Found'
         CONTAINER.appendChild(elementNoMatches)

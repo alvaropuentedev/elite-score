@@ -14,30 +14,30 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-info">
+  <nav id="main-menu" class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold font-monospace" href="#">EliteScore</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand fw-bold font-monospace text-white" href="index.html">EliteScore</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a id="nav-baseball" class="nav-link d-flex justify-content-center" aria-current="page"
-            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" href="#">Baseball<span
-              class="material-icons">
+          <a id="nav-baseball" class="nav-link d-flex justify-content-end text-white" aria-current="page"
+            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
               sports_baseball
             </span></a>
-          <a id="nav-hockey" class="nav-link d-flex justify-content-center" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show" href="#">Hockey<span class="material-icons">
+          <a id="nav-hockey" class="nav-link d-flex justify-content-end text-white" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
               sports_hockey
-            </spa></a>
-          <a class="nav-link d-flex justify-content-center" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show" href="#">Basketball<span class="material-icons">
+              </spa></a>
+          <a class="nav-link d-flex justify-content-end text-white" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
               sports_basketball
             </span></a>
-          <a id="nav-soccer" class="nav-link d-flex justify-content-center" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show" href="#">Soccer<span class="material-icons">
+          <a id="nav-soccer" class="nav-link d-flex justify-content-end text-white" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
               sports_soccer
             </span></a>
         </div>
@@ -45,13 +45,14 @@
     </div>
   </nav>
   <div id="container" class="container">
-    <h1 id="title" class="d-flex justify-content-center mt-5">LIVE SCORE</h1>
-    <script type="module" src="js/baseball.js"></script>
-    <script type="module" src="js/hockey.js"></script>
-    <script type="module" src="js/soccer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"></script>
+    <h1 id="title" class="d-flex justify-content-center">LIVE SCORE</h1>
+  </div>
+  <script type="module" src="js/baseball.js"></script>
+  <script type="module" src="js/hockey.js"></script>
+  <script type="module" src="js/soccer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
