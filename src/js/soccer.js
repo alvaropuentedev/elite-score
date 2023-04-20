@@ -21,6 +21,10 @@ const options2 = {
 NAV_SOCCER_LINK.addEventListener('click', () => {
     fetchDataLiveMatch()
 })
+window.addEventListener('load', () => {
+    createMenu()
+    document.querySelector('.box-score-reload').style.display = 'none'
+})
 
 // FETCH API
 const fetchDataLiveMatch = async () => {
@@ -47,18 +51,13 @@ const createMenu = () => {
     navMenuContainer.id = 'nav-menu'
     navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark rounded d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
+    // LIVE
     const optionLiveMatch = document.createElement('span')
     optionLiveMatch.id = 'option-menu'
-    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
-    optionLiveMatch.textContent = 'Live'
+    optionLiveMatch.setAttribute('class', 'text-white material-icons')
+    optionLiveMatch.textContent = 'live_tv'
     navMenuContainer.appendChild(optionLiveMatch)
     optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
-    const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu'
-    optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
-    optionNews.textContent = 'News'
-    navMenuContainer.appendChild(optionNews)
-    optionNews.addEventListener('click', () => { fetchDataLiveMatch() })
 }
 
 // LIVE SCORES

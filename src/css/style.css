@@ -1,43 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root {
-  --Angels: #ba0021;
-  --Astros: #eb6e20;
-  --Athletics: #006241;
-  --BlueJays: #134a8e;
-  --Braves: #bb0c2f;
-  --Cardinals: #c41e3b;
-  --Cubs: #0d3386;
-  --Diamondbacks: #ab0002;
-  --Dodgers: #004680;
-  --Giants: #fe5a1e;
-  --Guardians: #ce0d2d;
-  --Mariners: #005c5c;
-  --Marlins: #01a3e1;
-  --Mets: #ff5911;
-  --Nationals: #ab0002;
-  --Orioles: #df4601;
-  --Padres: #2f241c;
-  --Pirates: #feb827;
-  --Phillies: #c20b31;
-  --Tigers: #0c2c56;
-  --Twins: #002b5c;
-  --Rangers: #003278;
-  --Rays: #082c5c;
-  --Reds: #c6011f;
-  --RedSox: #bd303a;
-  --Rockies: #333466;
-  --Royals: #004687;
-  --Yankees: #132448;
-  --WhiteSox: #333333;
+  --angels: #ba0021;
+  --astros: #eb6e20;
+  --athletics: #006241;
+  --blue-jays: #134a8e;
+  --braves: #bb0c2f;
+  --cardinals: #c41e3b;
+  --cubs: #0d3386;
+  --diamondbacks: #ab0002;
+  --dodgers: #004680;
+  --giants: #fe5a1e;
+  --guardians: #ce0d2d;
+  --mariners: #005c5c;
+  --marlins: #01a3e1;
+  --mets: #ff5911;
+  --nationals: #ab0002;
+  --orioles: #df4601;
+  --padres: #2f241c;
+  --pirates: #feb827;
+  --phillies: #c20b31;
+  --tigers: #0c2c56;
+  --twins: #002b5c;
+  --rangers: #003278;
+  --rays: #082c5c;
+  --reds: #c6011f;
+  --redsox: #bd303a;
+  --rockies: #333466;
+  --royals: #004687;
+  --yankees: #132448;
+  --whitesox: #333;
 }
 
 #container {
-  min-width: 70%;
+  min-width: 90%;
 }
 
-#main-menu {
-  background: #224;
+#match-card-schedule {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  min-width: 30rem;
+  max-width: 30rem;
+}
+
+#name-tournament-schedule {
+  translate: 0.5rem;
+}
+
+#card-foot-schedule{
+  translate: -2rem;
+}
+
+#nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
 }
 
 #nav-menu {
@@ -62,17 +79,16 @@
 
 #match-card:hover {
   cursor: pointer;
-  /* background: #cbc9c9; */
   box-shadow: #cbc9c9;
   border: solid 1px #cbc9c9;
 }
 
 #name-tournament,
+#name-tournament-schedule,
 #country-tournament,
 #lineup-match {
-  font-family: 'Roboto';
-  font-weight: 800;
-  color: rgb(12, 114, 161);
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
 }
 
 #div-away,
@@ -100,348 +116,348 @@
 }
 
 /* TEAMS COLORS */
-#Cardinals {
-  color: var(--Cardinals);
+#cardinals {
+  color: var(--cardinals);
 }
 
-#pitchers-Cardinals,
-#batters-Cardinals {
-  background-color: var(--Cardinals);
+#pitchers-cardinals,
+#batters-cardinals {
+  background-color: var(--cardinals);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Guardians {
-  color: var(--Guardians);
+#guardians {
+  color: var(--guardians);
 }
 
-#pitchers-Guardians,
-#batters-Guardians {
-  background-color: var(--Guardians);
+#pitchers-guardians,
+#batters-guardians {
+  background-color: var(--guardians);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Dodgers {
-  color: var(--Dodgers);
+#dodgers {
+  color: var(--dodgers);
 }
 
-#pitchers-Dodgers,
-#batters-Dodgers {
-  background-color: var(--Dodgers);
+#pitchers-dodgers,
+#batters-dodgers {
+  background-color: var(--dodgers);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Yankees {
-  color: var(--Yankees);
+#yankees {
+  color: var(--yankees);
 }
 
-#pitchers-Yankees,
-#batters-Yankees {
-  background-color: var(--Yankees);
+#pitchers-yankees,
+#batters-yankees {
+  background-color: var(--yankees);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Orioles {
-  color: var(--Orioles);
+#orioles {
+  color: var(--orioles);
 }
 
-#pitchers-Orioles,
-#batters-Orioles {
-  background-color: var(--Orioles);
+#pitchers-orioles,
+#batters-orioles {
+  background-color: var(--orioles);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Athletics {
-  color: var(--Athletics);
+#athletics {
+  color: var(--athletics);
 }
 
-#pitchers-Athletics,
-#batters-Athletics {
-  background-color: var(--Yankees);
+#pitchers-athletics,
+#batters-athletics {
+  background-color: var(--yankees);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Astros {
-  color: var(--Astros);
+#astros {
+  color: var(--astros);
 }
 
-#pitchers-Astros,
-#batters-Astros {
-  background-color: var(--Astros);
+#pitchers-astros,
+#batters-astros {
+  background-color: var(--astros);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Pirates {
-  color: var(--Pirates);
+#pirates {
+  color: var(--pirates);
 }
 
-#pitchers-Pirates,
-#batters-Pirates {
-  background-color: var(--Pirates);
+#pitchers-pirates,
+#batters-pirates {
+  background-color: var(--pirates);
   color: white;
   justify-content: center;
 }
 
-#Cubs {
-  color: var(--Cubs);
+#cubs {
+  color: var(--cubs);
 }
 
-#pitchers-Cubs,
-#batters-Cubs {
-  background-color: var(--Cubs);
-  color: white;
-  justify-content: center;
-  font-size: small;
-}
-
-#Mariners {
-  color: var(--Mariners);
-}
-
-#pitchers-Mariners,
-#batters-Mariners {
-  background-color: var(--Mariners);
+#pitchers-cubs,
+#batters-cubs {
+  background-color: var(--cubs);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Phillies {
-  color: var(--Phillies);
+#mariners {
+  color: var(--mariners);
 }
 
-#pitchers-Phillies,
-#batters-Phillies {
-  background-color: var(--Phillies);
+#pitchers-mariners,
+#batters-mariners {
+  background-color: var(--mariners);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Reds {
-  color: var(--Reds);
+#phillies {
+  color: var(--phillies);
 }
 
-#pitchers-Reds,
-#batters-Reds {
-  background-color: var(--Reds);
+#pitchers-phillies,
+#batters-phillies {
+  background-color: var(--phillies);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Giants {
-  color: var(--Giants);
+#reds {
+  color: var(--reds);
 }
 
-#pitchers-Giants,
-#batters-Giants {
-  background-color: var(--Giants);
+#pitchers-reds,
+#batters-reds {
+  background-color: var(--reds);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Tigers {
-  color: var(--Tigers);
+#giants {
+  color: var(--giants);
 }
 
-#pitchers-Tigers,
-#batters-Tigers {
-  background-color: var(--Tigers);
+#pitchers-giants,
+#batters-giants {
+  background-color: var(--giants);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Diamondbacks {
-  color: var(--Diamondbacks);
+#tigers {
+  color: var(--tigers);
 }
 
-#pitchers-Diamondbacks,
-#batters-Diamondbacks {
-  background-color: var(--Diamondbacks);
+#pitchers-tigers,
+#batters-tigers {
+  background-color: var(--tigers);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Marlins {
-  color: var(--Marlins);
+#diamondbacks {
+  color: var(--diamondbacks);
 }
 
-#pitchers-Marlins,
-#batters-Marlins {
-  background-color: var(--Marlins);
+#pitchers-diamondbacks,
+#batters-diamondbacks {
+  background-color: var(--diamondbacks);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Twins {
-  color: var(--Twins);
+#marlins {
+  color: var(--marlins);
 }
 
-#pitchers-Twins,
-#batters-Twins {
-  background-color: var(--Twins);
+#pitchers-marlins,
+#batters-marlins {
+  background-color: var(--marlins);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Rays {
-  color: var(--Rays);
+#twins {
+  color: var(--twins);
 }
 
-#pitchers-Rays,
-#batters-Rays {
-  background-color: var(--Rays);
+#pitchers-twins,
+#batters-twins {
+  background-color: var(--twins);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Rockies {
-  color: var(--Rockies);
+#rays {
+  color: var(--rays);
 }
 
-#pitchers-Rockies,
-#batters-Rockies {
-  background-color: var(--Rockies);
+#pitchers-rays,
+#batters-rays {
+  background-color: var(--rays);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Angels {
-  color: var(--Angels);
+#rockies {
+  color: var(--rockies);
 }
 
-#pitchers-Angels,
-#batters-Angels {
-  background-color: var(--Angels);
+#pitchers-rockies,
+#batters-rockies {
+  background-color: var(--rockies);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Braves {
-  color: var(--Braves);
+#angels {
+  color: var(--angels);
 }
 
-#pitchers-Braves,
-#batters-Braves {
-  background-color: var(--Braves);
+#pitchers-angels,
+#batters-angels {
+  background-color: var(--angels);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Royals {
-  color: var(--Royals);
+#braves {
+  color: var(--braves);
 }
 
-#pitchers-Royals,
-#batters-Royals {
-  background-color: var(--Royals);
+#pitchers-braves,
+#batters-braves {
+  background-color: var(--braves);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Rangers {
-  color: var(--Rangers);
+#royals {
+  color: var(--royals);
 }
 
-#pitchers-Rangers,
-#batters-Rangers {
-  background-color: var(--Rangers);
+#pitchers-royals,
+#batters-royals {
+  background-color: var(--royals);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Nationals {
-  color: var(--Nationals);
+#rangers {
+  color: var(--rangers);
 }
 
-#pitchers-Nationals,
-#batters-Nationals {
-  background-color: var(--Nationals);
+#pitchers-rangers,
+#batters-rangers {
+  background-color: var(--rangers);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Mets {
-  color: var(--Mets);
+#nationals {
+  color: var(--nationals);
 }
 
-#pitchers-Mets,
-#batters-Mets {
-  background-color: var(--Mets);
+#pitchers-nationals,
+#batters-nationals {
+  background-color: var(--nationals);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-#Padres {
-  color: var(--Padres);
+#mets {
+  color: var(--mets);
 }
 
-#pitchers-Padres,
-#batters-Padres {
-  background-color: var(--Padres);
+#pitchers-mets,
+#batters-mets {
+  background-color: var(--mets);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-div[id='Red Sox'] {
-  color: var(--RedSox);
+#padres {
+  color: var(--padres);
 }
 
-div[id='pitchers-Red Sox'],
-div[id='batters-Red Sox'] {
-  background-color: var(--RedSox);
+#pitchers-padres,
+#batters-padres {
+  background-color: var(--padres);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-div[id='Blue Jays'] {
-  color: var(--BlueJays);
+div[id='red sox'],td[id='red sox']  {
+  color: var(--redsox);
 }
 
-div[id='pitchers-Blue Jays'],
-div[id='batters-Blue Jays'] {
-  background-color: var(--BlueJays);
+div[id='pitchers-red sox'],
+div[id='batters-red sox'] {
+  background-color: var(--redsox);
   color: white;
   justify-content: center;
   font-size: small;
 }
 
-div[id='White Sox'] {
-  color: var(--WhiteSox);
+div[id='blue jays'], td[id='blue jays'] {
+  color: var(--blue-jays);
+}
+
+div[id='pitchers-blue jays'],
+div[id='batters-blue jays'] {
+  background-color: var(--blue-jays);
+  color: white;
+  justify-content: center;
+  font-size: small;
+}
+
+div[id='white sox'], td[id='white sox'] {
+  color: var(--red);
 }
 
 div[id='pitchers-White Sox'],
 div[id='batters-White Sox'] {
-  background-color: var(--WhiteSox);
+  background-color: var(--whitesox);
   color: white;
   justify-content: center;
   font-size: small;

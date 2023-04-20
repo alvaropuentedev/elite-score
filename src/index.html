@@ -9,47 +9,43 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/mobile-style.css">
   <link rel="stylesheet" href="scss/custom.css">
-  <title>Elite Score</title>
+  <title>EliteScore</title>
 </head>
 
 <body>
   <!-- NAVBAR -->
-  <nav id="main-menu" class="navbar navbar-expand-lg navbar-light">
+  <nav id="main-menu" class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-around position-sticky" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-          <a class="navbar-brand fw-bold text-white" href="index.html">EliteScore</a>
-          <a id="nav-baseball" class="nav-link d-flex justify-content-end text-white" aria-current="page"
-            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
-              sports_baseball
-            </span></a>
-          <a id="nav-hockey" class="nav-link d-flex justify-content-end text-white" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
-              sports_hockey
-              </spa></a>
-          <a class="nav-link d-flex justify-content-end text-white" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
-              sports_basketball
-            </span></a>
-          <a id="nav-soccer" class="nav-link d-flex justify-content-end text-white" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show" href="#"><span class="material-icons">
-              sports_soccer
-            </span></a>
+        <a class="navbar-brand fw-bold text-white" href="./index.html">EliteScore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a id="nav-baseball" class="nav-link d-flex justify-content-center text-white" aria-current="page"
+                    href="baseball.html">Baseball<span class="align-self-center material-icons">
+                        sports_baseball
+                    </span></a>
+                <a id="nav-hockey" class="nav-link d-flex justify-content-center text-white"
+                    href="./hockey.html">Hockey<span class="align-self-center material-icons">
+                        sports_hockey
+                    </span></a>
+                <a id="nav-basketball" class="nav-link d-flex justify-content-center text-white"
+                    href="./basketball.html">Basketball<span class="align-self-center material-icons">
+                        sports_basketball
+                    </span></a>
+                <a id="nav-soccer" class="nav-link d-flex justify-content-center just text-white"
+                    href="soccer.html">Football<span class="align-self-center material-icons">
+                        sports_soccer
+                    </span></a>
+            </div>
         </div>
-      </div>
     </div>
-  </nav>
+</nav>
   <div id="container" class="container">
     <h1 id="title" class="d-flex justify-content-center">ELITE SCORE</h1>
   </div>
-  <script type="module" src="js/baseball.js"></script>
-  <script type="module" src="js/hockey.js"></script>
-  <script type="module" src="js/soccer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>

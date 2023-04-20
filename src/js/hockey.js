@@ -1,5 +1,6 @@
 const CONTAINER = document.querySelector('#container')
 const navHockey = document.querySelector('#nav-hockey')
+let MATCH_ID
 const options = {
     method: 'GET',
     headers: {
@@ -19,6 +20,10 @@ const options2 = {
 navHockey.addEventListener('click', () => {
     fetchDataLiveMatch()
 })
+window.addEventListener('load', () => {
+    createMenu()
+    document.querySelector('.box-score-reload').style.display = 'none'
+})
 
 // FUNC CREATE MENU
 const createMenu = () => {
@@ -27,18 +32,13 @@ const createMenu = () => {
     navMenuContainer.id = 'nav-menu'
     navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-dark rounded d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
+    // LIVE
     const optionLiveMatch = document.createElement('span')
     optionLiveMatch.id = 'option-menu'
-    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
-    optionLiveMatch.textContent = 'Live'
+    optionLiveMatch.setAttribute('class', 'text-white material-icons')
+    optionLiveMatch.textContent = 'live_tv'
     navMenuContainer.appendChild(optionLiveMatch)
     optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
-    const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu'
-    optionNews.setAttribute('class', 'text-white pointer mt-2 ms-3')
-    optionNews.textContent = 'News'
-    navMenuContainer.appendChild(optionNews)
-    optionNews.addEventListener('click', () => { fetchDataLiveMatch() })
 }
 // FETCH API
 const fetchDataLiveMatch = async () => {
@@ -132,10 +132,10 @@ const createMatches = (resLive) => {
             // ON CLICK SHOW LINEUPS
             elementCol.addEventListener('click', () => {
                 CONTAINER.innerHTML = ''
-                const matchId = resLive.events[i].id
+                MATCH_ID = resLive.events[i].id
                 const awayTeamName = resLive.events[i].awayTeam.shortName
                 const homeTeamName = resLive.events[i].homeTeam.shortName
-                fetchLineups(matchId, awayTeamName, homeTeamName)
+                fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
             })
         }
     }
@@ -148,8 +148,8 @@ const createMatches = (resLive) => {
     }
 }
 
-const fetchLineups = async (matchId, awayTeamName, homeTeamName) => {
-    const urlTeamLineup = 'https://icehockeyapi.p.rapidapi.com/api/ice-hockey/match/' + matchId + '/lineups'
+const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
+    const urlTeamLineup = `https://icehockeyapi.p.rapidapi.com/api/ice-hockey/match/${MATCH_ID}/lineups`
     const resLineup = await fetch(urlTeamLineup, options)
     const dataLineup = await resLineup.json()
     showLineups(dataLineup, awayTeamName, homeTeamName)
@@ -161,7 +161,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     console.log(dataLineup.home.players.length)
     const elementRow = document.createElement('div')
     elementRow.id =
-    elementRow.setAttribute('class', 'd-flex justify-content-between')
+        elementRow.setAttribute('class', 'd-flex justify-content-between')
     CONTAINER.appendChild(elementRow)
     // HOME ROW
     const elementRowHome = document.createElement('div')

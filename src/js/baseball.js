@@ -9,43 +9,72 @@ const options = {
         'X-RapidAPI-Host': 'baseballapi.p.rapidapi.com'
     }
 }
-
-// NAV MENU
 NAV_BASEBALL_LINK.addEventListener('click', () => {
-    fetchDataLiveMatch()
-    toDateTime(1681848314)
+    CONTAINER.innerHTML = ''
+    createMenu()
+    document.querySelector('.box-score-reload').style.display = 'none'
 })
-function toDateTime (secs) {
+
+// ONLOAD MENU
+window.addEventListener('load', () => {
+    createMenu()
+    document.querySelector('.box-score-reload').style.display = 'none'
+})
+// GET TIME
+const toDateTime = (secs) => {
     const t = new Date(1970, 0, 1)
     t.setSeconds(secs)
-    console.log(t)
+    let hours = t.getHours() + 2
+    const minutes = String(t.getMinutes()).padStart(2, '0')
+    const day = t.getDate()
+    const month = t.getMonth() + 1
+    hours = hours % 24
+    return day + '/' + month + '  ' + hours + ':' + minutes
 }
 // FUNC CREATE MENU
 const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
-    // MENU
+    // ///////////////////////////////////MENU////////////////////////
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light bg-dark rounded d-flex justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light bg-dark rounded d-flex justify-content-evenly justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
+    // LIVE
     const optionLiveMatch = document.createElement('span')
     optionLiveMatch.id = 'option-menu'
-    optionLiveMatch.setAttribute('class', 'text-white pointer mt-2')
-    optionLiveMatch.textContent = 'Live'
+    optionLiveMatch.setAttribute('class', 'text-white material-icons')
+    optionLiveMatch.textContent = 'live_tv'
     navMenuContainer.appendChild(optionLiveMatch)
     optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
-    const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu'
-    optionNews.setAttribute('class', 'box-score-reload text-white pointer mt-2 ms-3')
-    optionNews.textContent = 'Reload'
-    navMenuContainer.appendChild(optionNews)
-    optionNews.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
+    // SCHEDULE
+    const optionSchedule = document.createElement('span')
+    optionSchedule.id = 'option-menu'
+    optionSchedule.setAttribute('class', 'option-schedule text-white material-icons')
+    optionSchedule.textContent = 'calendar_month'
+    navMenuContainer.appendChild(optionSchedule)
+    optionSchedule.addEventListener('click', () => {
+        const date = new Date()
+        const day = date.getDate()
+        const month = date.getMonth() + 1
+        const year = date.getFullYear()
+
+        const todayDate = `${day}/${month}/${year}`
+        fetchDataSchedule(todayDate)
+        console.log(todayDate)
+    })
+    // LINEUPS REFRESH
+    const optionRefresh = document.createElement('span')
+    optionRefresh.id = 'option-menu'
+    optionRefresh.setAttribute('class', 'box-score-reload text-white material-icons')
+    optionRefresh.textContent = 'refresh'
+    navMenuContainer.appendChild(optionRefresh)
+    optionRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
 }
 
 // FETCH LIVE MATCH
 const fetchDataLiveMatch = async () => {
-    // const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
-    // const resLive = await fetch(urlLiveScores, options)
-    const resLive = await fetch('liveBaseballMatch.json')
+    const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
+    const resLive = await fetch(urlLiveScores, options)
+    // const resLive = await fetch('liveBaseballMatch.json')
     const dataLive = await resLive.json()
     createMatches(dataLive)
     console.log(dataLive)
@@ -56,7 +85,7 @@ const createMatches = (resLive) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
-    document.querySelector('.box-score-reload').innerHTML = ''
+    document.querySelector('.box-score-reload').style.display = 'none'
     if (resLive.events.length > 0) {
         // DIV CARDS CONTAINER
         const cardsContainer = document.createElement('div')
@@ -83,7 +112,7 @@ const createMatches = (resLive) => {
                 // AWAY TEAM
                 const elementAway = document.createElement('div')
                 elementAway.setAttribute('class', 'away-team')
-                elementAway.id = resLive.events[i].awayTeam.shortName
+                elementAway.id = resLive.events[i].awayTeam.shortName.toLowerCase()
                 elementAway.textContent = resLive.events[i].awayTeam.shortName
                 divAway.appendChild(elementAway)
                 // SCORE AWAY
@@ -99,7 +128,7 @@ const createMatches = (resLive) => {
                 // HOME TEAM
                 const elementHome = document.createElement('div')
                 elementHome.setAttribute('class', 'home-team')
-                elementHome.id = resLive.events[i].homeTeam.shortName
+                elementHome.id = resLive.events[i].homeTeam.shortName.toLowerCase()
                 elementHome.textContent = resLive.events[i].homeTeam.shortName
                 divHome.appendChild(elementHome)
                 // SCORE HOME
@@ -136,7 +165,7 @@ const createMatches = (resLive) => {
 // FETCH LINEUPS
 const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     try {
-        const urlTeamLineupBaseball = 'https://baseballapi.p.rapidapi.com/api/baseball/match/' + MATCH_ID + '/lineups'
+        const urlTeamLineupBaseball = `https://baseballapi.p.rapidapi.com/api/baseball/match/${MATCH_ID}/lineups`
         const resLineup = await fetch(urlTeamLineupBaseball, options)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
@@ -150,7 +179,7 @@ const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
         CONTAINER.appendChild(noLineupsFound)
     }
 }
-// SHOW LINEUPS
+// /////////////////////////////////////// SHOW LINEUPS ////////////////////////////////////////////////////////////////
 const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     CONTAINER.innerHTML = ''
     // MENU
@@ -165,13 +194,13 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     elementRow.appendChild(elementRowAway)
     // AWAY TEAM NAME
     const divAwayTeamName = document.createElement('div')
-    divAwayTeamName.id = awayTeamName
+    divAwayTeamName.id = awayTeamName.toLowerCase()
     divAwayTeamName.setAttribute('class', 'away-team-name fw-bold text-center')
-    divAwayTeamName.textContent = awayTeamName
+    divAwayTeamName.textContent = awayTeamName.toUpperCase()
     elementRowAway.appendChild(divAwayTeamName)
     // AWAY BATTERS BAR
     const battersAwaySeparator = document.createElement('div')
-    battersAwaySeparator.id = 'batters-' + awayTeamName
+    battersAwaySeparator.id = 'batters-' + awayTeamName.toLowerCase()
     battersAwaySeparator.setAttribute('class', 'text-center m-2')
     battersAwaySeparator.textContent = 'BATTERS'
     elementRowAway.appendChild(battersAwaySeparator)
@@ -184,7 +213,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     const theadAway = document.createElement('thead')
     tableAway.appendChild(theadAway)
     const rowHeadAway =
-    `<tr>
+        `<tr>
     <th>${'Player'}</th>
             <th>${'AB'}</th>
             <th>${'R'}</th>
@@ -220,9 +249,9 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
             stolenBases = stolenBases ?? myDefault
             homeRuns = homeRuns ?? myDefault
             const rowCellaway =
-            `<tr>
+                `<tr>
             <td>${dataLineup.away.players[i].player.shortName +
-            ' (' + dataLineup.away.players[i].player.position + ')'}</td>
+                ' (' + dataLineup.away.players[i].player.position + ')'}</td>
             <td>${atBat}</td>
             <td>${runs}</td>
             <td>${hits}</td>
@@ -237,7 +266,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     }
     // AWAY PITCHERS BAR
     const pitchersAwaySeparator = document.createElement('div')
-    pitchersAwaySeparator.id = 'pitchers-' + awayTeamName
+    pitchersAwaySeparator.id = 'pitchers-' + awayTeamName.toLowerCase()
     pitchersAwaySeparator.setAttribute('class', 'text-center m-2')
     pitchersAwaySeparator.textContent = 'PITCHERS'
     elementRowAway.appendChild(pitchersAwaySeparator)
@@ -250,7 +279,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     const theadPitchersAway = document.createElement('thead')
     tablePitchersAway.appendChild(theadPitchersAway)
     const rowHeadPitchersAway =
-    `<tr>
+        `<tr>
     <th>${'Player'}</th>
             <th>${'IP'}</th>
             <th>${'H'}</th>
@@ -268,7 +297,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     for (let i = 0; i < dataLineup.away.players.length; i++) {
         if (dataLineup.away.players[i].position === 'P') {
             const rowCellPitchersAway =
-            `<tr>
+                `<tr>
             <td>${dataLineup.away.players[i].player.shortName}</td>
             <td>${dataLineup.away.players[i].statistics.pitchingInningsPitched}</td>
             <td>${dataLineup.away.players[i].statistics.pitchingHits}</td>
@@ -287,13 +316,13 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     elementRow.appendChild(elementRowHome)
     // HOME TEAM NAME
     const divHomeTeamName = document.createElement('div')
-    divHomeTeamName.id = homeTeamName
+    divHomeTeamName.id = homeTeamName.toLowerCase()
     divHomeTeamName.setAttribute('class', 'home-team-name fw-bold text-center')
-    divHomeTeamName.textContent = homeTeamName
+    divHomeTeamName.textContent = homeTeamName.toUpperCase()
     elementRowHome.appendChild(divHomeTeamName)
     // HOME BATTERS BAR
     const battersHomeSeparator = document.createElement('div')
-    battersHomeSeparator.id = 'batters-' + homeTeamName
+    battersHomeSeparator.id = 'batters-' + homeTeamName.toLowerCase()
     battersHomeSeparator.setAttribute('class', 'text-center m-2')
     battersHomeSeparator.textContent = 'BATTERS'
     elementRowHome.appendChild(battersHomeSeparator)
@@ -306,8 +335,8 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     const theadHome = document.createElement('thead')
     tableHome.appendChild(theadHome)
     const rowHeadHome =
-    `<tr>
-    <th>${'Player'}</th>
+        `<tr>
+            <th>${'Player'}</th>
             <th>${'AB'}</th>
             <th>${'R'}</th>
             <th>${'H'}</th>
@@ -342,9 +371,9 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
             stolenBases = stolenBases ?? myDefault
             homeRuns = homeRuns ?? myDefault
             const rowCellHome =
-            `<tr>
+                `<tr>
             <td>${dataLineup.home.players[i].player.shortName +
-            ' (' + dataLineup.home.players[i].player.position + ')'}</td>
+                ' (' + dataLineup.home.players[i].player.position + ')'}</td>
             <td>${atBat}</td>
             <td>${runs}</td>
             <td>${hits}</td>
@@ -359,7 +388,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     }
     // HOME SEPARATOR
     const pitcherHomeSeparator = document.createElement('div')
-    pitcherHomeSeparator.id = 'pitchers-' + homeTeamName
+    pitcherHomeSeparator.id = 'pitchers-' + homeTeamName.toLowerCase()
     pitcherHomeSeparator.setAttribute('class', 'text-center m-2')
     pitcherHomeSeparator.textContent = 'PITCHERS'
     elementRowHome.appendChild(pitcherHomeSeparator)
@@ -372,8 +401,8 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     const theadPitchersHome = document.createElement('thead')
     tablePitchersHome.appendChild(theadPitchersHome)
     const rowHeadPitchersHome =
-    `<tr>
-    <th>${'Player'}</th>
+        `<tr>
+            <th>${'Player'}</th>
             <th>${'IP'}</th>
             <th>${'H'}</th>
             <th>${'R'}</th>
@@ -390,7 +419,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     for (let i = 0; i < dataLineup.home.players.length; i++) {
         if (dataLineup.home.players[i].position === 'P') {
             const rowCellPitchersHome =
-            `<tr>
+                `<tr>
             <td>${dataLineup.home.players[i].player.shortName}</td>
             <td>${dataLineup.home.players[i].statistics.pitchingInningsPitched}</td>
             <td>${dataLineup.home.players[i].statistics.pitchingHits}</td>
@@ -401,6 +430,207 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
             <td>${dataLineup.home.players[i].statistics.pitchingHomeRuns}</td>
             </tr>`
             tableBodyPitchersHome.innerHTML += rowCellPitchersHome
+        }
+    }
+}
+// FETCH SCHEDULE
+const fetchDataSchedule = async (todayDate) => {
+    const urlLiveScores = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
+    const res = await fetch(urlLiveScores, options)
+    // const resLive = await fetch('liveBaseballMatch.json')
+    const data = await res.json()
+    getSchedule(data)
+    console.log(data)
+}
+// ////////////////////////////////////////FUNC SCHEDULE//////////////////////////////////////////////
+const getSchedule = (dataSchedule) => {
+    CONTAINER.innerHTML = ''
+    createMenu()
+    document.querySelector('.box-score-reload').style.display = 'none'
+    const cardsContainer = document.createElement('div')
+    cardsContainer.id = 'cards-container'
+    cardsContainer.setAttribute('class', 'd-flex justify-content-center row')
+    CONTAINER.appendChild(cardsContainer)
+    // //////////////////GAMES NOT STARTED////////////////////////////////////////////////
+    for (let i = 0; i < dataSchedule.events.length; i++) {
+        if (dataSchedule.events[i].tournament.name === 'MLB' &&
+         dataSchedule.events[i].status.description !== 'Ended' && dataSchedule.events[i].status.description !== 'AET') {
+            // DIV MATCH CARDS
+            const matchCard = document.createElement('div')
+            matchCard.id = 'match-card-schedule'
+            matchCard.setAttribute('class', 'col shadow rounded text-start')
+            cardsContainer.appendChild(matchCard)
+            const divCard = document.createElement('div')
+            divCard.id = 'div-card'
+            divCard.setAttribute('class', ('p-3'))
+            matchCard.appendChild(divCard)
+            // DIV NAME TOURNAMENT
+            const nameTournament = document.createElement('div')
+            nameTournament.id = 'name-tournament-schedule'
+            nameTournament.textContent = dataSchedule.events[i].tournament.name
+            divCard.appendChild(nameTournament)
+            // DIV AWAY TEAMS CONTAINER
+            const teamsContainer = document.createElement('div')
+            teamsContainer.id = 'teams-container'
+            divCard.appendChild(teamsContainer)
+            // TABLE TEAMS
+            const tableTeams = document.createElement('table')
+            tableTeams.setAttribute('class', 'table')
+            teamsContainer.appendChild(tableTeams)
+            // THEAD
+            const tableHead = document.createElement('thead')
+            tableTeams.appendChild(tableHead)
+            const gameTime = toDateTime(dataSchedule.events[i].startTimestamp)
+            const rowHead =
+                `<tr>
+            <th>${gameTime}</th>
+            <th>${'R'}</th>  
+            <th>${'H'}</th>  
+            <th>${'E'}</th>  
+            </tr>`
+            tableHead.innerHTML += rowHead
+            // TBODY
+            const tableBody = document.createElement('tbody')
+            tableTeams.appendChild(tableBody)
+            const nameAway = dataSchedule.events[i].awayTeam.shortName
+            let currentAwayScore = dataSchedule.events[i].awayScore.current
+            let hitsAway
+            let errorsAway
+            const awayTeamName = dataSchedule.events[i].awayTeam.shortName
+            const homeTeamName = dataSchedule.events[i].homeTeam.shortName
+            try {
+                hitsAway = dataSchedule.events[i].awayScore.inningsBaseball.hits
+                errorsAway = dataSchedule.events[i].awayScore.inningsBaseball.errors
+            } catch(error) {
+                hitsAway = 0
+                errorsAway = 0
+            }
+            currentAwayScore = currentAwayScore ?? 0
+            const rowAwayBody =
+                `<tr>
+            <td id='${awayTeamName.toLowerCase()}'>${nameAway}</td>
+            <td>${currentAwayScore}</td>
+            <td>${hitsAway}</td>
+            <td>${errorsAway}</td>
+            </tr>`
+            tableBody.innerHTML += rowAwayBody
+            // HOME TEAM
+            const nameHome = dataSchedule.events[i].homeTeam.shortName
+            let currentHomeScore = dataSchedule.events[i].homeScore.current
+            let hitsHome
+            let errorsHome
+            try {
+                hitsHome = dataSchedule.events[i].homeScore.inningsBaseball.hits
+                errorsHome = dataSchedule.events[i].homeScore.inningsBaseball.errors
+            } catch(error) {
+                hitsHome = 0
+                errorsHome = 0
+            }
+            currentHomeScore = currentHomeScore ?? 0
+            const rowHomeBody =
+                `<tr>
+            <td id='${homeTeamName.toLowerCase()}'>${nameHome}</td>
+            <td>${currentHomeScore}</td>
+            <td>${hitsHome}</td>
+            <td>${errorsHome}</td>
+            </tr>`
+            tableBody.innerHTML += rowHomeBody
+            const cardFoot = document.createElement('div')
+            cardFoot.id = 'card-foot-schedule'
+            cardFoot.setAttribute('class', 'text-end')
+            cardFoot.textContent = dataSchedule.events[i].status.description
+            divCard.appendChild(cardFoot)
+        }
+    }
+    // ///////////////////SHOW GAMES ENDED//////////////////
+    for (let i = 0; i < dataSchedule.events.length; i++) {
+        if (dataSchedule.events[i].tournament.name === 'MLB' &&
+            dataSchedule.events[i].status.description !== 'Not started') {
+            // DIV MATCH CARDS
+            const matchCard = document.createElement('div')
+            matchCard.id = 'match-card-schedule'
+            matchCard.setAttribute('class', 'col shadow rounded text-start')
+            cardsContainer.appendChild(matchCard)
+            const divCard = document.createElement('div')
+            divCard.id = 'div-card'
+            divCard.setAttribute('class', ('p-3'))
+            matchCard.appendChild(divCard)
+            // DIV NAME TOURNAMENT
+            const nameTournament = document.createElement('div')
+            nameTournament.id = 'name-tournament-schedule'
+            nameTournament.textContent = dataSchedule.events[i].tournament.name
+            divCard.appendChild(nameTournament)
+            // DIV AWAY TEAMS CONTAINER
+            const teamsContainer = document.createElement('div')
+            teamsContainer.id = 'teams-container'
+            divCard.appendChild(teamsContainer)
+            // TABLE TEAMS
+            const tableTeams = document.createElement('table')
+            tableTeams.setAttribute('class', 'table')
+            teamsContainer.appendChild(tableTeams)
+            // THEAD
+            const tableHead = document.createElement('thead')
+            tableTeams.appendChild(tableHead)
+            const gameTime = toDateTime(dataSchedule.events[i].startTimestamp)
+            const rowHead =
+                `<tr>
+            <th>${gameTime}</th>
+            <th>${'R'}</th>  
+            <th>${'H'}</th>  
+            <th>${'E'}</th>  
+            </tr>`
+            tableHead.innerHTML += rowHead
+            // TBODY
+            const tableBody = document.createElement('tbody')
+            tableTeams.appendChild(tableBody)
+            const nameAway = dataSchedule.events[i].awayTeam.shortName
+            let currentAwayScore = dataSchedule.events[i].awayScore.current
+            let hitsAway
+            let errorsAway
+            const awayTeamName = dataSchedule.events[i].awayTeam.shortName
+            const homeTeamName = dataSchedule.events[i].homeTeam.shortName
+            try {
+                hitsAway = dataSchedule.events[i].awayScore.inningsBaseball.hits
+                errorsAway = dataSchedule.events[i].awayScore.inningsBaseball.errors
+            } catch (error) {
+                hitsAway = 0
+                errorsAway = 0
+            }
+            currentAwayScore = currentAwayScore ?? 0
+            const rowAwayBody =
+                `<tr>
+            <td id='${awayTeamName.toLowerCase()}'>${nameAway}</td>
+            <td>${currentAwayScore}</td>
+            <td>${hitsAway}</td>
+            <td>${errorsAway}</td>
+            </tr>`
+            tableBody.innerHTML += rowAwayBody
+            // HOME TEAM
+            const nameHome = dataSchedule.events[i].homeTeam.shortName
+            let currentHomeScore = dataSchedule.events[i].homeScore.current
+            let hitsHome
+            let errorsHome
+            try {
+                hitsHome = dataSchedule.events[i].homeScore.inningsBaseball.hits
+                errorsHome = dataSchedule.events[i].homeScore.inningsBaseball.errors
+            } catch (error) {
+                hitsHome = 0
+                errorsHome = 0
+            }
+            currentHomeScore = currentHomeScore ?? 0
+            const rowHomeBody =
+                `<tr>
+            <td id='${homeTeamName.toLowerCase()}'>${nameHome}</td>
+            <td>${currentHomeScore}</td>
+            <td>${hitsHome}</td>
+            <td>${errorsHome}</td>
+            </tr>`
+            tableBody.innerHTML += rowHomeBody
+            const cardFoot = document.createElement('div')
+            cardFoot.id = 'card-foot-schedule'
+            cardFoot.setAttribute('class', 'text-end')
+            cardFoot.textContent = dataSchedule.events[i].status.description
+            divCard.appendChild(cardFoot)
         }
     }
 }

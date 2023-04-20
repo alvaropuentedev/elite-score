@@ -1,9 +1,10 @@
-@media (max-width: 500px) {
-
-
+@media (width <= 500px) {
     #lineup-match {
         margin-top: 8%;
         font-size: 14px;
+        min-width: 10rem;
+        max-width: 40rem;
+        max-height: 100rem;
     }
 
     #option-menu {
@@ -20,10 +21,9 @@
         max-height: 20rem;
     }
 
-    #lineup-match {
-        min-width: 10rem;
-        max-width: 40rem;
-        max-height: 100rem;
+    #match-card-schedule{
+        min-width: 12rem;
+        max-width: 21rem;
+        max-height: 14rem;
     }
-
 }
