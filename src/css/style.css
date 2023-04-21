@@ -37,7 +37,18 @@
   min-width: 90%;
 }
 
+#main-menu {
+  background-color: #f3c77e;
+}
+
+#nav-menu {
+  background: #201815;
+  min-width: 100%;
+  min-height: 3rem;
+}
+
 #match-card-schedule {
+  background-color: white;
   font-family: Roboto, sans-serif;
   font-weight: bold;
   min-width: 30rem;
@@ -54,14 +65,17 @@
 
 #nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
   font-family: Roboto, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
+}
+#nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer :hove{
+  text-decoration: underline;
 }
 
 #news-container{
   margin-top: 1rem;
 }
 
- #news-div {
+#news-div {
   font-family: Roboto, sans-serif;
 }
 
@@ -70,10 +84,6 @@
   text-decoration: none;
 }
 
-#nav-menu {
-  min-width: 100%;
-  min-height: 3rem;
-}
 
 #cards-container,
 #title,

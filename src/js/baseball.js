@@ -80,14 +80,14 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 // FETCH NEWS
 const fetchNews = async () => {
     const urlNews = 'https://allscores.p.rapidapi.com/api/allscores/news?sport=7&timezone=Europe%2FMadrid&langId=1'
-    const res = await fetch(urlNews, optionsNews)
-    // const resLive = await fetch('liveBaseballMatch.json')
+    // const res = await fetch(urlNews, optionsNews)
+    const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
     getNews(dataNews)
     console.log(dataNews)
 }
 
-// LIVE SCORES
+// FUNC GET NEWS
 const getNews = (dataNews) => {
     console.log(dataNews)
     CONTAINER.innerHTML = ''
@@ -102,11 +102,12 @@ const getNews = (dataNews) => {
         const newsDiv = document.createElement('div')
         newsDiv.id = 'news-div'
         newsDiv.setAttribute('class', 'card')
-        newsDiv.setAttribute('style', 'width: 18rem;')
+        newsDiv.setAttribute('style', 'width: 18rem; height: 20rem;')
         newsContainer.appendChild(newsDiv)
         const imgNews = document.createElement('img')
         imgNews.id = 'img-news'
         imgNews.setAttribute('class', 'card-img-top')
+        imgNews.setAttribute('style', 'height: 10rem')
         imgNews.src = dataNews.news[i].image
         newsDiv.appendChild(imgNews)
         const divBodyCardNews = document.createElement('div')
@@ -500,7 +501,7 @@ const getSchedule = (dataSchedule) => {
             tableBody.innerHTML += rowHomeBody
             const cardFoot = document.createElement('div')
             cardFoot.id = 'card-foot-schedule'
-            cardFoot.setAttribute('class', 'text-end')
+            cardFoot.setAttribute('class', 'text-end text-secondary')
             cardFoot.textContent = dataSchedule.events[i].status.description
             divCard.appendChild(cardFoot)
             divCard.addEventListener('click', () => {
