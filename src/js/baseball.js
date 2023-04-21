@@ -9,6 +9,13 @@ const options = {
         'X-RapidAPI-Host': 'baseballapi.p.rapidapi.com'
     }
 }
+const optionsNews = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '3aefc1e7bamshd83a082017e807dp1102d7jsn7ea4642214b9',
+        'X-RapidAPI-Host': 'allscores.p.rapidapi.com'
+    }
+}
 NAV_BASEBALL_LINK.addEventListener('click', () => {
     CONTAINER.innerHTML = ''
     createMenu()
@@ -38,13 +45,13 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     navMenuContainer.id = 'nav-menu'
     navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light bg-dark rounded d-flex justify-content-evenly justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
-    // LIVE
+    // NEWS
     const optionLiveMatch = document.createElement('span')
     optionLiveMatch.id = 'option-menu'
     optionLiveMatch.setAttribute('class', 'text-white material-icons')
-    optionLiveMatch.textContent = 'live_tv'
+    optionLiveMatch.textContent = 'newspaper'
     navMenuContainer.appendChild(optionLiveMatch)
-    optionLiveMatch.addEventListener('click', () => { fetchDataLiveMatch() })
+    optionLiveMatch.addEventListener('click', () => { fetchNews() })
     // SCHEDULE
     const optionSchedule = document.createElement('span')
     optionSchedule.id = 'option-menu'
@@ -70,96 +77,52 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     optionRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
 }
 
-// FETCH LIVE MATCH
-const fetchDataLiveMatch = async () => {
-    const urlLiveScores = 'https://baseballapi.p.rapidapi.com/api/baseball/matches/live'
-    const resLive = await fetch(urlLiveScores, options)
+// FETCH NEWS
+const fetchNews = async () => {
+    const urlNews = 'https://allscores.p.rapidapi.com/api/allscores/news?sport=7&timezone=Europe%2FMadrid&langId=1'
+    const res = await fetch(urlNews, optionsNews)
     // const resLive = await fetch('liveBaseballMatch.json')
-    const dataLive = await resLive.json()
-    createMatches(dataLive)
-    console.log(dataLive)
+    const dataNews = await res.json()
+    getNews(dataNews)
+    console.log(dataNews)
 }
 
 // LIVE SCORES
-const createMatches = (resLive) => {
+const getNews = (dataNews) => {
+    console.log(dataNews)
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
     document.querySelector('.box-score-reload').style.display = 'none'
-    if (resLive.events.length > 0) {
-        // DIV CARDS CONTAINER
-        const cardsContainer = document.createElement('div')
-        cardsContainer.id = 'cards-container'
-        cardsContainer.setAttribute('class', 'd-flex justify-content-center row')
-        CONTAINER.appendChild(cardsContainer)
-        for (let i = 0; i < resLive.events.length; i++) {
-            if (resLive.events[i].tournament.name === 'MLB') {
-                // DIV MATCH CARDS
-                const elementCol = document.createElement('div')
-                elementCol.id = 'match-card'
-                elementCol.setAttribute('class', 'col p-2 shadow rounded text-start')
-                cardsContainer.appendChild(elementCol)
-                // DIV NAME TOURNAMENT
-                const nameTournament = document.createElement('div')
-                nameTournament.id = 'name-tournament'
-                nameTournament.textContent = resLive.events[i].tournament.name
-                elementCol.appendChild(nameTournament)
-                // DIV AWAY
-                const divAway = document.createElement('div')
-                divAway.id = 'div-away'
-                divAway.setAttribute('class', 'd-flex justify-content-between')
-                elementCol.appendChild(divAway)
-                // AWAY TEAM
-                const elementAway = document.createElement('div')
-                elementAway.setAttribute('class', 'away-team')
-                elementAway.id = resLive.events[i].awayTeam.shortName.toLowerCase()
-                elementAway.textContent = resLive.events[i].awayTeam.shortName
-                divAway.appendChild(elementAway)
-                // SCORE AWAY
-                const scoreAway = document.createElement('div')
-                scoreAway.id = 'score-away'
-                scoreAway.textContent = resLive.events[i].awayScore.current
-                divAway.appendChild(scoreAway)
-                // DIV HOME
-                const divHome = document.createElement('div')
-                divHome.id = 'div-home'
-                divHome.setAttribute('class', 'd-flex justify-content-between')
-                elementCol.appendChild(divHome)
-                // HOME TEAM
-                const elementHome = document.createElement('div')
-                elementHome.setAttribute('class', 'home-team')
-                elementHome.id = resLive.events[i].homeTeam.shortName.toLowerCase()
-                elementHome.textContent = resLive.events[i].homeTeam.shortName
-                divHome.appendChild(elementHome)
-                // SCORE HOME
-                const scoreHome = document.createElement('div')
-                scoreHome.id = 'score-home'
-                scoreHome.textContent = resLive.events[i].homeScore.current
-                divHome.appendChild(scoreHome)
-                // SEPARATOR
-                const separator = document.createElement('hr')
-                elementCol.appendChild(separator)
-                // SHOW ACTUAL INNING
-                const currentInning = document.createElement('div')
-                currentInning.id = 'current-inning'
-                currentInning.textContent = resLive.events[i].status.description
-                elementCol.appendChild(currentInning)
-                // ON CLICK SHOW LINEUPS
-                elementCol.addEventListener('click', () => {
-                    MATCH_ID = resLive.events[i].id
-                    const awayTeamName = resLive.events[i].awayTeam.shortName
-                    const homeTeamName = resLive.events[i].homeTeam.shortName
-                    fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
-                })
-            }
-        }
-    }
-    if (resLive.events.length < 1 || resLive.events[0].tournament.name !== 'MLB') {
-        const elementNoMatches = document.createElement('h5')
-        elementNoMatches.id = 'no-match-found'
-        elementNoMatches.setAttribute('class', 'mt-3 text-center')
-        elementNoMatches.textContent = 'No Matches Found'
-        CONTAINER.appendChild(elementNoMatches)
+    const newsContainer = document.createElement('div')
+    newsContainer.id = 'news-container'
+    newsContainer.setAttribute('class', 'd-flex justify-content-evenly')
+    CONTAINER.appendChild(newsContainer)
+    for (let i = 0; i < dataNews.news.length; i++) {
+        const newsDiv = document.createElement('div')
+        newsDiv.id = 'news-div'
+        newsDiv.setAttribute('class', 'card')
+        newsDiv.setAttribute('style', 'width: 18rem;')
+        newsContainer.appendChild(newsDiv)
+        const imgNews = document.createElement('img')
+        imgNews.id = 'img-news'
+        imgNews.setAttribute('class', 'card-img-top')
+        imgNews.src = dataNews.news[i].image
+        newsDiv.appendChild(imgNews)
+        const divBodyCardNews = document.createElement('div')
+        divBodyCardNews.id = 'div-body-card-news'
+        divBodyCardNews.setAttribute('class', 'card-body d-flex flex-column p-2')
+        newsDiv.appendChild(divBodyCardNews)
+        const publishDateNews = document.createElement('span')
+        publishDateNews.id = 'publish-date-news'
+        publishDateNews.textContent = dataNews.news[i].publishDate
+        divBodyCardNews.appendChild(publishDateNews)
+        const titleNews = document.createElement('a')
+        titleNews.id = 'title-news'
+        titleNews.setAttribute('class', 'card-title')
+        titleNews.href = dataNews.news[i].url
+        titleNews.textContent = dataNews.news[i].title
+        divBodyCardNews.appendChild(titleNews)
     }
 }
 // FETCH LINEUPS
@@ -454,7 +417,7 @@ const getSchedule = (dataSchedule) => {
     // //////////////////GAMES NOT STARTED////////////////////////////////////////////////
     for (let i = 0; i < dataSchedule.events.length; i++) {
         if (dataSchedule.events[i].tournament.name === 'MLB' &&
-         dataSchedule.events[i].status.description !== 'Ended' && dataSchedule.events[i].status.description !== 'AET') {
+            dataSchedule.events[i].status.description !== 'Ended' && dataSchedule.events[i].status.description !== 'AET') {
             // DIV MATCH CARDS
             const matchCard = document.createElement('div')
             matchCard.id = 'match-card-schedule'
@@ -501,7 +464,7 @@ const getSchedule = (dataSchedule) => {
             try {
                 hitsAway = dataSchedule.events[i].awayScore.inningsBaseball.hits
                 errorsAway = dataSchedule.events[i].awayScore.inningsBaseball.errors
-            } catch(error) {
+            } catch (error) {
                 hitsAway = 0
                 errorsAway = 0
             }
@@ -522,7 +485,7 @@ const getSchedule = (dataSchedule) => {
             try {
                 hitsHome = dataSchedule.events[i].homeScore.inningsBaseball.hits
                 errorsHome = dataSchedule.events[i].homeScore.inningsBaseball.errors
-            } catch(error) {
+            } catch (error) {
                 hitsHome = 0
                 errorsHome = 0
             }
@@ -540,12 +503,19 @@ const getSchedule = (dataSchedule) => {
             cardFoot.setAttribute('class', 'text-end')
             cardFoot.textContent = dataSchedule.events[i].status.description
             divCard.appendChild(cardFoot)
+            divCard.addEventListener('click', () => {
+                MATCH_ID = dataSchedule.events[i].id
+                const awayTeamName = dataSchedule.events[i].awayTeam.shortName
+                const homeTeamName = dataSchedule.events[i].homeTeam.shortName
+                fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
+            })
         }
     }
     // ///////////////////SHOW GAMES ENDED//////////////////
     for (let i = 0; i < dataSchedule.events.length; i++) {
         if (dataSchedule.events[i].tournament.name === 'MLB' &&
-            dataSchedule.events[i].status.description !== 'Not started') {
+            dataSchedule.events[i].status.description !== 'Not started' &&
+            dataSchedule.events[i].status.type !== 'inprogress') {
             // DIV MATCH CARDS
             const matchCard = document.createElement('div')
             matchCard.id = 'match-card-schedule'
@@ -631,6 +601,12 @@ const getSchedule = (dataSchedule) => {
             cardFoot.setAttribute('class', 'text-end')
             cardFoot.textContent = dataSchedule.events[i].status.description
             divCard.appendChild(cardFoot)
+            divCard.addEventListener('click', () => {
+                MATCH_ID = dataSchedule.events[i].id
+                const awayTeamName = dataSchedule.events[i].awayTeam.shortName
+                const homeTeamName = dataSchedule.events[i].homeTeam.shortName
+                fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
+            })
         }
     }
 }

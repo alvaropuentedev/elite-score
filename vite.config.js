@@ -1,7 +1,11 @@
-const path = require('path')
-
-export default {
-    root: path.resolve(__dirname, 'src'),
+import { defineConfig } from 'vite'
+import path from 'path'
+const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+const base = mode === 'production' ? '/' + path.basename(process.cwd()) + '/' : '/'
+export default defineConfig({
+    root: 'src',
+    base,
+    mode,
     build: {
         outDir: '../dist'
     },
@@ -9,4 +13,4 @@ export default {
         port: 8080,
         host: true
     }
-}
+})
