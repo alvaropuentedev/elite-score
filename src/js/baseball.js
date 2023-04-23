@@ -1,6 +1,11 @@
+
 const CONTAINER = document.querySelector('#container')
 const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
-let MATCH_ID
+let MATCH_ID, TODAY_DATE
+// ONLOAD WINDOW
+window.addEventListener('load', () => {
+    fetchDataSchedule(getTodayDate())
+})
 // FETCH HEADER
 const options = {
     method: 'GET',
@@ -22,11 +27,15 @@ NAV_BASEBALL_LINK.addEventListener('click', () => {
     document.querySelector('.box-score-reload').style.display = 'none'
 })
 
-// ONLOAD MENU
-window.addEventListener('load', () => {
-    createMenu()
-    document.querySelector('.box-score-reload').style.display = 'none'
-})
+const getTodayDate = () => {
+    const date = new Date()
+    const day = date.getDate()
+    const month = date.getMonth() + 1
+    const year = date.getFullYear()
+
+    TODAY_DATE = `${day}/${month}/${year}`
+    return TODAY_DATE
+}
 // GET TIME
 const toDateTime = (secs) => {
     const t = new Date(1970, 0, 1)
@@ -43,15 +52,22 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // ///////////////////////////////////MENU////////////////////////
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light bg-dark rounded d-flex justify-content-evenly justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light rounded d-flex justify-content-evenly justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     // NEWS
-    const optionLiveMatch = document.createElement('span')
-    optionLiveMatch.id = 'option-menu'
-    optionLiveMatch.setAttribute('class', 'text-white material-icons')
-    optionLiveMatch.textContent = 'newspaper'
-    navMenuContainer.appendChild(optionLiveMatch)
-    optionLiveMatch.addEventListener('click', () => { fetchNews() })
+    const optionNews = document.createElement('span')
+    optionNews.id = 'option-menu'
+    optionNews.setAttribute('class', 'text-white material-icons')
+    optionNews.textContent = 'newspaper'
+    navMenuContainer.appendChild(optionNews)
+    optionNews.addEventListener('click', () => { fetchNews() })
+    // HIGHLIGHTS
+    const optionHighlights = document.createElement('span')
+    optionHighlights.id = 'option-menu'
+    optionHighlights.setAttribute('class', 'option-highlights text-white material-icons')
+    optionHighlights.textContent = 'tv'
+    navMenuContainer.appendChild(optionHighlights)
+    optionHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
     // SCHEDULE
     const optionSchedule = document.createElement('span')
     optionSchedule.id = 'option-menu'
@@ -59,14 +75,7 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     optionSchedule.textContent = 'calendar_month'
     navMenuContainer.appendChild(optionSchedule)
     optionSchedule.addEventListener('click', () => {
-        const date = new Date()
-        const day = date.getDate()
-        const month = date.getMonth() + 1
-        const year = date.getFullYear()
-
-        const todayDate = `${day}/${month}/${year}`
-        fetchDataSchedule(todayDate)
-        console.log(todayDate)
+        fetchDataSchedule(getTodayDate())
     })
     // LINEUPS REFRESH
     const optionRefresh = document.createElement('span')
@@ -80,11 +89,19 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 // FETCH NEWS
 const fetchNews = async () => {
     const urlNews = 'https://allscores.p.rapidapi.com/api/allscores/news?sport=7&timezone=Europe%2FMadrid&langId=1'
-    // const res = await fetch(urlNews, optionsNews)
-    const res = await fetch('../assets/news.json')
+    const res = await fetch(urlNews, optionsNews)
+    // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
     getNews(dataNews)
     console.log(dataNews)
+    saveJSONToFile('prueba', dataNews)
+}
+// SAVE NEWS IN JSON FILE
+const saveJSONToFile = async (filename, data) => {
+    const fileHandle = await window.showSaveFilePicker()
+    const writable = await fileHandle.createWritable()
+    await writable.write(JSON.stringify(data))
+    await writable.close()
 }
 
 // FUNC GET NEWS
@@ -148,6 +165,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu(MATCH_ID, awayTeamName, homeTeamName)
+    window.scrollTo()
     // ROW
     const elementRow = document.createElement('div')
     elementRow.id = 'box-score-container'
@@ -399,18 +417,30 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
 }
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
-    const urlLiveScores = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
-    const res = await fetch(urlLiveScores, options)
+    const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
+    const res = await fetch(urlSchedule, options)
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
     getSchedule(data)
     console.log(data)
+}
+
+// FETCH HIGHLIGHTS
+const fetchMatchHighlights = async (matchId) => {
+    const urlhighlight = `https://baseballapi.p.rapidapi.com/api/baseball/match/${matchId}/highlights`
+    const res = await fetch(urlhighlight, options)
+    // const resLive = await fetch('liveBaseballMatch.json')
+    const data = await res.json()
+    getHighlihts(data)
+    console.log(data)
+    console.log(matchId)
 }
 // ////////////////////////////////////////FUNC SCHEDULE//////////////////////////////////////////////
 const getSchedule = (dataSchedule) => {
     CONTAINER.innerHTML = ''
     createMenu()
     document.querySelector('.box-score-reload').style.display = 'none'
+    document.querySelector('.option-highlights').style.display = 'none'
     const cardsContainer = document.createElement('div')
     cardsContainer.id = 'cards-container'
     cardsContainer.setAttribute('class', 'd-flex justify-content-center row')
@@ -418,7 +448,9 @@ const getSchedule = (dataSchedule) => {
     // //////////////////GAMES NOT STARTED////////////////////////////////////////////////
     for (let i = 0; i < dataSchedule.events.length; i++) {
         if (dataSchedule.events[i].tournament.name === 'MLB' &&
-            dataSchedule.events[i].status.description !== 'Ended' && dataSchedule.events[i].status.description !== 'AET') {
+            dataSchedule.events[i].status.description !== 'Ended' &&
+            dataSchedule.events[i].status.description !== 'AET' &&
+            dataSchedule.events[i].status.description !== 'Postponed') {
             // DIV MATCH CARDS
             const matchCard = document.createElement('div')
             matchCard.id = 'match-card-schedule'
@@ -610,4 +642,34 @@ const getSchedule = (dataSchedule) => {
             })
         }
     }
+}
+// GET HIGHLIGHTS
+const getHighlihts = (dataHighlights) => {
+    console.log(dataHighlights)
+    CONTAINER.innerHTML = ''
+    // MENU
+    createMenu()
+    document.querySelector('.box-score-reload').style.display = 'none'
+    const highlightContainer = document.createElement('div')
+    highlightContainer.id = 'highlights-container'
+    highlightContainer.setAttribute('class', 'd-flex justify-content-evenly')
+    CONTAINER.appendChild(highlightContainer)
+    const divHighlights = document.createElement('div')
+    divHighlights.id = 'div-highlights'
+    divHighlights.setAttribute('style', 'width: 50%;')
+    divHighlights.setAttribute('class', '')
+    highlightContainer.appendChild(divHighlights)
+    const divBodyHighlights = document.createElement('div')
+    divBodyHighlights.setAttribute('class', '')
+    divHighlights.appendChild(divBodyHighlights)
+    const titleHighlights = document.createElement('a')
+    titleHighlights.id = 'title-highlights'
+    titleHighlights.setAttribute('class', '')
+    titleHighlights.href = dataHighlights.highlights[0].url
+    divBodyHighlights.appendChild(titleHighlights)
+    const imgHightlights = document.createElement('img')
+    imgHightlights.setAttribute('class', 'card-img-top')
+    imgHightlights.setAttribute('style', 'height: 30rem; border-radius: 12px;')
+    imgHightlights.src = dataHighlights.highlights[0].thumbnailUrl
+    titleHighlights.appendChild(imgHightlights)
 }

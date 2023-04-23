@@ -7,6 +7,7 @@
   --athletics: #006241;
   --blue-jays: #134a8e;
   --braves: #bb0c2f;
+  --brewers: #0a2351;
   --cardinals: #c41e3b;
   --cubs: #0d3386;
   --diamondbacks: #ab0002;
@@ -66,28 +67,23 @@
 #nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
   font-family: Roboto, sans-serif;
   font-size: 16px;
-}
-#nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer :hove{
-  text-decoration: underline;
+  color: #201815;
 }
 
-#news-container{
-  margin-top: 1rem;
+#news-container, #highlights-container{
+  margin-top: 3rem;
 }
 
-#news-div {
+#news-div, #div-highlights {
   font-family: Roboto, sans-serif;
 }
 
-#title-news {
+#title-news, #title-highlights {
   color: inherit;
   text-decoration: none;
 }
 
-
-#cards-container,
-#title,
-#lineup-match {
+#cards-container, #title, #lineup-match {
   margin-top: 5%;
   gap: 1.09em;
 }
@@ -205,7 +201,7 @@
 
 #pitchers-athletics,
 #batters-athletics {
-  background-color: var(--yankees);
+  background-color: var(--athletics);
   color: white;
   justify-content: center;
   font-size: small;
@@ -390,6 +386,18 @@
   font-size: small;
 }
 
+#brewers {
+  color: var(--brewers);
+}
+
+#pitchers-brewers,
+#batters-brewers {
+  background-color: var(--brewers);
+  color: white;
+  justify-content: center;
+  font-size: small;
+}
+
 #royals {
   color: var(--royals);
 }
@@ -475,11 +483,11 @@ div[id='batters-blue jays'] {
 }
 
 div[id='white sox'], td[id='white sox'] {
-  color: var(--red);
+  color: var(--whitesox);
 }
 
-div[id='pitchers-White Sox'],
-div[id='batters-White Sox'] {
+div[id='pitchers-white sox'],
+div[id='batters-white sox'] {
   background-color: var(--whitesox);
   color: white;
   justify-content: center;
