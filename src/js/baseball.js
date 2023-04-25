@@ -1,11 +1,11 @@
-
-const CONTAINER = document.querySelector('#container')
-const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
-let MATCH_ID, TODAY_DATE
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
     fetchDataSchedule(getTodayDate())
 })
+
+const CONTAINER = document.querySelector('#container')
+const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
+let MATCH_ID, TODAY_DATE
 // FETCH HEADER
 const options = {
     method: 'GET',
@@ -652,7 +652,7 @@ const getHighlihts = (dataHighlights) => {
     document.querySelector('.box-score-reload').style.display = 'none'
     const highlightContainer = document.createElement('div')
     highlightContainer.id = 'highlights-container'
-    highlightContainer.setAttribute('class', 'd-flex justify-content-evenly')
+    highlightContainer.setAttribute('class', 'd-flex justify-content-center')
     CONTAINER.appendChild(highlightContainer)
     const divHighlights = document.createElement('div')
     divHighlights.id = 'div-highlights'
@@ -668,8 +668,9 @@ const getHighlihts = (dataHighlights) => {
     titleHighlights.href = dataHighlights.highlights[0].url
     divBodyHighlights.appendChild(titleHighlights)
     const imgHightlights = document.createElement('img')
+    imgHightlights.id = 'card-img-hightlights'
     imgHightlights.setAttribute('class', 'card-img-top')
-    imgHightlights.setAttribute('style', 'height: 30rem; border-radius: 12px;')
+    imgHightlights.setAttribute('style', 'border-radius: 12px;')
     imgHightlights.src = dataHighlights.highlights[0].thumbnailUrl
     titleHighlights.appendChild(imgHightlights)
 }
