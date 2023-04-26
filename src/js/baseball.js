@@ -1,32 +1,18 @@
+const CONTAINER = document.querySelector('#container')
+const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
+let MATCH_ID, TODAY_DATE
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
     fetchDataSchedule(getTodayDate())
 })
 
-const CONTAINER = document.querySelector('#container')
-const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
-let MATCH_ID, TODAY_DATE
-// FETCH HEADER
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '3aefc1e7bamshd83a082017e807dp1102d7jsn7ea4642214b9',
-        'X-RapidAPI-Host': 'baseballapi.p.rapidapi.com'
-    }
-}
-const optionsNews = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '3aefc1e7bamshd83a082017e807dp1102d7jsn7ea4642214b9',
-        'X-RapidAPI-Host': 'allscores.p.rapidapi.com'
-    }
-}
 NAV_BASEBALL_LINK.addEventListener('click', () => {
     CONTAINER.innerHTML = ''
     createMenu()
     document.querySelector('.box-score-reload').style.display = 'none'
 })
 
+// GET TODAY DAY
 const getTodayDate = () => {
     const date = new Date()
     const day = date.getDate()
@@ -60,7 +46,9 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     optionNews.setAttribute('class', 'text-white material-icons')
     optionNews.textContent = 'newspaper'
     navMenuContainer.appendChild(optionNews)
-    optionNews.addEventListener('click', () => { fetchNews() })
+    optionNews.addEventListener('click', () => {
+        fetchNews()
+    })
     // HIGHLIGHTS
     const optionHighlights = document.createElement('span')
     optionHighlights.id = 'option-menu'
@@ -88,20 +76,12 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 
 // FETCH NEWS
 const fetchNews = async () => {
-    const urlNews = 'https://allscores.p.rapidapi.com/api/allscores/news?sport=7&timezone=Europe%2FMadrid&langId=1'
-    const res = await fetch(urlNews, optionsNews)
+    const urlNews = 'http://192.168.1.252:3001/news'
+    const res = await fetch(urlNews)
     // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
     getNews(dataNews)
     console.log(dataNews)
-    saveJSONToFile('prueba', dataNews)
-}
-// SAVE NEWS IN JSON FILE
-const saveJSONToFile = async (filename, data) => {
-    const fileHandle = await window.showSaveFilePicker()
-    const writable = await fileHandle.createWritable()
-    await writable.write(JSON.stringify(data))
-    await writable.close()
 }
 
 // FUNC GET NEWS
@@ -146,8 +126,8 @@ const getNews = (dataNews) => {
 // FETCH LINEUPS
 const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     try {
-        const urlTeamLineupBaseball = `https://baseballapi.p.rapidapi.com/api/baseball/match/${MATCH_ID}/lineups`
-        const resLineup = await fetch(urlTeamLineupBaseball, options)
+        const urlTeamLineupBaseball = `http://192.168.1.252:3001/lineups?matchId=${MATCH_ID}`
+        const resLineup = await fetch(urlTeamLineupBaseball)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
         showLineups(dataLineup, awayTeamName, homeTeamName)
@@ -417,18 +397,18 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
 }
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
-    const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
-    const res = await fetch(urlSchedule, options)
+    const urlSchedule = `http://192.168.1.252:3001/schedule?todayDate=${todayDate}`
+    const res = await fetch(urlSchedule)
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
     getSchedule(data)
-    console.log(data)
+    console.log(todayDate)
 }
 
 // FETCH HIGHLIGHTS
 const fetchMatchHighlights = async (matchId) => {
     const urlhighlight = `https://baseballapi.p.rapidapi.com/api/baseball/match/${matchId}/highlights`
-    const res = await fetch(urlhighlight, options)
+    const res = await fetch(urlhighlight)
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
     getHighlihts(data)
