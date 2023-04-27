@@ -22,6 +22,7 @@ const getTodayDate = () => {
     TODAY_DATE = `${day}/${month}/${year}`
     return TODAY_DATE
 }
+
 // GET TIME
 const toDateTime = (secs) => {
     const t = new Date(1970, 0, 1)
@@ -38,7 +39,7 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // ///////////////////////////////////MENU////////////////////////
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg sticky-top navbar-light rounded d-flex justify-content-evenly justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light d-flex justify-content-evenly justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     // NEWS
     const optionNews = document.createElement('span')
@@ -76,7 +77,7 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 
 // FETCH NEWS
 const fetchNews = async () => {
-    const urlNews = 'http://192.168.1.252:3001/news'
+    const urlNews = 'http://192.168.1.252:3000/news'
     const res = await fetch(urlNews)
     // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
@@ -126,7 +127,7 @@ const getNews = (dataNews) => {
 // FETCH LINEUPS
 const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     try {
-        const urlTeamLineupBaseball = `http://192.168.1.252:3001/lineups?matchId=${MATCH_ID}`
+        const urlTeamLineupBaseball = `http://192.168.1.252:3000/lineups?matchId=${MATCH_ID}`
         const resLineup = await fetch(urlTeamLineupBaseball)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
@@ -397,7 +398,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
 }
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
-    const urlSchedule = `http://192.168.1.252:3001/schedule?todayDate=${todayDate}`
+    const urlSchedule = `http://192.168.1.252:3000/schedule?todayDate=${todayDate}`
     const res = await fetch(urlSchedule)
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
@@ -407,13 +408,21 @@ const fetchDataSchedule = async (todayDate) => {
 
 // FETCH HIGHLIGHTS
 const fetchMatchHighlights = async (matchId) => {
-    const urlhighlight = `https://baseballapi.p.rapidapi.com/api/baseball/match/${matchId}/highlights`
-    const res = await fetch(urlhighlight)
-    // const resLive = await fetch('liveBaseballMatch.json')
-    const data = await res.json()
-    getHighlihts(data)
-    console.log(data)
-    console.log(matchId)
+    try {
+        const urlhighlight = `http://192.168.1.252:3000/highlights?matchId=${matchId}`
+        const res = await fetch(urlhighlight)
+        // const resLive = await fetch('liveBaseballMatch.json')
+        const data = await res.json()
+        getHighlihts(data)
+        console.log(data)
+        console.log(matchId)
+    } catch (error) {
+        // NO HIGHLIGHS FOUND MESSAGE
+        const noLineupsFound = document.createElement('h5')
+        noLineupsFound.setAttribute('class', 'mt-3 text-center')
+        noLineupsFound.textContent = 'No Highlights Found'
+        CONTAINER.appendChild(noLineupsFound)
+    }
 }
 // ////////////////////////////////////////FUNC SCHEDULE//////////////////////////////////////////////
 const getSchedule = (dataSchedule) => {

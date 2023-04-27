@@ -1,4 +1,17 @@
 @media (width <= 500px) {
+    #nav-menu {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+        border-radius: 0%;
+    }
+
+    #option-menu {
+        font-size: 20px;
+    }
+
     #lineup-match {
         margin-top: 8%;
         font-size: 14px;
@@ -7,9 +20,6 @@
         max-height: 100rem;
     }
 
-    #option-menu {
-        font-size: 20px;
-    }
 
     #title {
         margin-top: 5rem;

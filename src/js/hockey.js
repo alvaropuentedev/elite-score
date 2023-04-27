@@ -30,7 +30,7 @@ const createMenu = () => {
     // MENU
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light rounded d-flex justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     // LIVE
     const optionLiveMatch = document.createElement('span')

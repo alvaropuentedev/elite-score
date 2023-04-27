@@ -1,10 +1,12 @@
 const path = require('path')
-const API_KEY = process.env.API_KEY
 const controller = {}
 
 controller.baseball = (request, response) => {
     response.sendFile(path.resolve(__dirname, '../baseball.html'))
 }
+
+const API_KEY = process.env.API_KEY
+
 // FETCH HEADER
 const options = {
     method: 'GET',
@@ -32,9 +34,8 @@ controller.news = (request, response) => {
     fetchNews()
 }
 
-// FETCH SCHEDULE BASEBALL
+// FETCH SCHEDULE
 controller.schedule = (request, response) => {
-    // FETCH SCHEDULE
     const fetchDataSchedule = async (todayDate) => {
         todayDate = request.query.todayDate
         const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
@@ -44,9 +45,9 @@ controller.schedule = (request, response) => {
     }
     fetchDataSchedule()
 }
+
 // FETCH LINEUPS BASEBALL
 controller.lineups = (request, response) => {
-    // FETCH LINEUPS
     const fetchLineups = async (matchId) => {
         matchId = request.query.matchId
         const urlTeamLineupBaseball = `https://baseballapi.p.rapidapi.com/api/baseball/match/${matchId}/lineups`
@@ -56,5 +57,18 @@ controller.lineups = (request, response) => {
         response.json(dataLineup)
     }
     fetchLineups()
+}
+
+// FETCH HIGHLIGHTS
+controller.hightlights = (request, response) => {
+    const fetchMatchHighlights = async (matchId) => {
+        matchId = request.query.matchId
+        const urlhighlight = `https://baseballapi.p.rapidapi.com/api/baseball/match/${matchId}/highlights`
+        const resHighlights = await fetch(urlhighlight, options)
+        // const resLive = await fetch('liveBaseballMatch.json')
+        const dataHightlights = await resHighlights.json()
+        response.json(dataHightlights)
+    }
+    fetchMatchHighlights()
 }
 module.exports = controller
