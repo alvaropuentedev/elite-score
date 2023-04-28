@@ -91,6 +91,7 @@ const getNews = (dataNews) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
+    document.querySelector('.option-highlights').style.display = 'none'
     document.querySelector('.box-score-reload').style.display = 'none'
     const newsContainer = document.createElement('div')
     newsContainer.id = 'news-container'
@@ -408,21 +409,13 @@ const fetchDataSchedule = async (todayDate) => {
 
 // FETCH HIGHLIGHTS
 const fetchMatchHighlights = async (matchId) => {
-    try {
-        const urlhighlight = `http://192.168.1.252:3000/highlights?matchId=${matchId}`
-        const res = await fetch(urlhighlight)
-        // const resLive = await fetch('liveBaseballMatch.json')
-        const data = await res.json()
-        getHighlihts(data)
-        console.log(data)
-        console.log(matchId)
-    } catch (error) {
-        // NO HIGHLIGHS FOUND MESSAGE
-        const noLineupsFound = document.createElement('h5')
-        noLineupsFound.setAttribute('class', 'mt-3 text-center')
-        noLineupsFound.textContent = 'No Highlights Found'
-        CONTAINER.appendChild(noLineupsFound)
-    }
+    const urlhighlight = `http://192.168.1.252:3000/highlights?matchId=${matchId}`
+    const res = await fetch(urlhighlight)
+    // const resLive = await fetch('liveBaseballMatch.json')
+    const data = await res.json()
+    getHighlihts(data)
+    console.log(data)
+    console.log(matchId)
 }
 // ////////////////////////////////////////FUNC SCHEDULE//////////////////////////////////////////////
 const getSchedule = (dataSchedule) => {
@@ -638,6 +631,7 @@ const getHighlihts = (dataHighlights) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
+    document.querySelector('.option-highlights').style.display = 'none'
     document.querySelector('.box-score-reload').style.display = 'none'
     const highlightContainer = document.createElement('div')
     highlightContainer.id = 'highlights-container'

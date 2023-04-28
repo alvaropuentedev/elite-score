@@ -15,6 +15,14 @@ const options = {
         'X-RapidAPI-Host': 'baseballapi.p.rapidapi.com'
     }
 }
+// FETCH HEADER
+const optionsAllSports = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': API_KEY,
+        'X-RapidAPI-Host': 'allsportsapi2.p.rapidapi.com'
+    }
+}
 
 // FETCH NEWS
 controller.news = (request, response) => {
@@ -38,8 +46,10 @@ controller.news = (request, response) => {
 controller.schedule = (request, response) => {
     const fetchDataSchedule = async (todayDate) => {
         todayDate = request.query.todayDate
-        const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
-        const res = await fetch(urlSchedule, options)
+        // const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
+        const urlSchedule = `https://allsportsapi2.p.rapidapi.com/api/baseball/matches/${todayDate}`
+        // const res = await fetch(urlSchedule, options)
+        const res = await fetch(urlSchedule, optionsAllSports)
         const dataSchedule = await res.json()
         response.json(dataSchedule)
     }
@@ -66,8 +76,15 @@ controller.hightlights = (request, response) => {
         const urlhighlight = `https://baseballapi.p.rapidapi.com/api/baseball/match/${matchId}/highlights`
         const resHighlights = await fetch(urlhighlight, options)
         // const resLive = await fetch('liveBaseballMatch.json')
-        const dataHightlights = await resHighlights.json()
-        response.json(dataHightlights)
+        try {
+            if (!resHighlights.ok) {
+                throw new Error(`HTTP error: ${resHighlights.status}`)
+            }
+            const dataHightlights = await resHighlights.json()
+            response.json(dataHightlights)
+        } catch (error) {
+            console.error(`Could not fetch data: ${error}`)
+        }
     }
     fetchMatchHighlights()
 }
