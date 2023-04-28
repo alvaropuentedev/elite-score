@@ -1,4 +1,8 @@
 @media (width <= 500px) {
+    #container {
+        padding-bottom: 4rem;
+    }
+
     #nav-menu {
         position: fixed;
         right: 0;
@@ -20,6 +24,17 @@
         max-height: 100rem;
     }
 
+    #nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        color: #201815;
+        max-width: fit-content;
+    }
+
+    .navbar-nav {
+        max-width: 6rem;
+        margin: auto;
+    }
 
     #title {
         margin-top: 5rem;

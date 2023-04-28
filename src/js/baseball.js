@@ -29,9 +29,12 @@ const toDateTime = (secs) => {
     t.setSeconds(secs)
     let hours = t.getHours() + 2
     const minutes = String(t.getMinutes()).padStart(2, '0')
-    const day = t.getDate()
+    let day = t.getDate()
     const month = t.getMonth() + 1
     hours = hours % 24
+    if (hours === 0 || hours === 1) {
+        day = day + 1
+    }
     return day + '/' + month + '  ' + hours + ':' + minutes
 }
 // FUNC CREATE MENU
@@ -73,6 +76,13 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     optionRefresh.textContent = 'refresh'
     navMenuContainer.appendChild(optionRefresh)
     optionRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
+    // HOME
+    const home = document.createElement('span')
+    home.id = 'option-menu'
+    home.setAttribute('class', 'home text-white material-icons')
+    home.textContent = 'home'
+    navMenuContainer.appendChild(home)
+    home.addEventListener('click', () => { window.location = '/' })
 }
 
 // FETCH NEWS
