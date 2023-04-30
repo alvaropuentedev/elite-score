@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-# elite-score
+# ELITE SCORE
 
 <!-- TABLE OF CONTENTS -->
 <details>
