@@ -170,5 +170,5 @@ Temporary Items
 .apdisk
 
 # Files
-hockey.js
-soccer.js
+**/hockey.js
+**/soccer.js
