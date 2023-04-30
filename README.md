@@ -55,7 +55,7 @@ This is an example of how you can use the code
    ```sh
    npm install
    ```
-4. Enter your API in `.env`
+4. Enter your API in `.env`(create this file in the proyect root)
    ```js
    API_KEY = 'ENTER YOUR API';
    ```
