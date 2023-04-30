@@ -3,6 +3,12 @@
         padding-bottom: 4rem;
     }
 
+    #main-menu {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+    }
+
     #nav-menu {
         position: fixed;
         right: 0;
@@ -18,10 +24,14 @@
 
     #lineup-match {
         margin-top: 8%;
-        font-size: 14px;
+        font-size: 13px;
         min-width: 10rem;
         max-width: 40rem;
         max-height: 100rem;
+    }
+
+    #lineups-container {
+        max-width: fit-content;
     }
 
     #nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
@@ -78,7 +88,16 @@
     }
 
     #card-img-hightlights {
-        min-width: 23rem;
-        min-height: 18rem;
+        width: 200%;
+    }
+
+    #highlights-container {
+        justify-content: left;
+    }
+
+    .spinner-border{
+        margin-top: 80%;
+        margin-left: 45%;
+        z-index: 99;
     }
 }

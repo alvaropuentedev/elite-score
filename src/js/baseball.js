@@ -87,7 +87,7 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 
 // FETCH NEWS
 const fetchNews = async () => {
-    const urlNews = 'http://192.168.1.252:3000/news'
+    const urlNews = 'http://bruckecloud.asuscomm.com/news'
     const res = await fetch(urlNews)
     // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
@@ -138,7 +138,8 @@ const getNews = (dataNews) => {
 // FETCH LINEUPS
 const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     try {
-        const urlTeamLineupBaseball = `http://192.168.1.252:3000/lineups?matchId=${MATCH_ID}`
+        // const urlTeamLineupBaseball = `http://192.168.1.252:3000/lineups?matchId=${MATCH_ID}`
+        const urlTeamLineupBaseball = `http://bruckecloud.asuscomm.com/lineups?matchId=${MATCH_ID}`
         const resLineup = await fetch(urlTeamLineupBaseball)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
@@ -160,7 +161,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     window.scrollTo()
     // ROW
     const elementRow = document.createElement('div')
-    elementRow.id = 'box-score-container'
+    elementRow.id = 'lineups-container'
     CONTAINER.appendChild(elementRow)
     // ROW AWAY
     const elementRowAway = document.createElement('div')
@@ -409,9 +410,13 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
 }
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
-    const urlSchedule = `http://192.168.1.252:3000/schedule?todayDate=${todayDate}`
+    // const urlSchedule = `http://192.168.1.252:3000/schedule?todayDate=${todayDate}`
+    const urlSchedule = `http://bruckecloud.asuscomm.com/schedule?todayDate=${todayDate}`
     const res = await fetch(urlSchedule)
-    // const resLive = await fetch('liveBaseballMatch.json')
+    const loading = document.createElement('div')
+    loading.setAttribute('class', 'spinner-border')
+    loading.setAttribute('role', 'status')
+    CONTAINER.appendChild(loading)
     const data = await res.json()
     getSchedule(data)
     console.log(todayDate)
@@ -419,7 +424,8 @@ const fetchDataSchedule = async (todayDate) => {
 
 // FETCH HIGHLIGHTS
 const fetchMatchHighlights = async (matchId) => {
-    const urlhighlight = `http://192.168.1.252:3000/highlights?matchId=${matchId}`
+    // const urlhighlight = `http://192.168.1.252:3000/highlights?matchId=${matchId}`
+    const urlhighlight = `http://bruckecloud.asuscomm.com/highlights?matchId=${matchId}`
     const res = await fetch(urlhighlight)
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
@@ -645,7 +651,7 @@ const getHighlihts = (dataHighlights) => {
     document.querySelector('.box-score-reload').style.display = 'none'
     const highlightContainer = document.createElement('div')
     highlightContainer.id = 'highlights-container'
-    highlightContainer.setAttribute('class', 'd-flex justify-content-center')
+    highlightContainer.setAttribute('class', 'd-flex')
     CONTAINER.appendChild(highlightContainer)
     const divHighlights = document.createElement('div')
     divHighlights.id = 'div-highlights'
