@@ -50,6 +50,11 @@
         margin-top: 5rem;
     }
 
+    #title-img {
+        width: 100%;
+        margin: auto;
+    }
+
     #match-card {
         min-width: 10rem;
         max-width: 20rem;
