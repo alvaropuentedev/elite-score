@@ -24,7 +24,7 @@
 </details>
 
 ## About The Project
-Web site about sports score with diferents sports to follow
+Web site about sports score with diferents sports to follow, make fetch to API Rest in server side for get endpoints with the games data and use this in the front for show stats, highlights and more..
 
 ### Built With
 <br />

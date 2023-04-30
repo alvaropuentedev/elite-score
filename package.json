@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "nodemon app.js",
+    "server": "nodemon app.js",
+    "dev": "vite",
     "start": "node src/app.js",
     "build": "vite build",
     "preview": "vite preview"
