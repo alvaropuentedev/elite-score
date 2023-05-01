@@ -452,7 +452,7 @@ const getSchedule = (dataSchedule) => {
             // DIV MATCH CARDS
             const matchCard = document.createElement('div')
             matchCard.id = 'match-card-schedule'
-            matchCard.setAttribute('class', 'col shadow rounded text-start')
+            matchCard.setAttribute('class', 'col rounded text-start')
             cardsContainer.appendChild(matchCard)
             const divCard = document.createElement('div')
             divCard.id = 'div-card'
