@@ -87,7 +87,7 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
 
 // FETCH NEWS
 const fetchNews = async () => {
-    const urlNews = 'http://bruckecloud.asuscomm.com/news'
+    const urlNews = 'https://elite-score-alvaropuentedev.vercel.app/news'
     const res = await fetch(urlNews)
     // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
@@ -138,8 +138,7 @@ const getNews = (dataNews) => {
 // FETCH LINEUPS
 const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     try {
-        // const urlTeamLineupBaseball = `http://192.168.1.252:3000/lineups?matchId=${MATCH_ID}`
-        const urlTeamLineupBaseball = `http://bruckecloud.asuscomm.com/lineups?matchId=${MATCH_ID}`
+        const urlTeamLineupBaseball = `https://elite-score-alvaropuentedev.vercel.app/lineups?matchId=${MATCH_ID}`
         const resLineup = await fetch(urlTeamLineupBaseball)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
@@ -410,8 +409,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
 }
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
-    // const urlSchedule = `http://192.168.1.252:3000/schedule?todayDate=${todayDate}`
-    const urlSchedule = `http://bruckecloud.asuscomm.com/schedule?todayDate=${todayDate}`
+    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${todayDate}`
     const res = await fetch(urlSchedule)
     const loading = document.createElement('div')
     loading.setAttribute('class', 'spinner-border')
@@ -424,8 +422,7 @@ const fetchDataSchedule = async (todayDate) => {
 
 // FETCH HIGHLIGHTS
 const fetchMatchHighlights = async (matchId) => {
-    // const urlhighlight = `http://192.168.1.252:3000/highlights?matchId=${matchId}`
-    const urlhighlight = `http://bruckecloud.asuscomm.com/highlights?matchId=${matchId}`
+    const urlhighlight = `https://elite-score-alvaropuentedev.vercel.app/highlights?matchId=${matchId}`
     const res = await fetch(urlhighlight)
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
