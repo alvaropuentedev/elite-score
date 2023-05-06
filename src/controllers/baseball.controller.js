@@ -46,10 +46,10 @@ controller.news = (request, response) => {
 controller.schedule = (request, response) => {
     const fetchDataSchedule = async (todayDate) => {
         todayDate = request.query.todayDate
-        const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
-        const res = await fetch(urlSchedule, options)
-        // const urlSchedule = `https://allsportsapi2.p.rapidapi.com/api/baseball/matches/${todayDate}`
-        // const res = await fetch(urlSchedule, optionsAllSports)
+        // const urlSchedule = `https://baseballapi.p.rapidapi.com/api/baseball/matches/${todayDate}`
+        // const res = await fetch(urlSchedule, options)
+        const urlSchedule = `https://allsportsapi2.p.rapidapi.com/api/baseball/matches/${todayDate}`
+        const res = await fetch(urlSchedule, optionsAllSports)
         const dataSchedule = await res.json()
         response.json(dataSchedule)
     }
