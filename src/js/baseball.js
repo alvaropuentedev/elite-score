@@ -539,6 +539,13 @@ const getSchedule = (dataSchedule) => {
             })
         }
     }
+
+    // ////// TITLE GAMES ENDED ///////
+    const gamesEndedTitle = document.createElement('h2')
+    gamesEndedTitle.setAttribute('class', 'text-center')
+    gamesEndedTitle.textContent = 'GAMES ENDED'
+    cardsContainer.appendChild(gamesEndedTitle)
+
     // ///////////////////SHOW GAMES ENDED//////////////////
     for (let i = 0; i < dataSchedule.events.length; i++) {
         if (dataSchedule.events[i].tournament.name === 'MLB' &&
@@ -547,7 +554,7 @@ const getSchedule = (dataSchedule) => {
             // DIV MATCH CARDS
             const matchCard = document.createElement('div')
             matchCard.id = 'match-card-schedule'
-            matchCard.setAttribute('class', 'col shadow rounded text-start')
+            matchCard.setAttribute('class', 'col rounded text-start')
             cardsContainer.appendChild(matchCard)
             const divCard = document.createElement('div')
             divCard.id = 'div-card'
