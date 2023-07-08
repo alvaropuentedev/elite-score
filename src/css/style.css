@@ -100,7 +100,7 @@
   translate: -2rem;
 }
 
-#nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
+#nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer, h2{
   font-family: Roboto, sans-serif;
   font-size: 16px;
   color: #201815;

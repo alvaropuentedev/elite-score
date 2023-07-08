@@ -108,7 +108,7 @@ const getNews = (dataNews) => {
     newsContainer.setAttribute('class', 'd-flex justify-content-evenly')
     CONTAINER.appendChild(newsContainer)
     for (let i = 0; i < dataNews.news.length; i++) {
-        const newsDiv = document.createElement('div')
+        const newsDiv = document.createElement('article')
         newsDiv.id = 'news-div'
         newsDiv.setAttribute('class', 'card')
         newsDiv.setAttribute('style', 'width: 18rem; height: 20rem;')
@@ -447,7 +447,7 @@ const getSchedule = (dataSchedule) => {
             dataSchedule.events[i].status.description !== 'AET' &&
             dataSchedule.events[i].status.description !== 'Postponed') {
             // DIV MATCH CARDS
-            const matchCard = document.createElement('div')
+            const matchCard = document.createElement('card')
             matchCard.id = 'match-card-schedule'
             matchCard.setAttribute('class', 'col rounded text-start')
             cardsContainer.appendChild(matchCard)
@@ -542,6 +542,7 @@ const getSchedule = (dataSchedule) => {
 
     // ////// TITLE GAMES ENDED ///////
     const gamesEndedTitle = document.createElement('h2')
+    gamesEndedTitle.id = 'games-ended-title'
     gamesEndedTitle.setAttribute('class', 'text-center')
     gamesEndedTitle.textContent = 'GAMES ENDED'
     cardsContainer.appendChild(gamesEndedTitle)
@@ -552,7 +553,7 @@ const getSchedule = (dataSchedule) => {
             dataSchedule.events[i].status.description !== 'Not started' &&
             dataSchedule.events[i].status.type !== 'inprogress') {
             // DIV MATCH CARDS
-            const matchCard = document.createElement('div')
+            const matchCard = document.createElement('card')
             matchCard.id = 'match-card-schedule'
             matchCard.setAttribute('class', 'col rounded text-start')
             cardsContainer.appendChild(matchCard)
