@@ -42,12 +42,12 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // ///////////////////////////////////MENU////////////////////////
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light d-flex justify-content-evenly justify-content-center')
+    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
     // NEWS
     const optionNews = document.createElement('span')
     optionNews.id = 'option-menu'
-    optionNews.setAttribute('class', 'text-white material-icons')
+    optionNews.setAttribute('class', 'text-white me-5 material-icons')
     optionNews.textContent = 'newspaper'
     navMenuContainer.appendChild(optionNews)
     optionNews.addEventListener('click', () => {
@@ -56,14 +56,14 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // HIGHLIGHTS
     const optionHighlights = document.createElement('span')
     optionHighlights.id = 'option-menu'
-    optionHighlights.setAttribute('class', 'option-highlights text-white material-icons')
+    optionHighlights.setAttribute('class', 'option-highlights me-5 text-white material-icons')
     optionHighlights.textContent = 'tv'
     navMenuContainer.appendChild(optionHighlights)
     optionHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
     // SCHEDULE
     const optionSchedule = document.createElement('span')
     optionSchedule.id = 'option-menu'
-    optionSchedule.setAttribute('class', 'option-schedule text-white material-icons')
+    optionSchedule.setAttribute('class', 'option-schedule me-5 text-white material-icons')
     optionSchedule.textContent = 'calendar_month'
     navMenuContainer.appendChild(optionSchedule)
     optionSchedule.addEventListener('click', () => {
@@ -72,7 +72,7 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // LINEUPS REFRESH
     const optionRefresh = document.createElement('span')
     optionRefresh.id = 'option-menu'
-    optionRefresh.setAttribute('class', 'box-score-reload text-white material-icons')
+    optionRefresh.setAttribute('class', 'box-score-reload me-5 text-white material-icons')
     optionRefresh.textContent = 'refresh'
     navMenuContainer.appendChild(optionRefresh)
     optionRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })

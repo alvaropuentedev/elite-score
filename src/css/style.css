@@ -45,7 +45,7 @@
 }
 
 #main-menu {
-  background-color: #f3c77e;
+  background-color: #6d9397cf;
 }
 
 #title-img {
@@ -103,7 +103,7 @@
 #nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
   font-family: Roboto, sans-serif;
   font-size: 16px;
-  color: #201815;
+  color: #393c41;
 }
 
 #games-ended-title {
