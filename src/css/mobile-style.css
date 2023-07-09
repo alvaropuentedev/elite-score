@@ -10,12 +10,13 @@
     }
 
     #nav-menu {
-        position: fixed;
-        right: 0;
+        background-color: #f9f9fb;
+        border-radius: 0%;
         bottom: 0;
         left: 0;
+        position: fixed;
+        right: 0;
         z-index: 1030;
-        border-radius: 0%;
     }
 
     #option-menu {
@@ -46,6 +47,24 @@
         margin: auto;
     }
 
+    /* OPTION MENU */
+    #home-text, 
+    #news-text,
+    #schedule-text, 
+    #highlights-text, 
+    #refresh-text {
+        color:#201815;
+        font-family: Roboto, sans-serif;
+    }
+
+    #icon-home,
+    #icon-news,
+    #icon-hightlights,
+    #icon-schedule,
+    #icon-refresh {
+        color: #201815;
+    }
+
     #title {
         margin-top: 5rem;
     }
@@ -56,15 +75,15 @@
     }
 
     #match-card {
-        min-width: 10rem;
-        max-width: 20rem;
         max-height: 20rem;
+        max-width: 20rem;
+        min-width: 10rem;
     }
 
     #match-card-schedule{
-        min-width: 12rem;
-        max-width: 21rem;
         max-height: 14rem;
+        max-width: 21rem;
+        min-width: 12rem;
     }
 
     #news-container{

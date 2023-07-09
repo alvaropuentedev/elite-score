@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 NAV_BASEBALL_LINK.addEventListener('click', () => {
     CONTAINER.innerHTML = ''
     createMenu()
-    document.querySelector('.box-score-reload').style.display = 'none'
+    document.querySelector('#container-menu-refresh').style.display = 'none'
 })
 
 // GET TODAY DAY
@@ -42,47 +42,84 @@ const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // ///////////////////////////////////MENU////////////////////////
     const navMenuContainer = document.createElement('nav')
     navMenuContainer.id = 'nav-menu'
-    navMenuContainer.setAttribute('class', 'navbar navbar-expand-lg navbar-light d-flex justify-content-center')
     CONTAINER.appendChild(navMenuContainer)
+    const divMenuContainer = document.createElement('div')
+    divMenuContainer.setAttribute('class', 'd-flex text-center justify-content-evenly')
+    navMenuContainer.appendChild(divMenuContainer)
     // NEWS
-    const optionNews = document.createElement('span')
-    optionNews.id = 'option-menu'
-    optionNews.setAttribute('class', 'text-white me-5 material-icons')
-    optionNews.textContent = 'newspaper'
-    navMenuContainer.appendChild(optionNews)
-    optionNews.addEventListener('click', () => {
+    const iconNews = document.createElement('span')
+    iconNews.id = 'icon-news'
+    iconNews.setAttribute('class', 'material-icons')
+    iconNews.textContent = 'newspaper'
+    const newsText = document.createElement('p')
+    newsText.id = 'news-text'
+    newsText.textContent = 'News'
+    const containerMenuNews = document.createElement('div')
+    containerMenuNews.id = 'container-menu-news'
+    divMenuContainer.appendChild(containerMenuNews)
+    containerMenuNews.appendChild(iconNews)
+    containerMenuNews.appendChild(newsText)
+    containerMenuNews.addEventListener('click', () => {
         fetchNews()
     })
     // HIGHLIGHTS
-    const optionHighlights = document.createElement('span')
-    optionHighlights.id = 'option-menu'
-    optionHighlights.setAttribute('class', 'option-highlights me-5 text-white material-icons')
-    optionHighlights.textContent = 'tv'
-    navMenuContainer.appendChild(optionHighlights)
-    optionHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
+    const iconHighlights = document.createElement('span')
+    iconHighlights.id = 'icon-highlights'
+    iconHighlights.setAttribute('class', 'material-icons')
+    iconHighlights.textContent = 'tv'
+    const highlightsText = document.createElement('p')
+    highlightsText.id = 'highlights-text'
+    highlightsText.textContent = 'Highlights'
+    const containerMenuHighlights = document.createElement('div')
+    containerMenuHighlights.id = 'container-menu-highlights'
+    containerMenuHighlights.appendChild(iconHighlights)
+    containerMenuHighlights.appendChild(highlightsText)
+    divMenuContainer.appendChild(containerMenuHighlights)
+    containerMenuHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
     // SCHEDULE
-    const optionSchedule = document.createElement('span')
-    optionSchedule.id = 'option-menu'
-    optionSchedule.setAttribute('class', 'option-schedule me-5 text-white material-icons')
-    optionSchedule.textContent = 'calendar_month'
-    navMenuContainer.appendChild(optionSchedule)
-    optionSchedule.addEventListener('click', () => {
+    const iconSchedule = document.createElement('span')
+    iconSchedule.id = 'icon-schedule'
+    iconSchedule.setAttribute('class', 'material-icons')
+    iconSchedule.textContent = 'calendar_month'
+    const scheduleText = document.createElement('p')
+    scheduleText.id = 'schedule-text'
+    scheduleText.textContent = 'Schedule'
+    const containerMenuSchedule = document.createElement('div')
+    containerMenuSchedule.id = 'container-menu-schedule'
+    divMenuContainer.appendChild(containerMenuSchedule)
+    containerMenuSchedule.appendChild(iconSchedule)
+    containerMenuSchedule.appendChild(scheduleText)
+    containerMenuSchedule.addEventListener('click', () => {
         fetchDataSchedule(getTodayDate())
     })
     // LINEUPS REFRESH
-    const optionRefresh = document.createElement('span')
-    optionRefresh.id = 'option-menu'
-    optionRefresh.setAttribute('class', 'box-score-reload me-5 text-white material-icons')
-    optionRefresh.textContent = 'refresh'
-    navMenuContainer.appendChild(optionRefresh)
-    optionRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
+    const iconRefresh = document.createElement('span')
+    iconRefresh.id = 'icon-refresh'
+    iconRefresh.setAttribute('class', 'material-icons')
+    iconRefresh.textContent = 'refresh'
+    const refreshText = document.createElement('p')
+    refreshText.id = 'refresh-text'
+    refreshText.textContent = 'Refresh'
+    const containerMenuRefresh = document.createElement('div')
+    containerMenuRefresh.id = 'container-menu-refresh'
+    divMenuContainer.appendChild(containerMenuRefresh)
+    containerMenuRefresh.appendChild(iconRefresh)
+    containerMenuRefresh.appendChild(refreshText)
+    containerMenuRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
     // HOME
-    const home = document.createElement('span')
-    home.id = 'option-menu'
-    home.setAttribute('class', 'home text-white material-icons')
-    home.textContent = 'home'
-    navMenuContainer.appendChild(home)
-    home.addEventListener('click', () => { window.location = '/' })
+    const iconHome = document.createElement('span')
+    iconHome.id = 'icon-home'
+    iconHome.setAttribute('class', 'material-icons')
+    iconHome.textContent = 'home'
+    const homeText = document.createElement('p')
+    homeText.id = 'home-text'
+    homeText.textContent = 'Home'
+    const containerMenuHome = document.createElement('div')
+    containerMenuHome.id = 'container-menu-home'
+    divMenuContainer.appendChild(containerMenuHome)
+    containerMenuHome.appendChild(iconHome)
+    containerMenuHome.appendChild(homeText)
+    containerMenuHome.addEventListener('click', () => { window.location = '/' })
 }
 
 // FETCH NEWS
@@ -101,8 +138,8 @@ const getNews = (dataNews) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
-    document.querySelector('.option-highlights').style.display = 'none'
-    document.querySelector('.box-score-reload').style.display = 'none'
+    document.querySelector('#container-menu-highlights').style.display = 'none'
+    document.querySelector('#container-menu-refresh').style.display = 'none'
     const newsContainer = document.createElement('div')
     newsContainer.id = 'news-container'
     newsContainer.setAttribute('class', 'd-flex justify-content-evenly')
@@ -434,8 +471,8 @@ const fetchMatchHighlights = async (matchId) => {
 const getSchedule = (dataSchedule) => {
     CONTAINER.innerHTML = ''
     createMenu()
-    document.querySelector('.box-score-reload').style.display = 'none'
-    document.querySelector('.option-highlights').style.display = 'none'
+    document.querySelector('#container-menu-refresh').style.display = 'none'
+    document.querySelector('#container-menu-highlights').style.display = 'none'
     const cardsContainer = document.createElement('div')
     cardsContainer.id = 'cards-container'
     cardsContainer.setAttribute('class', 'd-flex justify-content-center row')
@@ -652,8 +689,8 @@ const getHighlihts = (dataHighlights) => {
     CONTAINER.innerHTML = ''
     // MENU
     createMenu()
-    document.querySelector('.option-highlights').style.display = 'none'
-    document.querySelector('.box-score-reload').style.display = 'none'
+    document.querySelector('#container-menu-highlights').style.display = 'none'
+    document.querySelector('#container-menu-refresh').style.display = 'none'
     const highlightContainer = document.createElement('div')
     highlightContainer.id = 'highlights-container'
     highlightContainer.setAttribute('class', 'd-flex')

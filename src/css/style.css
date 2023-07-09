@@ -56,7 +56,7 @@
 #nav-menu {
   background: #201815;
   min-width: 100%;
-  min-height: 3rem;
+  height: 3.3rem;
   border-radius: 4px;
 }
 
@@ -167,13 +167,42 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#option-menu {
-  font-size: 1.3rem;
+/* OPTION MENU */
+
+#home-text, 
+#news-text, 
+#schedule-text, 
+#highlights-text, 
+#refresh-text {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  translate: 0 -0.5rem;
 }
 
-#option-menu:hover {
+#icon-home,
+#icon-news,
+#icon-hightlights,
+#icon-schedule,
+#icon-refresh {
+  color: white;
+}
+
+#container-menu-news, 
+#container-menu-schedule, 
+#container-menu-home, 
+#container-menu-highlights, 
+#container-menu-refresh {
   cursor: pointer;
-  text-decoration: underline;
+  margin-top: 0.4rem;
+}
+
+#container-menu-news:hover, 
+#container-menu-schedule:hover, 
+#container-menu-home:hover, 
+#container-menu-highlights:hover, 
+#container-menu-refresh:hover {
+  cursor: pointer;
 }
 
 /* TEAMS COLORS */
