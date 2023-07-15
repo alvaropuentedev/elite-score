@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root {
+  --bs-body-bg: #0a0ae3;
   --angels: #ba0021;
   --astros: #eb6e20;
   --athletics: #006241;
