@@ -1,5 +1,6 @@
 const CONTAINER = document.querySelector('#container')
 const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
+const MENU_LIST = document.querySelector('#option-menu')
 let MATCH_ID, TODAY_DATE
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
@@ -8,7 +9,6 @@ window.addEventListener('load', () => {
 
 NAV_BASEBALL_LINK.addEventListener('click', () => {
     CONTAINER.innerHTML = ''
-    createMenu()
     document.querySelector('#container-menu-refresh').style.display = 'none'
 })
 
@@ -37,7 +37,34 @@ const toDateTime = (secs) => {
     }
     return day + '/' + month + '  ' + hours + ':' + minutes
 }
-// FUNC CREATE MENU
+
+// OPTION MENU
+const NEWS = document.querySelector('#container-menu-news')
+const SCHEDULE = document.querySelector('#container-menu-schedule')
+const HIGHLIGHTS = document.querySelector('#container-menu-highlights')
+const REFRESH = document.querySelector('#container-menu-refresh')
+const HOME = document.querySelector('#container-menu-home')
+
+NEWS.addEventListener('click', () => {
+    fetchNews()
+})
+SCHEDULE.addEventListener('click', () => {
+    fetchDataSchedule(getTodayDate())
+})
+HIGHLIGHTS.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
+REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
+HOME.addEventListener('click', () => { window.location = '/' })
+// UNDERLINE SELECTED MENU OPTION
+const menuItems = document.querySelectorAll('#option-menu li')
+menuItems.forEach(item => {
+    item.addEventListener('click', function () {
+        menuItems.forEach(item => {
+            item.classList.remove('active')
+        })
+        this.classList.add('active')
+    })
+})
+
 const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
     // ///////////////////////////////////MENU////////////////////////
     const navMenuContainer = document.createElement('nav')
@@ -137,7 +164,7 @@ const getNews = (dataNews) => {
     console.log(dataNews)
     CONTAINER.innerHTML = ''
     // MENU
-    createMenu()
+    MENU_LIST.style.display = 'block'
     document.querySelector('#container-menu-highlights').style.display = 'none'
     document.querySelector('#container-menu-refresh').style.display = 'none'
     const newsContainer = document.createElement('div')
@@ -193,6 +220,9 @@ const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
 const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     CONTAINER.innerHTML = ''
     // MENU
+    MENU_LIST.style.display = 'block'
+    document.querySelector('#container-menu-highlights').style.display = 'block'
+    document.querySelector('#container-menu-refresh').style.display = 'block'
     createMenu(MATCH_ID, awayTeamName, homeTeamName)
     window.scrollTo()
     // ROW
@@ -470,7 +500,9 @@ const fetchMatchHighlights = async (matchId) => {
 // ////////////////////////////////////////FUNC SCHEDULE//////////////////////////////////////////////
 const getSchedule = (dataSchedule) => {
     CONTAINER.innerHTML = ''
-    createMenu()
+    // MENU
+    MENU_LIST.style.display = 'block'
+    document.querySelector('#container-menu-schedule').setAttribute('class', 'active')
     document.querySelector('#container-menu-refresh').style.display = 'none'
     document.querySelector('#container-menu-highlights').style.display = 'none'
     const cardsContainer = document.createElement('div')
@@ -688,7 +720,7 @@ const getHighlihts = (dataHighlights) => {
     console.log(dataHighlights)
     CONTAINER.innerHTML = ''
     // MENU
-    createMenu()
+    MENU_LIST.style.display = 'block'
     document.querySelector('#container-menu-highlights').style.display = 'none'
     document.querySelector('#container-menu-refresh').style.display = 'none'
     const highlightContainer = document.createElement('div')

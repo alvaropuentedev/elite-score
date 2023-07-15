@@ -9,20 +9,6 @@
         z-index: 99;
     }
 
-    #nav-menu {
-        background-color: #f9f9fb;
-        border-radius: 0%;
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        right: 0;
-        z-index: 1030;
-    }
-
-    #option-menu {
-        font-size: 20px;
-    }
-
     #lineup-match {
         margin-top: 8%;
         font-size: 13px;
@@ -48,6 +34,25 @@
     }
 
     /* OPTION MENU */
+
+    #option-menu {
+        background-color: #f9f9fb;
+        border-radius: 0%;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: 1030;
+        text-decoration: none;
+    }
+
+    #option-menu li.active::after {
+        text-decoration: underline;
+        color: black;
+        border-bottom: 1px solid black; /* Agrega un borde inferior de 1px sólido de color negro */
+        margin-top: 3px;
+    }
+
     #home-text, 
     #news-text,
     #schedule-text, 

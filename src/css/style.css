@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root {
-  --bs-body-bg: #0a0ae3;
   --angels: #ba0021;
   --astros: #eb6e20;
   --athletics: #006241;
@@ -52,13 +51,6 @@
 #title-img {
   width: 30%;
   margin: auto;
-}
-
-#nav-menu {
-  background: #201815;
-  min-width: 100%;
-  height: 3.3rem;
-  border-radius: 4px;
 }
 
 #cards-container, #box-score-container {
@@ -170,6 +162,25 @@
 
 /* OPTION MENU */
 
+#option-menu {
+  display: none;
+  background: #201815;
+  min-width: 100%;
+  height: 3.3rem;
+  text-decoration: none;
+}
+
+#option-menu li.active {
+  text-decoration: underline;
+  border-bottom: 5px solid white; /* Agrega un borde inferior de 1px sólido de color negro */
+  margin-top: 3px;
+}
+
+#menu-list {
+  list-style: none;
+  display: inline-table;
+}
+
 #home-text, 
 #news-text, 
 #schedule-text, 
@@ -196,6 +207,7 @@
 #container-menu-refresh {
   cursor: pointer;
   margin-top: 0.4rem;
+  color: white;
 }
 
 #container-menu-news:hover, 
