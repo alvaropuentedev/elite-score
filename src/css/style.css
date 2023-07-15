@@ -96,7 +96,7 @@
 #nav-baseball, #nav-hockey, #nav-basketball, #nav-soccer{
   font-family: Roboto, sans-serif;
   font-size: 16px;
-  color: #393c41;
+  color: #000000ba;
 }
 
 #games-ended-title {
@@ -172,7 +172,7 @@
 
 #option-menu li.active {
   text-decoration: underline;
-  border-bottom: 5px solid white; /* Agrega un borde inferior de 1px sólido de color negro */
+  border-bottom: 5px solid black; /* Agrega un borde inferior de 1px sólido de color negro */
   margin-top: 3px;
 }
 

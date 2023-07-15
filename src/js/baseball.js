@@ -1,15 +1,9 @@
 const CONTAINER = document.querySelector('#container')
-const NAV_BASEBALL_LINK = document.querySelector('#nav-baseball')
 const MENU_LIST = document.querySelector('#option-menu')
-let MATCH_ID, TODAY_DATE
+let MATCH_ID, TODAY_DATE, HOME_TEAM_NAME, AWAY_TEAM_NAME
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
     fetchDataSchedule(getTodayDate())
-})
-
-NAV_BASEBALL_LINK.addEventListener('click', () => {
-    CONTAINER.innerHTML = ''
-    document.querySelector('#container-menu-refresh').style.display = 'none'
 })
 
 // GET TODAY DAY
@@ -52,7 +46,7 @@ SCHEDULE.addEventListener('click', () => {
     fetchDataSchedule(getTodayDate())
 })
 HIGHLIGHTS.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
-REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
+REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) })
 HOME.addEventListener('click', () => { window.location = '/' })
 // UNDERLINE SELECTED MENU OPTION
 const menuItems = document.querySelectorAll('#option-menu li')
@@ -64,90 +58,91 @@ menuItems.forEach(item => {
         this.classList.add('active')
     })
 })
+// //////// OLD MENU ///////////
 
-const createMenu = (MATCH_ID, awayTeamName, homeTeamName) => {
-    // ///////////////////////////////////MENU////////////////////////
-    const navMenuContainer = document.createElement('nav')
-    navMenuContainer.id = 'nav-menu'
-    CONTAINER.appendChild(navMenuContainer)
-    const divMenuContainer = document.createElement('div')
-    divMenuContainer.setAttribute('class', 'd-flex text-center justify-content-evenly')
-    navMenuContainer.appendChild(divMenuContainer)
-    // NEWS
-    const iconNews = document.createElement('span')
-    iconNews.id = 'icon-news'
-    iconNews.setAttribute('class', 'material-icons')
-    iconNews.textContent = 'newspaper'
-    const newsText = document.createElement('p')
-    newsText.id = 'news-text'
-    newsText.textContent = 'News'
-    const containerMenuNews = document.createElement('div')
-    containerMenuNews.id = 'container-menu-news'
-    divMenuContainer.appendChild(containerMenuNews)
-    containerMenuNews.appendChild(iconNews)
-    containerMenuNews.appendChild(newsText)
-    containerMenuNews.addEventListener('click', () => {
-        fetchNews()
-    })
-    // HIGHLIGHTS
-    const iconHighlights = document.createElement('span')
-    iconHighlights.id = 'icon-highlights'
-    iconHighlights.setAttribute('class', 'material-icons')
-    iconHighlights.textContent = 'tv'
-    const highlightsText = document.createElement('p')
-    highlightsText.id = 'highlights-text'
-    highlightsText.textContent = 'Highlights'
-    const containerMenuHighlights = document.createElement('div')
-    containerMenuHighlights.id = 'container-menu-highlights'
-    containerMenuHighlights.appendChild(iconHighlights)
-    containerMenuHighlights.appendChild(highlightsText)
-    divMenuContainer.appendChild(containerMenuHighlights)
-    containerMenuHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
-    // SCHEDULE
-    const iconSchedule = document.createElement('span')
-    iconSchedule.id = 'icon-schedule'
-    iconSchedule.setAttribute('class', 'material-icons')
-    iconSchedule.textContent = 'calendar_month'
-    const scheduleText = document.createElement('p')
-    scheduleText.id = 'schedule-text'
-    scheduleText.textContent = 'Schedule'
-    const containerMenuSchedule = document.createElement('div')
-    containerMenuSchedule.id = 'container-menu-schedule'
-    divMenuContainer.appendChild(containerMenuSchedule)
-    containerMenuSchedule.appendChild(iconSchedule)
-    containerMenuSchedule.appendChild(scheduleText)
-    containerMenuSchedule.addEventListener('click', () => {
-        fetchDataSchedule(getTodayDate())
-    })
-    // LINEUPS REFRESH
-    const iconRefresh = document.createElement('span')
-    iconRefresh.id = 'icon-refresh'
-    iconRefresh.setAttribute('class', 'material-icons')
-    iconRefresh.textContent = 'refresh'
-    const refreshText = document.createElement('p')
-    refreshText.id = 'refresh-text'
-    refreshText.textContent = 'Refresh'
-    const containerMenuRefresh = document.createElement('div')
-    containerMenuRefresh.id = 'container-menu-refresh'
-    divMenuContainer.appendChild(containerMenuRefresh)
-    containerMenuRefresh.appendChild(iconRefresh)
-    containerMenuRefresh.appendChild(refreshText)
-    containerMenuRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, awayTeamName, homeTeamName) })
-    // HOME
-    const iconHome = document.createElement('span')
-    iconHome.id = 'icon-home'
-    iconHome.setAttribute('class', 'material-icons')
-    iconHome.textContent = 'home'
-    const homeText = document.createElement('p')
-    homeText.id = 'home-text'
-    homeText.textContent = 'Home'
-    const containerMenuHome = document.createElement('div')
-    containerMenuHome.id = 'container-menu-home'
-    divMenuContainer.appendChild(containerMenuHome)
-    containerMenuHome.appendChild(iconHome)
-    containerMenuHome.appendChild(homeText)
-    containerMenuHome.addEventListener('click', () => { window.location = '/' })
-}
+// const createMenu = (MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
+//     // ///////////////////////////////////MENU////////////////////////
+//     const navMenuContainer = document.createElement('nav')
+//     navMenuContainer.id = 'nav-menu'
+//     CONTAINER.appendChild(navMenuContainer)
+//     const divMenuContainer = document.createElement('div')
+//     divMenuContainer.setAttribute('class', 'd-flex text-center justify-content-evenly')
+//     navMenuContainer.appendChild(divMenuContainer)
+//     // NEWS
+//     const iconNews = document.createElement('span')
+//     iconNews.id = 'icon-news'
+//     iconNews.setAttribute('class', 'material-icons')
+//     iconNews.textContent = 'newspaper'
+//     const newsText = document.createElement('p')
+//     newsText.id = 'news-text'
+//     newsText.textContent = 'News'
+//     const containerMenuNews = document.createElement('div')
+//     containerMenuNews.id = 'container-menu-news'
+//     divMenuContainer.appendChild(containerMenuNews)
+//     containerMenuNews.appendChild(iconNews)
+//     containerMenuNews.appendChild(newsText)
+//     containerMenuNews.addEventListener('click', () => {
+//         fetchNews()
+//     })
+//     // HIGHLIGHTS
+//     const iconHighlights = document.createElement('span')
+//     iconHighlights.id = 'icon-highlights'
+//     iconHighlights.setAttribute('class', 'material-icons')
+//     iconHighlights.textContent = 'tv'
+//     const highlightsText = document.createElement('p')
+//     highlightsText.id = 'highlights-text'
+//     highlightsText.textContent = 'Highlights'
+//     const containerMenuHighlights = document.createElement('div')
+//     containerMenuHighlights.id = 'container-menu-highlights'
+//     containerMenuHighlights.appendChild(iconHighlights)
+//     containerMenuHighlights.appendChild(highlightsText)
+//     divMenuContainer.appendChild(containerMenuHighlights)
+//     containerMenuHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
+//     // SCHEDULE
+//     const iconSchedule = document.createElement('span')
+//     iconSchedule.id = 'icon-schedule'
+//     iconSchedule.setAttribute('class', 'material-icons')
+//     iconSchedule.textContent = 'calendar_month'
+//     const scheduleText = document.createElement('p')
+//     scheduleText.id = 'schedule-text'
+//     scheduleText.textContent = 'Schedule'
+//     const containerMenuSchedule = document.createElement('div')
+//     containerMenuSchedule.id = 'container-menu-schedule'
+//     divMenuContainer.appendChild(containerMenuSchedule)
+//     containerMenuSchedule.appendChild(iconSchedule)
+//     containerMenuSchedule.appendChild(scheduleText)
+//     containerMenuSchedule.addEventListener('click', () => {
+//         fetchDataSchedule(getTodayDate())
+//     })
+//     // LINEUPS REFRESH
+//     const iconRefresh = document.createElement('span')
+//     iconRefresh.id = 'icon-refresh'
+//     iconRefresh.setAttribute('class', 'material-icons')
+//     iconRefresh.textContent = 'refresh'
+//     const refreshText = document.createElement('p')
+//     refreshText.id = 'refresh-text'
+//     refreshText.textContent = 'Refresh'
+//     const containerMenuRefresh = document.createElement('div')
+//     containerMenuRefresh.id = 'container-menu-refresh'
+//     divMenuContainer.appendChild(containerMenuRefresh)
+//     containerMenuRefresh.appendChild(iconRefresh)
+//     containerMenuRefresh.appendChild(refreshText)
+//     containerMenuRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) })
+//     // HOME
+//     const iconHome = document.createElement('span')
+//     iconHome.id = 'icon-home'
+//     iconHome.setAttribute('class', 'material-icons')
+//     iconHome.textContent = 'home'
+//     const homeText = document.createElement('p')
+//     homeText.id = 'home-text'
+//     homeText.textContent = 'Home'
+//     const containerMenuHome = document.createElement('div')
+//     containerMenuHome.id = 'container-menu-home'
+//     divMenuContainer.appendChild(containerMenuHome)
+//     containerMenuHome.appendChild(iconHome)
+//     containerMenuHome.appendChild(homeText)
+//     containerMenuHome.addEventListener('click', () => { window.location = '/' })
+// }
 
 // FETCH NEWS
 const fetchNews = async () => {
@@ -156,12 +151,10 @@ const fetchNews = async () => {
     // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
     getNews(dataNews)
-    console.log(dataNews)
 }
 
 // FUNC GET NEWS
 const getNews = (dataNews) => {
-    console.log(dataNews)
     CONTAINER.innerHTML = ''
     // MENU
     MENU_LIST.style.display = 'block'
@@ -200,13 +193,13 @@ const getNews = (dataNews) => {
     }
 }
 // FETCH LINEUPS
-const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
+const fetchLineups = async (MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
     try {
         const urlTeamLineupBaseball = `https://elite-score-alvaropuentedev.vercel.app/lineups?matchId=${MATCH_ID}`
         const resLineup = await fetch(urlTeamLineupBaseball)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
-        showLineups(dataLineup, awayTeamName, homeTeamName)
+        showLineups(dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME)
         console.log(dataLineup)
     } catch (error) {
         // NO LINEUPS FOUND MESSAGE
@@ -217,13 +210,12 @@ const fetchLineups = async (MATCH_ID, awayTeamName, homeTeamName) => {
     }
 }
 // /////////////////////////////////////// SHOW LINEUPS ////////////////////////////////////////////////////////////////
-const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
+const showLineups = (dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
     CONTAINER.innerHTML = ''
     // MENU
     MENU_LIST.style.display = 'block'
     document.querySelector('#container-menu-highlights').style.display = 'block'
     document.querySelector('#container-menu-refresh').style.display = 'block'
-    createMenu(MATCH_ID, awayTeamName, homeTeamName)
     window.scrollTo()
     // ROW
     const elementRow = document.createElement('div')
@@ -235,13 +227,13 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     elementRow.appendChild(elementRowAway)
     // AWAY TEAM NAME
     const divAwayTeamName = document.createElement('div')
-    divAwayTeamName.id = awayTeamName.toLowerCase()
+    divAwayTeamName.id = AWAY_TEAM_NAME.toLowerCase()
     divAwayTeamName.setAttribute('class', 'away-team-name fw-bold text-center')
-    divAwayTeamName.textContent = awayTeamName.toUpperCase()
+    divAwayTeamName.textContent = AWAY_TEAM_NAME.toUpperCase()
     elementRowAway.appendChild(divAwayTeamName)
     // AWAY BATTERS BAR
     const battersAwaySeparator = document.createElement('div')
-    battersAwaySeparator.id = 'batters-' + awayTeamName.toLowerCase()
+    battersAwaySeparator.id = 'batters-' + AWAY_TEAM_NAME.toLowerCase()
     battersAwaySeparator.setAttribute('class', 'text-center m-2')
     battersAwaySeparator.textContent = 'BATTERS'
     elementRowAway.appendChild(battersAwaySeparator)
@@ -307,7 +299,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     }
     // AWAY PITCHERS BAR
     const pitchersAwaySeparator = document.createElement('div')
-    pitchersAwaySeparator.id = 'pitchers-' + awayTeamName.toLowerCase()
+    pitchersAwaySeparator.id = 'pitchers-' + AWAY_TEAM_NAME.toLowerCase()
     pitchersAwaySeparator.setAttribute('class', 'text-center m-2')
     pitchersAwaySeparator.textContent = 'PITCHERS'
     elementRowAway.appendChild(pitchersAwaySeparator)
@@ -357,13 +349,13 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     elementRow.appendChild(elementRowHome)
     // HOME TEAM NAME
     const divHomeTeamName = document.createElement('div')
-    divHomeTeamName.id = homeTeamName.toLowerCase()
+    divHomeTeamName.id = HOME_TEAM_NAME.toLowerCase()
     divHomeTeamName.setAttribute('class', 'home-team-name fw-bold text-center')
-    divHomeTeamName.textContent = homeTeamName.toUpperCase()
+    divHomeTeamName.textContent = HOME_TEAM_NAME.toUpperCase()
     elementRowHome.appendChild(divHomeTeamName)
     // HOME BATTERS BAR
     const battersHomeSeparator = document.createElement('div')
-    battersHomeSeparator.id = 'batters-' + homeTeamName.toLowerCase()
+    battersHomeSeparator.id = 'batters-' + HOME_TEAM_NAME.toLowerCase()
     battersHomeSeparator.setAttribute('class', 'text-center m-2')
     battersHomeSeparator.textContent = 'BATTERS'
     elementRowHome.appendChild(battersHomeSeparator)
@@ -429,7 +421,7 @@ const showLineups = (dataLineup, awayTeamName, homeTeamName) => {
     }
     // HOME SEPARATOR
     const pitcherHomeSeparator = document.createElement('div')
-    pitcherHomeSeparator.id = 'pitchers-' + homeTeamName.toLowerCase()
+    pitcherHomeSeparator.id = 'pitchers-' + HOME_TEAM_NAME.toLowerCase()
     pitcherHomeSeparator.setAttribute('class', 'text-center m-2')
     pitcherHomeSeparator.textContent = 'PITCHERS'
     elementRowHome.appendChild(pitcherHomeSeparator)
@@ -484,7 +476,6 @@ const fetchDataSchedule = async (todayDate) => {
     CONTAINER.appendChild(loading)
     const data = await res.json()
     getSchedule(data)
-    console.log(todayDate)
 }
 
 // FETCH HIGHLIGHTS
@@ -494,8 +485,6 @@ const fetchMatchHighlights = async (matchId) => {
     // const resLive = await fetch('liveBaseballMatch.json')
     const data = await res.json()
     getHighlihts(data)
-    console.log(data)
-    console.log(matchId)
 }
 // ////////////////////////////////////////FUNC SCHEDULE//////////////////////////////////////////////
 const getSchedule = (dataSchedule) => {
@@ -556,8 +545,8 @@ const getSchedule = (dataSchedule) => {
             let currentAwayScore = dataSchedule.events[i].awayScore.current
             let hitsAway
             let errorsAway
-            const awayTeamName = dataSchedule.events[i].awayTeam.shortName
-            const homeTeamName = dataSchedule.events[i].homeTeam.shortName
+            AWAY_TEAM_NAME = dataSchedule.events[i].awayTeam.shortName
+            HOME_TEAM_NAME = dataSchedule.events[i].homeTeam.shortName
             try {
                 hitsAway = dataSchedule.events[i].awayScore.inningsBaseball.hits
                 errorsAway = dataSchedule.events[i].awayScore.inningsBaseball.errors
@@ -568,7 +557,7 @@ const getSchedule = (dataSchedule) => {
             currentAwayScore = currentAwayScore ?? 0
             const rowAwayBody =
                 `<tr>
-            <td id='${awayTeamName.toLowerCase()}'>${nameAway}</td>
+            <td id='${AWAY_TEAM_NAME.toLowerCase()}'>${nameAway}</td>
             <td>${currentAwayScore}</td>
             <td>${hitsAway}</td>
             <td>${errorsAway}</td>
@@ -589,7 +578,7 @@ const getSchedule = (dataSchedule) => {
             currentHomeScore = currentHomeScore ?? 0
             const rowHomeBody =
                 `<tr>
-            <td id='${homeTeamName.toLowerCase()}'>${nameHome}</td>
+            <td id='${HOME_TEAM_NAME.toLowerCase()}'>${nameHome}</td>
             <td>${currentHomeScore}</td>
             <td>${hitsHome}</td>
             <td>${errorsHome}</td>
@@ -717,7 +706,6 @@ const getSchedule = (dataSchedule) => {
 }
 // GET HIGHLIGHTS
 const getHighlihts = (dataHighlights) => {
-    console.log(dataHighlights)
     CONTAINER.innerHTML = ''
     // MENU
     MENU_LIST.style.display = 'block'
