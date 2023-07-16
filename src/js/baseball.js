@@ -566,8 +566,8 @@ const getSchedule = (dataSchedule) => {
             let currentAwayScore = dataSchedule.events[i].awayScore.current
             let hitsAway
             let errorsAway
-            const awayTeamName = dataSchedule.events[i].awayTeam.shortName
-            const homeTeamName = dataSchedule.events[i].homeTeam.shortName
+            AWAY_TEAM_NAME = dataSchedule.events[i].awayTeam.shortName
+            HOME_TEAM_NAME = dataSchedule.events[i].homeTeam.shortName
             try {
                 hitsAway = dataSchedule.events[i].awayScore.inningsBaseball.hits
                 errorsAway = dataSchedule.events[i].awayScore.inningsBaseball.errors
@@ -578,7 +578,7 @@ const getSchedule = (dataSchedule) => {
             currentAwayScore = currentAwayScore ?? 0
             const rowAwayBody =
                 `<tr>
-            <td id='${awayTeamName.toLowerCase()}'>${nameAway}</td>
+            <td id='${AWAY_TEAM_NAME.toLowerCase()}'>${nameAway}</td>
             <td>${currentAwayScore}</td>
             <td>${hitsAway}</td>
             <td>${errorsAway}</td>
@@ -599,7 +599,7 @@ const getSchedule = (dataSchedule) => {
             currentHomeScore = currentHomeScore ?? 0
             const rowHomeBody =
                 `<tr>
-            <td id='${homeTeamName.toLowerCase()}'>${nameHome}</td>
+            <td id='${HOME_TEAM_NAME.toLowerCase()}'>${nameHome}</td>
             <td>${currentHomeScore}</td>
             <td>${hitsHome}</td>
             <td>${errorsHome}</td>
@@ -612,9 +612,9 @@ const getSchedule = (dataSchedule) => {
             divCard.appendChild(cardFoot)
             divCard.addEventListener('click', () => {
                 MATCH_ID = dataSchedule.events[i].id
-                const awayTeamName = dataSchedule.events[i].awayTeam.shortName
-                const homeTeamName = dataSchedule.events[i].homeTeam.shortName
-                fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
+                AWAY_TEAM_NAME = dataSchedule.events[i].awayTeam.shortName
+                HOME_TEAM_NAME = dataSchedule.events[i].homeTeam.shortName
+                fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME)
             })
         }
     }
