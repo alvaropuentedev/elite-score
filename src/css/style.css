@@ -162,6 +162,10 @@
 
 /* OPTION MENU */
 
+ul {
+  padding-left: 0 !important;
+}
+
 #option-menu {
   display: none;
   background: #201815;
@@ -171,6 +175,11 @@
 #option-menu li.active p {
   position: relative;
   text-decoration: none;
+  color: #ffff;
+}
+
+#option-menu li.active span {
+  color: #ffff;
 }
 
 #option-menu li.active p::after {
@@ -180,14 +189,13 @@
   right: -5px;
   bottom: -2px; /* Controla la posición vertical del subrayado */
   width: --webkit-fill-available; /* Controla el ancho del subrayado */
-  height: 4px; /* Controla el largo del subrayado */
+  height: 2.5px; /* Controla el largo del subrayado */
   background-color: white;
 }
 
-
 #menu-list {
   list-style: none;
-  display: inline-table;
+  display: inline-block;
   max-height: 3.3rem;
 }
 
@@ -196,18 +204,9 @@
 #schedule-text, 
 #highlights-text, 
 #refresh-text {
-  color: white;
   font-family: Roboto, sans-serif;
   font-size: 14px;
   translate: 0 -0.5rem;
-}
-
-#icon-home,
-#icon-news,
-#icon-highlights,
-#icon-schedule,
-#icon-refresh {
-  color: white;
 }
 
 #container-menu-news, 
@@ -217,7 +216,7 @@
 #container-menu-refresh {
   cursor: pointer;
   margin-top: 0.4rem;
-  color: white;
+  color: #ffffff9c;
 }
 
 #container-menu-news:hover, 
