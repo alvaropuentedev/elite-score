@@ -63,6 +63,7 @@
         bottom: -2px; /* Controla la posición vertical del subrayado */
         width: --webkit-fill-available; /* Controla el ancho del subrayado */
         height: 2.5px; /* Controla el largo del subrayado */
+        border-radius: 50%;
         background-color: #201815;
     }
 
