@@ -1,6 +1,7 @@
 const CONTAINER = document.querySelector('#container')
 const MENU_LIST = document.querySelector('#option-menu')
 let MATCH_ID, TODAY_DATE, HOME_TEAM_NAME, AWAY_TEAM_NAME
+
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
     fetchDataSchedule(getTodayDate())
@@ -115,7 +116,6 @@ const fetchLineups = async (MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
         showLineups(dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME)
-        console.log(dataLineup)
     } catch (error) {
         // NO LINEUPS FOUND MESSAGE
         const noLineupsFound = document.createElement('h5')
@@ -506,9 +506,9 @@ const getSchedule = (dataSchedule) => {
             divCard.appendChild(cardFoot)
             divCard.addEventListener('click', () => {
                 MATCH_ID = dataSchedule.events[i].id
-                const awayTeamName = dataSchedule.events[i].awayTeam.shortName
-                const homeTeamName = dataSchedule.events[i].homeTeam.shortName
-                fetchLineups(MATCH_ID, awayTeamName, homeTeamName)
+                AWAY_TEAM_NAME = dataSchedule.events[i].awayTeam.shortName
+                HOME_TEAM_NAME = dataSchedule.events[i].homeTeam.shortName
+                fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME)
             })
         }
     }
