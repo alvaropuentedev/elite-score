@@ -166,19 +166,29 @@
   display: none;
   background: #201815;
   min-width: 100%;
-  height: 3.3rem;
+}
+
+#option-menu li.active p {
+  position: relative;
   text-decoration: none;
 }
 
-#option-menu li.active {
-  text-decoration: underline;
-  border-bottom: 5px solid black; /* Agrega un borde inferior de 1px sólido de color negro */
-  margin-top: 3px;
+#option-menu li.active p::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: -2px; /* Controla la posición vertical del subrayado */
+  width: --webkit-fill-available; /* Controla el ancho del subrayado */
+  height: 4px; /* Controla el largo del subrayado */
+  background-color: white;
 }
+
 
 #menu-list {
   list-style: none;
   display: inline-table;
+  max-height: 3.3rem;
 }
 
 #home-text, 

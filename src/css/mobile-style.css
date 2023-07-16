@@ -37,20 +37,29 @@
 
     #option-menu {
         background-color: #f9f9fb;
-        border-radius: 0%;
         bottom: 0;
-        left: 0;
         position: fixed;
-        right: 0;
         z-index: 1030;
-        text-decoration: none;
     }
 
-    #option-menu li.active::after {
-        text-decoration: underline;
-        color: black;
-        border-bottom: 1px solid black; /* Agrega un borde inferior de 1px sólido de color negro */
-        margin-top: 3px;
+    #option-menu li.active p {
+        position: relative;
+        text-decoration: none;
+      }
+
+      ul {
+        padding-left: 0 !important;
+      }
+      
+    #option-menu li.active p::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        bottom: -2px; /* Controla la posición vertical del subrayado */
+        width: --webkit-fill-available; /* Controla el ancho del subrayado */
+        height: 4px; /* Controla el largo del subrayado */
+        background-color: black;
     }
 
     #home-text, 

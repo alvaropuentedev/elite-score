@@ -58,91 +58,6 @@ menuItems.forEach(item => {
         this.classList.add('active')
     })
 })
-// //////// OLD MENU ///////////
-
-// const createMenu = (MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
-//     // ///////////////////////////////////MENU////////////////////////
-//     const navMenuContainer = document.createElement('nav')
-//     navMenuContainer.id = 'nav-menu'
-//     CONTAINER.appendChild(navMenuContainer)
-//     const divMenuContainer = document.createElement('div')
-//     divMenuContainer.setAttribute('class', 'd-flex text-center justify-content-evenly')
-//     navMenuContainer.appendChild(divMenuContainer)
-//     // NEWS
-//     const iconNews = document.createElement('span')
-//     iconNews.id = 'icon-news'
-//     iconNews.setAttribute('class', 'material-icons')
-//     iconNews.textContent = 'newspaper'
-//     const newsText = document.createElement('p')
-//     newsText.id = 'news-text'
-//     newsText.textContent = 'News'
-//     const containerMenuNews = document.createElement('div')
-//     containerMenuNews.id = 'container-menu-news'
-//     divMenuContainer.appendChild(containerMenuNews)
-//     containerMenuNews.appendChild(iconNews)
-//     containerMenuNews.appendChild(newsText)
-//     containerMenuNews.addEventListener('click', () => {
-//         fetchNews()
-//     })
-//     // HIGHLIGHTS
-//     const iconHighlights = document.createElement('span')
-//     iconHighlights.id = 'icon-highlights'
-//     iconHighlights.setAttribute('class', 'material-icons')
-//     iconHighlights.textContent = 'tv'
-//     const highlightsText = document.createElement('p')
-//     highlightsText.id = 'highlights-text'
-//     highlightsText.textContent = 'Highlights'
-//     const containerMenuHighlights = document.createElement('div')
-//     containerMenuHighlights.id = 'container-menu-highlights'
-//     containerMenuHighlights.appendChild(iconHighlights)
-//     containerMenuHighlights.appendChild(highlightsText)
-//     divMenuContainer.appendChild(containerMenuHighlights)
-//     containerMenuHighlights.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
-//     // SCHEDULE
-//     const iconSchedule = document.createElement('span')
-//     iconSchedule.id = 'icon-schedule'
-//     iconSchedule.setAttribute('class', 'material-icons')
-//     iconSchedule.textContent = 'calendar_month'
-//     const scheduleText = document.createElement('p')
-//     scheduleText.id = 'schedule-text'
-//     scheduleText.textContent = 'Schedule'
-//     const containerMenuSchedule = document.createElement('div')
-//     containerMenuSchedule.id = 'container-menu-schedule'
-//     divMenuContainer.appendChild(containerMenuSchedule)
-//     containerMenuSchedule.appendChild(iconSchedule)
-//     containerMenuSchedule.appendChild(scheduleText)
-//     containerMenuSchedule.addEventListener('click', () => {
-//         fetchDataSchedule(getTodayDate())
-//     })
-//     // LINEUPS REFRESH
-//     const iconRefresh = document.createElement('span')
-//     iconRefresh.id = 'icon-refresh'
-//     iconRefresh.setAttribute('class', 'material-icons')
-//     iconRefresh.textContent = 'refresh'
-//     const refreshText = document.createElement('p')
-//     refreshText.id = 'refresh-text'
-//     refreshText.textContent = 'Refresh'
-//     const containerMenuRefresh = document.createElement('div')
-//     containerMenuRefresh.id = 'container-menu-refresh'
-//     divMenuContainer.appendChild(containerMenuRefresh)
-//     containerMenuRefresh.appendChild(iconRefresh)
-//     containerMenuRefresh.appendChild(refreshText)
-//     containerMenuRefresh.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) })
-//     // HOME
-//     const iconHome = document.createElement('span')
-//     iconHome.id = 'icon-home'
-//     iconHome.setAttribute('class', 'material-icons')
-//     iconHome.textContent = 'home'
-//     const homeText = document.createElement('p')
-//     homeText.id = 'home-text'
-//     homeText.textContent = 'Home'
-//     const containerMenuHome = document.createElement('div')
-//     containerMenuHome.id = 'container-menu-home'
-//     divMenuContainer.appendChild(containerMenuHome)
-//     containerMenuHome.appendChild(iconHome)
-//     containerMenuHome.appendChild(homeText)
-//     containerMenuHome.addEventListener('click', () => { window.location = '/' })
-// }
 
 // FETCH NEWS
 const fetchNews = async () => {
@@ -468,12 +383,12 @@ const showLineups = (dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
 }
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
-    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${todayDate}`
-    const res = await fetch(urlSchedule)
     const loading = document.createElement('div')
     loading.setAttribute('class', 'spinner-border')
     loading.setAttribute('role', 'status')
     CONTAINER.appendChild(loading)
+    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${todayDate}`
+    const res = await fetch(urlSchedule)
     const data = await res.json()
     getSchedule(data)
 }
