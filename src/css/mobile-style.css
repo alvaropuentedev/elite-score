@@ -1,4 +1,4 @@
-@media (width <= 500px) {
+@media (width <= 768px) {
     #container {
         padding-bottom: 4rem;
     }
@@ -50,21 +50,8 @@
     }
 
     #option-menu li.active p {
-        position: relative;
         text-decoration: none;
         color: #201815;
-      }
-
-    #option-menu li.active p::after {
-        content: "";
-        position: absolute;
-        left: -5px;
-        right: -5px;
-        bottom: -2px; /* Controla la posición vertical del subrayado */
-        width: --webkit-fill-available; /* Controla el ancho del subrayado */
-        height: 2.5px; /* Controla el largo del subrayado */
-        border-radius: 50%;
-        background-color: #201815;
     }
 
     #home-text, 
@@ -81,7 +68,7 @@
     #container-menu-highlights, 
     #container-menu-refresh {
     cursor: pointer;
-    margin-top: 0.4rem;
+    margin-top: 1rem;
     color: #20181580;
     }
 
