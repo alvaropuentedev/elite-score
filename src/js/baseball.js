@@ -76,6 +76,8 @@ const getNews = (dataNews) => {
     MENU_LIST.style.display = 'block'
     document.querySelector('#container-menu-highlights').style.display = 'none'
     document.querySelector('#container-menu-refresh').style.display = 'none'
+    window.scrollTo()
+
     const newsContainer = document.createElement('div')
     newsContainer.id = 'news-container'
     newsContainer.setAttribute('class', 'd-flex justify-content-evenly')
@@ -409,6 +411,8 @@ const getSchedule = (dataSchedule) => {
     document.querySelector('#container-menu-schedule').setAttribute('class', 'active')
     document.querySelector('#container-menu-refresh').style.display = 'none'
     document.querySelector('#container-menu-highlights').style.display = 'none'
+    window.scrollTo()
+
     const cardsContainer = document.createElement('div')
     cardsContainer.id = 'cards-container'
     cardsContainer.setAttribute('class', 'd-flex justify-content-center row')
