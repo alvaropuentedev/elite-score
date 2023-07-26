@@ -6,7 +6,7 @@
     "server": "nodemon app.js",
     "dev": "vite",
     "start": "node src/app.js",
-    "build": "vite build",
+    "build": "vite build --emptyOutDir",
     "preview": "vite preview"
   },
   "devDependencies": {
