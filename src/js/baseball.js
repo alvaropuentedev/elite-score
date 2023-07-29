@@ -383,15 +383,37 @@ const showLineups = (dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
         }
     }
 }
+const getCacheDataOrFetchAPI = async (todayDate) => {
+    const cacheExpiration = 3 * 60 * 1000
+    // eslint-disable-next-line no-undef
+    const cacheData = JSON.parse(localStorage.getItem('cacheData'))
+    // eslint-disable-next-line no-undef
+    const cacheTime = localStorage.getItem('cacheTime')
+
+    if (cacheData && cacheTime) {
+        const currentTime = new Date().getTime()
+        if (currentTime - cacheTime < cacheExpiration) {
+            return cacheData
+        }
+    }
+    // Cached data has expired or doesn't exist, make a new API request
+    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${todayDate}`
+    const res = await fetch(urlSchedule)
+    const data = await res.json()
+    // Update the cache with the new data and current timestamp
+    // eslint-disable-next-line no-undef
+    localStorage.setItem('cacheData', JSON.stringify(data))
+    // eslint-disable-next-line no-undef
+    localStorage.setItem('cacheTime', new Date().getTime())
+    return data
+}
 // FETCH SCHEDULE
 const fetchDataSchedule = async (todayDate) => {
     const loading = document.createElement('div')
     loading.setAttribute('class', 'spinner-border')
     loading.setAttribute('role', 'status')
     CONTAINER.appendChild(loading)
-    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${todayDate}`
-    const res = await fetch(urlSchedule)
-    const data = await res.json()
+    const data = await getCacheDataOrFetchAPI(todayDate)
     getSchedule(data)
 }
 
