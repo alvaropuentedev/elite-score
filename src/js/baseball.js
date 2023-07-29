@@ -40,13 +40,9 @@ const SCHEDULE = document.querySelector('#container-menu-schedule')
 const HIGHLIGHTS = document.querySelector('#container-menu-highlights')
 const REFRESH = document.querySelector('#container-menu-refresh')
 const HOME = document.querySelector('#container-menu-home')
-
-NEWS.addEventListener('click', () => {
-    fetchNews()
-})
-SCHEDULE.addEventListener('click', () => {
-    fetchDataSchedule(getTodayDate())
-})
+// CLICK EVENTS
+NEWS.addEventListener('click', () => { fetchNews() })
+SCHEDULE.addEventListener('click', () => { fetchDataSchedule() })
 HIGHLIGHTS.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
 REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) })
 HOME.addEventListener('click', () => { window.location = '/' })
