@@ -1,10 +1,11 @@
+/* global localStorage */
 const CONTAINER = document.querySelector('#container')
 const MENU_LIST = document.querySelector('#option-menu')
 let MATCH_ID, TODAY_DATE, HOME_TEAM_NAME, AWAY_TEAM_NAME
 
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
-    fetchDataSchedule(getTodayDate())
+    fetchDataSchedule()
 })
 
 // GET TODAY DAY
@@ -59,13 +60,33 @@ menuItems.forEach(item => {
         this.classList.add('active')
     })
 })
+const getCacheDataOrFetchNews = async () => {
+    const cacheExpiration = 3 * 60 * 1000
+    const cacheData = JSON.parse(localStorage.getItem('cacheDataNews'))
+    const cacheTime = localStorage.getItem('cacheTimeNews')
 
-// FETCH NEWS
-const fetchNews = async () => {
+    if (cacheData && cacheTime) {
+        const currentTime = new Date().getTime()
+        if (currentTime - cacheTime < cacheExpiration) {
+            return cacheData
+        }
+    }
+    // Cached data has expired or doesn't exist, make a new API request
     const urlNews = 'https://elite-score-alvaropuentedev.vercel.app/news'
     const res = await fetch(urlNews)
-    // const res = await fetch('../assets/news.json')
     const dataNews = await res.json()
+    // Update the cache with the new data and current timestamp
+    localStorage.setItem('cacheDataNews', JSON.stringify(dataNews))
+    localStorage.setItem('cacheTimeNews', new Date().getTime())
+    return dataNews
+}
+// FETCH NEWS
+const fetchNews = async () => {
+    const loading = document.createElement('div')
+    loading.setAttribute('class', 'spinner-border')
+    loading.setAttribute('role', 'status')
+    CONTAINER.appendChild(loading)
+    const dataNews = await getCacheDataOrFetchNews()
     getNews(dataNews)
 }
 
@@ -383,12 +404,10 @@ const showLineups = (dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
         }
     }
 }
-const getCacheDataOrFetchAPI = async (todayDate) => {
+const getCacheDataOrFetchSchedule = async () => {
     const cacheExpiration = 3 * 60 * 1000
-    // eslint-disable-next-line no-undef
-    const cacheData = JSON.parse(localStorage.getItem('cacheData'))
-    // eslint-disable-next-line no-undef
-    const cacheTime = localStorage.getItem('cacheTime')
+    const cacheData = JSON.parse(localStorage.getItem('cacheDataSchedule'))
+    const cacheTime = localStorage.getItem('cacheTimeSchedule')
 
     if (cacheData && cacheTime) {
         const currentTime = new Date().getTime()
@@ -397,23 +416,21 @@ const getCacheDataOrFetchAPI = async (todayDate) => {
         }
     }
     // Cached data has expired or doesn't exist, make a new API request
-    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${todayDate}`
+    const urlSchedule = `https://elite-score-alvaropuentedev.vercel.app/schedule?todayDate=${getTodayDate()}`
     const res = await fetch(urlSchedule)
     const data = await res.json()
     // Update the cache with the new data and current timestamp
-    // eslint-disable-next-line no-undef
-    localStorage.setItem('cacheData', JSON.stringify(data))
-    // eslint-disable-next-line no-undef
-    localStorage.setItem('cacheTime', new Date().getTime())
+    localStorage.setItem('cacheDataSchedule', JSON.stringify(data))
+    localStorage.setItem('cacheTimeSchedule', new Date().getTime())
     return data
 }
 // FETCH SCHEDULE
-const fetchDataSchedule = async (todayDate) => {
+const fetchDataSchedule = async () => {
     const loading = document.createElement('div')
     loading.setAttribute('class', 'spinner-border')
     loading.setAttribute('role', 'status')
     CONTAINER.appendChild(loading)
-    const data = await getCacheDataOrFetchAPI(todayDate)
+    const data = await getCacheDataOrFetchSchedule()
     getSchedule(data)
 }
 
