@@ -99,8 +99,10 @@ const getNews = (dataNews) => {
     newsContainer.id = 'news-container'
     newsContainer.setAttribute('class', 'd-flex')
     const newsHeader = document.createElement('h2')
-    newsHeader.id = 'news-header'
-    newsHeader.textContent = 'Latest News'
+    const newsSpan = document.createElement('span')
+    newsSpan.id = 'news-span'
+    newsSpan.textContent = 'Latest News'
+    newsHeader.appendChild(newsSpan)
     newsContainer.appendChild(newsHeader)
     CONTAINER.appendChild(newsContainer)
     for (let i = 0; i < dataNews.news.length; i++) {

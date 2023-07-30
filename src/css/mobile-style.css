@@ -97,6 +97,14 @@
         min-width: 12rem;
     }
 
+    #news-span {
+        position: relative;
+      }
+      
+    #news-container article {
+        margin-top: 0;
+      }
+
     #news-container{
         margin-top: 1rem;
         display: flex;

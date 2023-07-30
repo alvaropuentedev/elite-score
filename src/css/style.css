@@ -110,12 +110,6 @@
   margin: auto;
 }
 
-#news-container article {
-  width: 400px;
-  height: 360px;
-  margin: 4px;
-}
-
 #news-div, #div-highlights {
   font-family: Roboto, sans-serif;
 }
@@ -143,8 +137,21 @@
   gap: 1.09em;
 }
 
-#news-header {
+#news-span {
+  border-bottom: 2px solid black;
+  display: inline-block;
+  height: inherit;
   padding: 1rem;
+  padding-bottom: 3px;
+  z-index: 999;
+  position: absolute;
+}
+
+#news-container article {
+  width: 400px;
+  height: 360px;
+  margin: 4px;
+  margin-top: 5rem;
 }
 
 @media  (width >= 2000px) {
