@@ -97,13 +97,16 @@ const getNews = (dataNews) => {
 
     const newsContainer = document.createElement('div')
     newsContainer.id = 'news-container'
-    newsContainer.setAttribute('class', 'd-flex justify-content-evenly')
+    newsContainer.setAttribute('class', 'd-flex')
+    const newsHeader = document.createElement('h2')
+    newsHeader.id = 'news-header'
+    newsHeader.textContent = 'Latest News'
+    newsContainer.appendChild(newsHeader)
     CONTAINER.appendChild(newsContainer)
     for (let i = 0; i < dataNews.news.length; i++) {
         const newsDiv = document.createElement('article')
         newsDiv.id = 'news-div'
         newsDiv.setAttribute('class', 'card')
-        newsDiv.setAttribute('style', 'width: 18rem; height: 20rem;')
         newsContainer.appendChild(newsDiv)
         const imgNews = document.createElement('img')
         imgNews.id = 'img-news'

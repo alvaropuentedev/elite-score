@@ -54,8 +54,9 @@
 }
 
 #cards-container, #box-score-container {
-  max-width: 130rem;
+  max-width: fit-content;
   margin: auto;
+  
 }
 
 #match-card-schedule {
@@ -105,7 +106,14 @@
 }
 
 #news-container, #highlights-container{
-  margin-top: 3rem;
+  max-width: fit-content;
+  margin: auto;
+}
+
+#news-container article {
+  width: 400px;
+  height: 360px;
+  margin: 4px;
 }
 
 #news-div, #div-highlights {
@@ -132,8 +140,17 @@
 }
 
 #cards-container, #title, #lineup-match {
-  margin-top: 5%;
   gap: 1.09em;
+}
+
+#news-header {
+  padding: 1rem;
+}
+
+@media  (width >= 2000px) {
+  #cards-container {
+    max-width: 120rem;
+  }
 }
 
 

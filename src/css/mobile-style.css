@@ -72,6 +72,10 @@
     color: #20181580;
     }
 
+    #cards-container {
+        margin-top: 1.2rem;
+    }
+
     #title {
         margin-top: 5rem;
     }
