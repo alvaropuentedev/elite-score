@@ -94,7 +94,7 @@
     #match-card-schedule{
         max-height: 14rem;
         max-width: 21rem;
-        min-width: 12rem;
+        min-width: fit-content;
     }
 
     #news-span {
