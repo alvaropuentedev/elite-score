@@ -7,7 +7,9 @@ let MATCH_ID, TODAY_DATE, HOME_TEAM_NAME, AWAY_TEAM_NAME
 window.addEventListener('load', () => {
     fetchDataSchedule()
 })
-
+const scrollToTopSmooth = () => {
+    
+}
 // GET TODAY DAY
 const getTodayDate = () => {
     const date = new Date()
