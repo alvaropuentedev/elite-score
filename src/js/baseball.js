@@ -8,7 +8,10 @@ window.addEventListener('load', () => {
     fetchDataSchedule()
 })
 const scrollToTopSmooth = () => {
-    
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
 }
 // GET TODAY DAY
 const getTodayDate = () => {
@@ -47,10 +50,10 @@ const HIGHLIGHTS = document.querySelector('#container-menu-highlights')
 const REFRESH = document.querySelector('#container-menu-refresh')
 const HOME = document.querySelector('#container-menu-home')
 // CLICK EVENTS
-NEWS.addEventListener('click', () => { fetchNews() })
-SCHEDULE.addEventListener('click', () => { fetchDataSchedule() })
+NEWS.addEventListener('click', () => { fetchNews(scrollToTopSmooth()) })
+SCHEDULE.addEventListener('click', () => { fetchDataSchedule(scrollToTopSmooth()) })
 HIGHLIGHTS.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
-REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) })
+REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME, scrollToTopSmooth()) })
 HOME.addEventListener('click', () => { window.location = '/' })
 // UNDERLINE SELECTED MENU OPTION
 const menuItems = document.querySelectorAll('#option-menu li')
@@ -99,7 +102,6 @@ const getNews = (dataNews) => {
     MENU_LIST.style.display = 'block'
     document.querySelector('#container-menu-highlights').style.display = 'none'
     document.querySelector('#container-menu-refresh').style.display = 'none'
-    window.scrollTo()
 
     const newsContainer = document.createElement('div')
     newsContainer.id = 'news-container'
@@ -161,7 +163,6 @@ const showLineups = (dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
     MENU_LIST.style.display = 'block'
     document.querySelector('#container-menu-highlights').style.display = 'block'
     document.querySelector('#container-menu-refresh').style.display = 'block'
-    window.scrollTo()
     // ROW
     const elementRow = document.createElement('div')
     elementRow.id = 'lineups-container'
@@ -457,7 +458,6 @@ const getSchedule = (dataSchedule) => {
     document.querySelector('#container-menu-schedule').setAttribute('class', 'active')
     document.querySelector('#container-menu-refresh').style.display = 'none'
     document.querySelector('#container-menu-highlights').style.display = 'none'
-    window.scrollTo()
 
     const cardsContainer = document.createElement('div')
     cardsContainer.id = 'cards-container'
