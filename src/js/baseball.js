@@ -147,7 +147,7 @@ const fetchLineups = async (MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME) => {
         const resLineup = await fetch(urlTeamLineupBaseball)
         // const resLineup = await fetch('lineupsBaseball.json')
         const dataLineup = await resLineup.json()
-        showLineups(dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME)
+        showLineups(dataLineup, AWAY_TEAM_NAME, HOME_TEAM_NAME, scrollToTopSmooth())
     } catch (error) {
         // NO LINEUPS FOUND MESSAGE
         const noLineupsFound = document.createElement('h5')
