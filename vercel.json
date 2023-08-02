@@ -6,7 +6,7 @@
         }
     ],
     "rewrites": [{
-        "source": "/server/(.*)", "destination": "/api/index.js"
+        "source": "/server/(.*)", "destination": "/server/app.js"
       }]
   }
   
