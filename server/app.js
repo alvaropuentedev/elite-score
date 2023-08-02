@@ -10,6 +10,7 @@ app.use(cors())
 app.use('/src/scss', express.static(path.join(__dirname, '..', 'src', 'scss')))
 app.use('/src/css', express.static(path.join(__dirname, '..', 'src', 'css')))
 app.use('/src/js', express.static(path.join(__dirname, '..', 'src', 'js')))
+app.use('/src/assets', express.static(path.join(__dirname, '..', 'src', 'assets')))
 
 // ROUTES
 app.use(require('./routes/index.routes'))
