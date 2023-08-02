@@ -2,7 +2,7 @@ const path = require('path')
 const controller = {}
 
 controller.baseball = (request, response) => {
-    response.sendFile(path.resolve(__dirname, '../../src/baseball.html'))
+    response.sendFile(path.resolve(__dirname, '../../public/baseball.html'))
 }
 
 const API_KEY = process.env.API_KEY
