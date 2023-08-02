@@ -6,10 +6,7 @@ require('dotenv').config()
 const app = express()
 app.use(cors())
 
-app.use('/css', express.static(path.join(__dirname, 'css')))
-app.use('/scss', express.static(path.join(__dirname, 'scss')))
-app.use('/js', express.static(path.join(__dirname, 'js')))
-app.use('/assets', express.static(path.join(__dirname, 'assets')))
+app.use(express.static('src'))
 
 // ROUTES
 app.use(require('./routes/index.routes'))
