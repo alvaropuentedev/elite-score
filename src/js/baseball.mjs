@@ -1,7 +1,9 @@
+import { getTodayDate } from './getTodayDate.mjs'
+
 /* global localStorage */
 const CONTAINER = document.querySelector('#container')
 const MENU_LIST = document.querySelector('#option-menu')
-let MATCH_ID, TODAY_DATE, HOME_TEAM_NAME, AWAY_TEAM_NAME
+let MATCH_ID, HOME_TEAM_NAME, AWAY_TEAM_NAME
 
 // ONLOAD WINDOW
 window.addEventListener('load', () => {
@@ -12,16 +14,6 @@ const scrollToTopSmooth = () => {
         top: 0,
         behavior: 'smooth'
     })
-}
-// GET TODAY DAY
-const getTodayDate = () => {
-    const date = new Date()
-    const day = date.getDate()
-    const month = date.getMonth() + 1
-    const year = date.getFullYear()
-
-    TODAY_DATE = `${day}/${month}/${year}`
-    return TODAY_DATE
 }
 
 // GET TIME
