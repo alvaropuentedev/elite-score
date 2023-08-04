@@ -6,9 +6,10 @@ require('dotenv').config()
 const app = express()
 app.use(cors())
 
+app.use('/src/styles', express.static(path.join(__dirname, '..', 'src', 'styles')))
 app.use('/src/scss', express.static(path.join(__dirname, '..', 'src', 'scss')))
-app.use('/src/css', express.static(path.join(__dirname, '..', 'src', 'css')))
-app.use('/src/js', express.static(path.join(__dirname, '..', 'src', 'js')))
+app.use('/src/modules', express.static(path.join(__dirname, '..', 'src', 'modules')))
+app.use('/src/utils', express.static(path.join(__dirname, '..', 'src', 'utils')))
 app.use('/src/assets', express.static(path.join(__dirname, '..', 'src', 'assets')))
 
 // ROUTES

@@ -1,4 +1,6 @@
-import { getTodayDate } from './getTodayDate.mjs'
+import { getTodayDate } from '../../utils/getTodayDate.mjs'
+import { scrollToTopSmooth } from '../../utils/scrollToTopSmooth.mjs'
+import { toDateTime } from '../../utils/toDateTime.mjs'
 
 /* global localStorage */
 const CONTAINER = document.querySelector('#container')
@@ -9,31 +11,6 @@ let MATCH_ID, HOME_TEAM_NAME, AWAY_TEAM_NAME
 window.addEventListener('load', () => {
     fetchDataSchedule()
 })
-const scrollToTopSmooth = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
-}
-
-// GET TIME
-const toDateTime = (secs) => {
-    const t = new Date(1970, 0, 1)
-    t.setSeconds(secs)
-    let hours = t.getHours() + 2
-    const minutes = String(t.getMinutes()).padStart(2, '0')
-    let day = t.getDate()
-    let month = t.getMonth() + 1
-    hours = hours % 24
-    if (hours === 0 || hours === 1) {
-        day = day + 1
-        if (day === 32) {
-            day = 1
-            month = month + 1
-        }
-    }
-    return day + '/' + month + '  ' + hours + ':' + minutes
-}
 
 // OPTION MENU
 const NEWS = document.querySelector('#container-menu-news')
