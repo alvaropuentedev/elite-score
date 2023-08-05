@@ -24,7 +24,7 @@ SCHEDULE.addEventListener('click', () => { fetchDataSchedule(scrollToTopSmooth()
 HIGHLIGHTS.addEventListener('click', () => { fetchMatchHighlights(MATCH_ID) })
 REFRESH.addEventListener('click', () => { fetchLineups(MATCH_ID, AWAY_TEAM_NAME, HOME_TEAM_NAME, scrollToTopSmooth()) })
 HOME.addEventListener('click', () => { window.location = '/' })
-// UNDERLINE SELECTED MENU OPTION
+// BOLD SELECTED MENU OPTION
 const menuItems = document.querySelectorAll('#option-menu li')
 menuItems.forEach(item => {
     item.addEventListener('click', function () {
