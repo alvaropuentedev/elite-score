@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.7",
+    "@vercel/analytics": "^1.0.2",
     "bootstrap": "5.2.3",
     "cors": "^2.8.5",
     "dotenv": "16.0.3",
